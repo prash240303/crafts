@@ -1,13 +1,12 @@
 import React from 'react';
 
-
 const ArrowButton = () => {
   return (
     <a
       href=""
       target="_blank"
       rel="noopener noreferrer"
-      className="hero-button group relative mt-12 rounded-lg py-3 px-2 overflow-hidden mx-auto w-max block rounded-6 bg-neutral-loud text-neutral-white  shadow-2xl  bg-zinc-900 text-white text-body-small-medium cursor-pointer"
+      className="hero-button group relative mt-12 rounded-lg py-3 px-2 overflow-hidden mx-auto w-max block rounded-6 bg-neutral-loud text-neutral-white shadow-2xl bg-zinc-900 text-white text-body-small-medium cursor-pointer"
     >
       <div className="hero-button-arrows absolute flex items-center pointer-events-none overflow-hidden transition-all p-1 duration-500 group-hover:w-full group-hover:h-full group-hover:left-0 group-hover:top-0 justify-center h-full w-12 rounded-4 top-0 left-0 moving-arrows">
         <div className="rounded-md flex w-full h-full bg-[#D6FF18] shadow-xl  justify-center items-center" style={{ boxShadow: 'inset 0 0 5px rgba(255, 255, 255, 1)' }}>
