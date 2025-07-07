@@ -1,6 +1,6 @@
 "use client"
-import { useEffect, useState } from "react";
-import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
+import {  useState } from "react";
+import { DragDropContext, Draggable, Droppable } from "@hello-pangea/dnd";
 const DATA = [
   {
     id: "0e2f0db1-5457-46b0-949e-8032d2f9997a",
