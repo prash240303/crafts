@@ -92,7 +92,7 @@ const cardsData = [
 
 function CustomCards() {
   return (
-    <div className="flex gap-4">
+    <div className="flex mx-auto w-full items-center justify-center gap-4">
       {cardsData.map((card, index) => (
         <Card key={index} {...card} />
       ))}
