@@ -1,4 +1,3 @@
-import CustomCards from '@/components/cards';
 import React from 'react';
 
 export default function ComponentLinks() {

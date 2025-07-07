@@ -140,8 +140,8 @@ function StoreList({ name, items, id }:Props) {
   return (
     <Droppable droppableId={id}>
       {(provided) => (
-        <div {...provided.droppableProps} ref={provided.innerRef}>
-          <div className="store-container">
+        <div {...provided.droppableProps} ref={provided.innerRef} className="store-list border border-gray-200 rounded-lg p-4 mb-4 bg-white shadow-sm hover:shadow-md transition-shadow duration-200">
+          <div className="store-container font-medium rounded-lg mb-2 bg-white  transition-shadow duration-200">
             <h3>{name}</h3>
           </div>
           <div className="items-container">
@@ -149,7 +149,7 @@ function StoreList({ name, items, id }:Props) {
               <Draggable draggableId={item.id} index={index} key={item.id}>
                 {(provided) => (
                   <div
-                    className="item-container"
+                    className="item-container border border-gray-300 rounded-lg p-2 mb-2 bg-white shadow-sm hover:shadow-md transition-shadow duration-200"
                     {...provided.dragHandleProps}
                     {...provided.draggableProps}
                     ref={provided.innerRef}
