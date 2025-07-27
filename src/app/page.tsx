@@ -1,41 +1,47 @@
-import React from 'react';
+"use client";
+import { ArrowRight } from "lucide-react";
+import React from "react";
+import { useRouter } from "next/navigation";
 
 export default function ComponentLinks() {
   const componentLinks = [
-    { name: 'Arrow Button', path: '/arrow-button' },
-    { name: 'Magic Text', path: '/magic-text' },
-    { name: 'Tab Switcher', path: '/tab-switcher' },
-    { name: 'Tags Component', path: '/tags-component' },
-    { name: 'Zip Code Checker', path: '/zip-code-checker' },
-    { name: 'Custom Cards', path: '/custom-cards' }
+    { name: "Arrow Button", path: "/arrow-button", description: "A button with an arrow icon." },
+    { name: "Magic Text", path: "/magic-text", description: "A text component with magical effects." },
+    { name: "Tab Switcher", path: "/tab-switcher", description: "A component for switching between tabs." },
+    { name: "Tags Component", path: "/tags-component", description: "A component for displaying tags." },
+    { name: "Zip Code Checker", path: "/zip-code-checker", description: "A component for checking zip codes." },
+    { name: "Custom Cards", path: "/custom-cards", description: "A component for displaying custom cards." },
   ];
+  const router = useRouter();
 
   return (
-    <div className="max-w-4xl mx-auto p-8 bg-white min-h-screen">
+    <div className="max-w-3xl mx-auto p-8 bg-white min-h-screen">
+      <div className="flex flex-col gap-4 items-start justify-between mb-8">
+        <div className="text-3xl font-bold text-left text-gray-900">Crafts</div>
+        <div>
+          {" "}
+          Hi, I&apos;m Prashant. I&apos;m a full-stack engineer from India.
+        </div>
+      </div>
       <div className="border-t-2 border-gray-900 pt-6">
-        <h1 className="text-sm font-mono uppercase tracking-wider text-gray-900 mb-8">
-          TABLE OF CONTENTS <span className="text-gray-500">[v1.0]</span>
-          <span className="float-right text-gray-500">[ COMPONENTS: {componentLinks.length} ]</span>
-        </h1>
-        
         <div className="space-y-6">
-          {componentLinks.map((link, index) => (
-            <div key={link.path} className="flex items-start">
-              <span className="text-gray-900 font-mono text-sm mr-4 mt-1">
-                {(index + 1).toString().padStart(2, '0')}.
-              </span>
+          {componentLinks.map((link) => (
+            <div key={link.path} onClick={() => {router.push(link.path)}} className="flex rounded-md group hover:cursor-pointer hover:bg-blue-50 py-3 px-5 items-start">
               <div className="flex-1">
-                <a 
-                  href={link.path}
-                  className="text-gray-900 hover:text-blue-600 transition-colors duration-200 font-medium"
+                <div
+                  className="text-gray-900 transition-colors duration-200 font-medium"
                 >
                   {link.name}
-                </a>
-                <div className="border-b border-dotted border-gray-300 mt-2"></div>
+                </div>
+                <div className="text-neutral-500 border-dotted border-gray-300 mt-2">
+                  {link.description || "No description available."}
+                </div>
+              </div>
+              <div className="text-gray-500 my-auto text-sm">
+                <ArrowRight className="inline-block mr-1 transition-all duration-150 ease-in-out text-neutral-500 group-hover:text-blue-500 -rotate-45 group-hover:rotate-0" />
               </div>
             </div>
           ))}
-
         </div>
       </div>
     </div>
