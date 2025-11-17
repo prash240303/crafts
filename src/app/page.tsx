@@ -21,7 +21,7 @@ export default function ComponentLinks() {
         <div className="text-3xl font-bold text-left text-gray-900">Crafts</div>
         <div>
           {" "}
-          Hi, I&apos;m Prashant. I&apos;m a frontend-stack engineer from India.
+          Hi, I&apos;m Prashant. I&apos;m a frontend engineer from India.
         </div>
       </div>
       <div className="border-t-2 border-gray-900 pt-6">
