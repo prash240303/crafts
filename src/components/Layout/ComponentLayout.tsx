@@ -40,7 +40,7 @@ export default function ComponentLayout({
 
       {/* Main Content */}
       <main className="flex-1 px-6 py-12">
-        <div className=" mx-auto">
+        <div className=" max-w-3xl place-items-center flex items-center justify-center mx-auto">
             {children}
         </div>
       </main>

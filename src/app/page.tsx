@@ -11,6 +11,7 @@ export default function ComponentLinks() {
     { name: "Tags Component", path: "/tags-component", description: "A component for displaying tags." },
     { name: "Zip Code Checker", path: "/zip-code-checker", description: "A component for checking zip codes." },
     { name: "Custom Cards", path: "/custom-cards", description: "A component for displaying custom cards." },
+    { name: "Ripple button", path: "/ripple-button", description: "Button with ripple effect on hover" }
   ];
   const router = useRouter();
 
@@ -20,13 +21,13 @@ export default function ComponentLinks() {
         <div className="text-3xl font-bold text-left text-gray-900">Crafts</div>
         <div>
           {" "}
-          Hi, I&apos;m Prashant. I&apos;m a full-stack engineer from India.
+          Hi, I&apos;m Prashant. I&apos;m a frontend-stack engineer from India.
         </div>
       </div>
       <div className="border-t-2 border-gray-900 pt-6">
         <div className="space-y-6">
           {componentLinks.map((link) => (
-            <div key={link.path} onClick={() => {router.push(link.path)}} className="flex rounded-md group hover:cursor-pointer hover:bg-blue-50 py-3 px-5 items-start">
+            <div key={link.path} onClick={() => { router.push(link.path) }} className="flex rounded-md group hover:cursor-pointer hover:bg-blue-50 py-3 px-5 items-start">
               <div className="flex-1">
                 <div
                   className="text-gray-900 transition-colors duration-200 font-medium"

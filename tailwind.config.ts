@@ -6,6 +6,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+
   theme: {
     extend: {
       backgroundImage: {
@@ -15,8 +16,29 @@ const config: Config = {
         "purpleCardBG": "linear-gradient(275deg, #6E58EB 1.24%, #9A88FE 97.24%)",
         "blackCardBG": "linear-gradient(275deg, #46474C 1.24%, #232429 97.24%)",
       },
+      keyframes: {
+        ripple: {
+          "0%": {
+            transform: "scale(0)",
+            opacity: "0.7",
+          },
+          "50%": {
+            transform: "scale(1.2)",
+            opacity: "0.4",
+          },
+          "100%": {
+            transform: "scale(1.5)",
+            opacity: "0",
+          },
+        },
+      },
+      animation: {
+        ripple: "ripple 1s ease-out forwards",
+      },
+
     },
   },
+
   plugins: [],
 };
 
