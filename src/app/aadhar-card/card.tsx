@@ -16,13 +16,14 @@ function Card() {
 
                 <div className='flex flex-col text-xs gap-1'>
                     <div className='text-[#5D5139] space-x-3'>
-                        <span> DOB : 2003-03-24</span>
+                        <span> DOB : 2004-02-12</span>
                         <span> Gender : MALE</span>
                     </div>
                     <div className='text-[#5D5139]'>
-                        S/O Birendra Kumar Village Degwan
-                        Chirali-Khizersarai road
-                        Gaya Bihar 824233
+                        S/O John Doe
+                        Village Greenfield
+                        Riverside-Oakwood Road
+                        Springfield, Stateville 000000
                     </div>
                 </div>
                 <div className='w-full h-4 bottom-10 left-0 absolute'>
@@ -30,7 +31,7 @@ function Card() {
                 </div>
 
                 <div className='font-bold text-lg  text-[#171510] mt-3 flex items-center justify-center w-full'>
-                    523848994814
+                    739482156203
                 </div>
             </div>
 
