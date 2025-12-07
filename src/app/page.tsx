@@ -1,51 +1,141 @@
-"use client";
-import { ArrowRight } from "lucide-react";
-import React from "react";
-import { useRouter } from "next/navigation";
+"use client"
+import React, { useState } from 'react';
 
-export default function ComponentLinks() {
-  const componentLinks = [
-    { name: "Arrow Button", path: "/arrow-button", description: "A button with an arrow icon." },
-    { name: "Magic Text", path: "/magic-text", description: "A text component with magical effects." },
-    { name: "Tab Switcher", path: "/tab-switcher", description: "A component for switching between tabs." },
-    { name: "Tags Component", path: "/tags-component", description: "A component for displaying tags." },
-    { name: "Zip Code Checker", path: "/zip-code-checker", description: "A component for checking zip codes." },
-    { name: "Custom Cards", path: "/custom-cards", description: "A component for displaying custom cards." },
-    { name: "Ripple button", path: "/ripple-button", description: "Button with ripple effect on hover" },
-    { name: "Aadhar Card", path: "/aadhar-card", description: "A component for displaying aadhar card" }
-  ];
-  const router = useRouter();
+const PortfolioGrid = () => {
+  const [projects] = useState([
+    {
+      id: 1,
+      name: 'Arrow Button',
+      path: '/arrow-button',
+      vid: '/craft-preview/base.mp4',
+      description: 'A button with an arrow icon.',
+      type: 'arrow-button',
+      height: 'h-72'
+    },
+    {
+      id: 2,
+      name: 'Magic Text',
+      path: '/magic-text',
+      vid: '/craft-preview/base.mp4',
+      description: 'A text component with magical effects.',
+      type: 'magic-text',
+      height: 'h-80'
+    },
+    {
+      id: 3,
+      name: 'Tab Switcher',
+      path: '/tab-switcher',
+      vid: '/craft-preview/base.mp4',
+      description: 'A component for switching between tabs.',
+      type: 'tab-switcher',
+      height: 'h-96'
+    },
+    {
+      id: 4,
+      name: 'Tags Component',
+      path: '/tags-component',
+      vid: '/craft-preview/base.mp4',
+      description: 'A component for displaying tags.',
+      type: 'tags',
+      height: 'h-64'
+    },
+    {
+      id: 5,
+      name: 'Zip Code Checker',
+      path: '/zip-code-checker',
+      vid: '/craft-preview/base.mp4',
+      description: 'A component for checking zip codes.',
+      type: 'zip-code',
+      height: 'h-80'
+    },
+    {
+      id: 6,
+      name: 'Custom Cards',
+      path: '/custom-cards',
+      vid: '/craft-preview/base.mp4',
+      description: 'A component for displaying custom cards.',
+      type: 'custom-cards',
+      height: 'h-96'
+    },
+    {
+      id: 7,
+      name: 'Ripple button',
+      path: '/ripple-button',
+      vid: '/craft-preview/base.mp4',
+      description: 'Button with ripple effect on hover',
+      type: 'ripple-button',
+      height: 'h-72'
+    },
+    {
+      id: 8,
+      name: 'Aadhar Card',
+      path: '/aadhar-card',
+      vid: '/craft-preview/base.mp4',
+      description: 'A component for displaying aadhar card',
+      type: 'aadhar-card',
+      height: 'h-[420px]'
+    }
+  ]);
+
+  const renderContent = (vid) => {
+    return (
+      <video
+        src={vid}
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="w-full h-full object-cover rounded-lg"
+      />
+    );
+  };
+
+  const handleCardClick = (path) => {
+    console.log(`Navigating to: ${path}`);
+    // Uncomment if using Next.js router
+    // router.push(path)
+  };
+
+  // Split projects into 3 equal columns
+  const itemsPerColumn = Math.ceil(projects.length / 3);
+  const column1 = projects.slice(0, itemsPerColumn);
+  const column2 = projects.slice(itemsPerColumn, itemsPerColumn * 2);
+  const column3 = projects.slice(itemsPerColumn * 2);
+
+  const renderColumn = (columnProjects) => (
+    <div className="flex flex-col gap-2">
+      {columnProjects.map((project) => (
+        <div
+          key={project.id}
+          onClick={() => handleCardClick(project.path)}
+          className={`bg-zinc-900 border border-zinc-800 rounded-2xl p-1 hover:border-zinc-700 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 cursor-pointer flex flex-col ${project.height}`}
+        >
+          {/* Video Container */}
+          <div className="bg-black relative rounded-xl h-full overflow-hidden">
+            {renderContent(project.vid)}
+
+            {/* Card Footer */}
+            <div className="space-y-1 absolute bottom-4 left-3 px-2">
+              <div className="text-white text-lg font-medium">{project.name}</div>
+              <div className="text-gray-500 text-sm">{project.description}</div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 
   return (
-    <div className="max-w-3xl mx-auto p-8 bg-white min-h-screen">
-      <div className="flex flex-col gap-4 items-start justify-between mb-8">
-        <div className="text-3xl font-bold text-left text-gray-900">Crafts</div>
-        <div>
-          {" "}
-          Hi, I&apos;m Prashant. I&apos;m a frontend engineer from India.
-        </div>
-      </div>
-      <div className="border-t-2 border-gray-900 pt-6">
-        <div className="space-y-6">
-          {componentLinks.map((link) => (
-            <div key={link.path} onClick={() => { router.push(link.path) }} className="flex rounded-md group hover:cursor-pointer hover:bg-blue-50 py-3 px-5 items-start">
-              <div className="flex-1">
-                <div
-                  className="text-gray-900 transition-colors duration-200 font-medium"
-                >
-                  {link.name}
-                </div>
-                <div className="text-neutral-500 border-dotted border-gray-300 mt-2">
-                  {link.description || "No description available."}
-                </div>
-              </div>
-              <div className="text-gray-500 my-auto text-sm">
-                <ArrowRight className="inline-block mr-1 transition-all duration-150 ease-in-out text-neutral-500 group-hover:text-blue-500 -rotate-45 group-hover:rotate-0" />
-              </div>
-            </div>
-          ))}
+    <div className="min-h-screen bg-[#131210] p-10">
+      <div className="max-w-5xl mx-auto">
+        <div className="grid grid-cols-3 gap-2">
+          {renderColumn(column1)}
+          {renderColumn(column2)}
+          {renderColumn(column3)}
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default PortfolioGrid;
