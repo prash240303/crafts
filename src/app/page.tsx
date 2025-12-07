@@ -11,7 +11,8 @@ export default function ComponentLinks() {
     { name: "Tags Component", path: "/tags-component", description: "A component for displaying tags." },
     { name: "Zip Code Checker", path: "/zip-code-checker", description: "A component for checking zip codes." },
     { name: "Custom Cards", path: "/custom-cards", description: "A component for displaying custom cards." },
-    { name: "Ripple button", path: "/ripple-button", description: "Button with ripple effect on hover" }
+    { name: "Ripple button", path: "/ripple-button", description: "Button with ripple effect on hover" },
+    { name: "Aadhar Card", path: "/aadhar-card", description: "A component for displaying aadhar card" }
   ];
   const router = useRouter();
 

@@ -292,3 +292,17 @@ h1 > .magic > .magic-text {
   pointer-events: none;
   animation: water-ripple 1s ease-out;
 }
+
+.mask-top {
+  -webkit-mask-image: url("/mask-top.svg");
+  mask-image: url("/mask-top.svg");
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  -webkit-mask-size: 100% auto;
+  mask-size: 100% auto;
+
+  -webkit-mask-position: top center;
+  mask-position: top center;
+}
