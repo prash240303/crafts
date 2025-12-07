@@ -3,6 +3,42 @@ import { Mail } from 'lucide-react';
 import { DotIcon } from "lucide-react";
 import { Check } from "lucide-react";
 
+/** Pastel‑tuned colors */
+const pastelBg = {
+  Danger: '#FDE8E8',
+  Success: '#E3F8E0',
+  Warning: '#FFF6DA',
+  Info: '#E6F4FF',
+  Teal: '#D7F8F7',
+  Purple: '#F0E9FF',
+  Blue: '#E4F1FF',
+  Default: '#F3F4F6'
+};
+
+const pastelSolid = {
+  Danger: '#E86A6A',
+  Success: '#4CAF50',
+  Warning: '#F2C94C',
+  Info: '#2D9CDB',
+  Teal: '#2BC5B4',
+  Purple: '#8B5CF6',
+  Blue: '#3B82F6',
+  Default: '#6B7280'
+};
+
+const pastelText = {
+  Danger: '#B94A48',
+  Success: '#2F7A38',
+  Warning: '#A17700',
+  Info: '#1C6FAF',
+  Teal: '#1C7F77',
+  Purple: '#5B3FA4',
+  Blue: '#1E4F91',
+  Default: '#111827'
+};
+
+type ColorKey = keyof typeof pastelText;
+
 type Props = {
   type: string;
   content: string;
@@ -10,7 +46,7 @@ type Props = {
   isBordered: boolean;
   trailingIcon: React.ReactNode;
   leadingIcon: React.ReactNode;
-  color: string;
+  color: ColorKey;
   colorType?: 'light' | 'solid';
 };
 
@@ -22,60 +58,29 @@ const TagsComponent = (props: Props) => {
     trailingIcon,
     leadingIcon,
     color,
-    colorType = 'light', // Default to 'light' if not provided
+    colorType = 'light'
   } = props;
-
-  const BgColors: { [key: string]: string } = {
-    Danger: '#FEE2E1',
-    Success: '#DCFCE7',
-    Warning: '#FEF9C2',
-    Info: '#E0F2FE',
-    Teal: '#C5F6FB',
-    Purple: '#EDEAFF',
-    Blue: '#E0F2FE',
-    Default: '#F1F4F9',
-  };
-
-  const SolidColors: { [key: string]: string } = {
-    Purple: '#6D28D9',
-    Danger: '#BA1C1D',
-    Success: '#28a745',
-    Warning: '#ffc107',
-    Info: '#17a2b8',
-    Teal: '#20c997',
-    Default: '#6c757d',
-  };
-
-  const DarkTextColors: { [key: string]: string } = {
-    Danger: '#C5302A',
-    Success: '#1D7300',
-    Warning: '#BA1D1C',
-    Info: '#1C6E96',
-    Teal: '#1A8577',
-    Default: '#000  ',
-  };
 
   const baseClasses = 'inline-flex items-center px-2 py-1.5 font-semibold rounded-lg text-sm';
   const leadingIconMargin = leadingIcon ? 'mr-1' : '';
   const trailingIconMargin = trailingIcon ? 'ml-2' : '';
 
-  let backgroundColor = 'transparent';  
-  let textColor = 'gray';
+  let backgroundColor = 'transparent';
+  let textColor = pastelText[color] || pastelText.Default;
 
   if (isFilled) {
     if (colorType === 'light') {
-      backgroundColor = BgColors[color] || 'black';
-      textColor = DarkTextColors[color] || 'black';
-    } else if (colorType === 'solid') {
-      backgroundColor = SolidColors[color] || 'black';
+      backgroundColor = pastelBg[color] || pastelBg.Default;
+    } else {
+      backgroundColor = pastelSolid[color] || pastelSolid.Default;
       textColor = 'white';
     }
   }
 
-  const borderColor = BgColors[color] || 'gray';
+  const borderColor = pastelBg[color] || pastelBg.Default;
 
   const tagStyle = {
-    backgroundColor: backgroundColor,
+    backgroundColor,
     color: textColor,
     display: 'flex',
     border: isBordered ? `1px solid ${borderColor}` : 'none',
@@ -83,9 +88,17 @@ const TagsComponent = (props: Props) => {
 
   return (
     <div className={`${baseClasses}`} style={tagStyle}>
-      {leadingIcon && <span  className={`w-4 h-4 flex items-center justify-center  ${leadingIconMargin}`}>{leadingIcon}</span>}
+      {leadingIcon && (
+        <span className={`w-4 h-4 flex items-center justify-center ${leadingIconMargin}`}>
+          {leadingIcon}
+        </span>
+      )}
       <span>{content}</span>
-      {trailingIcon && <span  className={`w-4 h-4 flex items-center justify-center  ${trailingIconMargin}`}>{trailingIcon}</span>}
+      {trailingIcon && (
+        <span className={`w-4 h-4 flex items-center justify-center ${trailingIconMargin}`}>
+          {trailingIcon}
+        </span>
+      )}
     </div>
   );
 };

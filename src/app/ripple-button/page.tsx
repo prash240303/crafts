@@ -4,8 +4,8 @@ import RippleButton from "@/components/RippleButton";
 function page() {
     return (
         <ComponentLayout
-            title="Tab Switcher Component"
-            description="A versatile tab switcher component for seamless navigation."
+            title="Ripple Button"
+            description="Hover over it!"
         >
             <RippleButton>
                 Click me

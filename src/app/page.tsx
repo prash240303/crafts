@@ -1,7 +1,19 @@
 "use client"
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 
+type Project = {
+  id: number;
+  name: string;
+  path: string;
+  vid: string;
+  description: string;
+  type: string;
+  height: string;
+};
+
 const PortfolioGrid = () => {
+  const router = useRouter()
   const [projects] = useState([
     {
       id: 1,
@@ -77,7 +89,7 @@ const PortfolioGrid = () => {
     }
   ]);
 
-  const renderContent = (vid) => {
+  const renderContent = (vid: string) => {
     return (
       <video
         src={vid}
@@ -90,10 +102,9 @@ const PortfolioGrid = () => {
     );
   };
 
-  const handleCardClick = (path) => {
+  const handleCardClick = (path: string) => {
     console.log(`Navigating to: ${path}`);
-    // Uncomment if using Next.js router
-    // router.push(path)
+    router.push(path)
   };
 
   // Split projects into 3 equal columns
@@ -102,7 +113,7 @@ const PortfolioGrid = () => {
   const column2 = projects.slice(itemsPerColumn, itemsPerColumn * 2);
   const column3 = projects.slice(itemsPerColumn * 2);
 
-  const renderColumn = (columnProjects) => (
+  const renderColumn = (columnProjects: Project[]) => (
     <div className="flex flex-col gap-2">
       {columnProjects.map((project) => (
         <div

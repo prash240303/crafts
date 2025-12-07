@@ -21,7 +21,7 @@ const page = (props: Props) => {
       title="Tags Component"
       description="A versatile tags component for displaying various statuses and actions with icons and colors."
     >
-    <div className="flex max-w-6xl mx-auto p-4 py-8 border border-neutral-200 shadow-sm rounded-md bg-white items-center justify-center w-full gap-4">
+    <div className="flex max-w-5xl mx-auto p-4 py-8 border border-neutral-200 shadow-sm rounded-md bg-white items-center justify-center gap-2">
       {" "}
       <TagsComponent
         type="default"
@@ -90,26 +90,16 @@ const page = (props: Props) => {
         isBordered={false}
         trailingIcon={null}
         leadingIcon={<Download />}
-        colorType="solid"
+        colorType="light"
         color="Purple"
       />
-      <TagsComponent
+        <TagsComponent
         type="default"
         content="Upload"
         isFilled={true}
         isBordered={false}
         trailingIcon={null}
         leadingIcon={<Upload />}
-        colorType="solid"
-        color="Purple"
-      />
-      <TagsComponent
-        type="default"
-        content="view"
-        isFilled={true}
-        isBordered={false}
-        trailingIcon={<Eye />}
-        leadingIcon={null}
         colorType="solid"
         color="Purple"
       />
