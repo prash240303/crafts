@@ -1,6 +1,8 @@
 "use client"
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
+import { Inter } from 'next/font/google';
+import { cn } from "../lib/utils";
 
 type Project = {
   id: number;
@@ -11,6 +13,10 @@ type Project = {
   type: string;
   height: string;
 };
+
+const inter = Inter({
+  subsets: ['latin'],
+});
 
 const PortfolioGrid = () => {
   const router = useRouter()
@@ -114,12 +120,12 @@ const PortfolioGrid = () => {
   const column3 = projects.slice(itemsPerColumn * 2);
 
   const renderColumn = (columnProjects: Project[]) => (
-    <div className="flex flex-col gap-2">
+    <div className={cn("flex flex-col gap-2", inter.className)}>
       {columnProjects.map((project) => (
         <div
           key={project.id}
           onClick={() => handleCardClick(project.path)}
-          className={`bg-zinc-900 border border-zinc-800 rounded-2xl p-1 hover:border-zinc-700 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 cursor-pointer flex flex-col ${project.height}`}
+          className={`bg-white border border-zinc-300 rounded-2xl p-1 hover:border-zinc-400 hover:scale-[101%] hover:shadow-2xl transition-all ease-in duration-400 cursor-pointer flex flex-col ${project.height}`}
         >
           {/* Video Container */}
           <div className="bg-black relative rounded-xl h-full overflow-hidden">
@@ -137,7 +143,7 @@ const PortfolioGrid = () => {
   );
 
   return (
-    <div className="min-h-screen bg-[#131210] p-10">
+    <div className="min-h-screen p-10">
       <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-3 gap-2">
           {renderColumn(column1)}
