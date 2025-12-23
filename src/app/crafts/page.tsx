@@ -68,7 +68,7 @@ const PortfolioGrid = () => {
       id: 5,
       name: "Zip Code Checker",
       path: "/zip-code-checker",
-      img: "/craft-preview/zipCodeChecker.png",
+      img: "/craft-preview/zipcodechecker.png",
       description: "A component for checking zip codes.",
       type: "zip-code",
       height: "h-80",
