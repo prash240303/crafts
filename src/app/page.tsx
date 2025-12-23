@@ -71,7 +71,7 @@ const PortfolioGrid: React.FC = () => {
       w: 1,
       h: 2,
       type: "image",
-      src: "/home/frame2.png",
+      src: "/home/Frame2.png",
     },
     {
       id: "hero",
@@ -89,7 +89,7 @@ const PortfolioGrid: React.FC = () => {
       w: 2,
       h: 2,
       type: "image",
-      src: "/home/frame1.png",
+      src: "/home/Frame1.png",
     },
     {
       // hero top right
@@ -99,7 +99,7 @@ const PortfolioGrid: React.FC = () => {
       w: 2,
       h: 1,
       type: "image",
-      src: "/home/frame3.png",
+      src: "/home/Frame3.png",
     },
     {
       //hero bottom right
@@ -109,7 +109,7 @@ const PortfolioGrid: React.FC = () => {
       w: 1.5,
       h: 2,
       type: "image",
-      src: "/home/frame4.png",
+      src: "/home/Frame4.png",
     },
     {
       id: "img8",
