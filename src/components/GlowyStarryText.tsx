@@ -39,7 +39,7 @@ const MagicText: React.FC = () => {
           100% { transform: rotate(360deg); }
         }
         .magic-star {
-          --size: 0.75rem;
+          --size: 0.8rem;
           --color: #9333ea;
           position: absolute;
           left: var(--star-left, 50%);
@@ -67,7 +67,7 @@ const MagicText: React.FC = () => {
       `}</style>
       
       <div className="flex justify-center mt-8 relative">
-        <h1 className="text-black text-3xl md:text-5xl font-light text-center relative">
+        <h1 className="text-black text-3xl font-light text-center relative">
           Like all good stories, it&apos;s a{' '}
           <span className="relative inline-block">
             <span className="relative inline-block">

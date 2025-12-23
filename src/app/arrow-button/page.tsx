@@ -2,7 +2,7 @@
 import ArrowButton from "@/components/ArrowButton";
 import ComponentLayout from "@/components/Layout/ComponentLayout";
 import React from "react";
-import CodeBlock from "./CodeBlock";
+import CodeBlock from "../../components/Layout/CodeBlock";
 import Image from "next/image";
 import { motion } from 'framer-motion';
 

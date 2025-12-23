@@ -1,5 +1,9 @@
+"use client";
 import type { ReactNode } from "react";
 import { ChevronLeft } from "lucide-react";
+import { useState } from "react";
+import { useParams, useRouter, usePathname } from "next/navigation";
+import Link from "next/link";
 
 interface LayoutProps {
   title: string;
@@ -12,6 +16,90 @@ export default function ComponentLayout({
   description = "Component description goes here",
   children,
 }: LayoutProps) {
+  const pathname = usePathname();
+  console.log("Current path:", pathname);
+
+  const projects = [
+    {
+      id: 1,
+      name: "Arrow Button",
+      path: "/arrow-button",
+      vid: "/craft-preview/base.mp4",
+      description: "A button with an arrow icon.",
+      type: "arrow-button",
+      height: "h-72",
+    },
+    {
+      id: 2,
+      name: "Magic Text",
+      path: "/magic-text",
+      vid: "/craft-preview/base.mp4",
+      description: "A text component with magical effects.",
+      type: "magic-text",
+      height: "h-80",
+    },
+    {
+      id: 3,
+      name: "Tab Switcher",
+      path: "/tab-switcher",
+      vid: "/craft-preview/base.mp4",
+      description: "A component for switching between tabs.",
+      type: "tab-switcher",
+      height: "h-96",
+    },
+    {
+      id: 4,
+      name: "Tags Component",
+      path: "/tags-component",
+      vid: "/craft-preview/base.mp4",
+      description: "A component for displaying tags.",
+      type: "tags",
+      height: "h-64",
+    },
+    {
+      id: 5,
+      name: "Zip Code Checker",
+      path: "/zip-code-checker",
+      vid: "/craft-preview/base.mp4",
+      description: "A component for checking zip codes.",
+      type: "zip-code",
+      height: "h-80",
+    },
+    {
+      id: 6,
+      name: "Custom Cards",
+      path: "/custom-cards",
+      vid: "/craft-preview/base.mp4",
+      description: "A component for displaying custom cards.",
+      type: "custom-cards",
+      height: "h-96",
+    },
+    {
+      id: 7,
+      name: "Ripple button",
+      path: "/ripple-button",
+      vid: "/craft-preview/base.mp4",
+      description: "Button with ripple effect on hover",
+      type: "ripple-button",
+      height: "h-72",
+    },
+    {
+      id: 8,
+      name: "Aadhar Card",
+      path: "/aadhar-card",
+      vid: "/craft-preview/base.mp4",
+      description: "A component for displaying aadhar card",
+      type: "aadhar-card",
+      height: "h-[420px]",
+    },
+  ];
+
+  const currIdx = projects.findIndex((item) => item.path === pathname);
+  const leftIdx = currIdx === 0 ? projects.length - 1 : currIdx - 1;
+  const rightIdx = currIdx === projects.length - 1 ? 0 : currIdx + 1;
+
+  console.log("left ad right", leftIdx, rightIdx);
+
   return (
     <div className="min-h-screen mx-auto flex flex-col items-start max-w-3xl gap-8 py-12">
       {/* Header */}
@@ -36,16 +124,27 @@ export default function ComponentLayout({
       </div>
 
       {/* Main Content */}
-      <main className="">
-        {children}
-      </main>
+      <main className="">{children}</main>
 
       {/* Footer */}
-      <footer className="mt-auto w-full">
+      <footer className="mt-auto  w-full">
         <div className="w-full border-[0.5px] border-t  border-b-0 border-dashed border-neutral-500 h-[1px]" />
-          <div className="flex w-full flex-col sm:flex-row justify-between items-center gap-4">
-            footer here
-          </div>
+        <div className="flex w-full text-sm mt-3 flex-col sm:flex-row justify-between items-center gap-4">
+          <Link
+            href={projects[leftIdx].path}
+            className="flex flex-col gap-1 items-start justify-center"
+          >
+            <span className="text-neutral-600 text-xs">Previous</span>
+            <span className="font-medium">{projects[leftIdx].name}</span>
+          </Link>
+          <Link
+            href={projects[rightIdx].path}
+            className="flex flex-col gap-1 items-end justify-center"
+          >
+            <span className="text-neutral-600 text-xs">Next</span>
+            <span className="font-medium">{projects[rightIdx].name}</span>
+          </Link>
+        </div>
       </footer>
     </div>
   );
