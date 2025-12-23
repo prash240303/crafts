@@ -106,7 +106,7 @@ export default function ComponentLayout({
       <div className="">
         <div className="flex items-center gap-6 mb-6">
           <a
-            href="/"
+            href="/crafts"
             className="group flex items-center gap-2 text-gray-500 hover:text-black transition-all duration-300 text-sm py-2"
           >
             <ChevronLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
