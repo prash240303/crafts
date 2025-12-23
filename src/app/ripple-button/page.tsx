@@ -100,11 +100,11 @@ function Page() {
         I built this Ripple Button as a micro-interaction experiment to make button hovers feel more alive and responsive. The goal was to create subtle motion that adds tactile feedback without overwhelming the user.
 
         <div className="mt-4">
-          It's a client-side React component that tracks hover events and dynamically creates ripple elements at the cursor position. Each ripple expands outward with a smooth animation before fading away, creating the illusion of the button filling in with color.
+          It&apos;s a client-side React component that tracks hover events and dynamically creates ripple elements at the cursor position. Each ripple expands outward with a smooth animation before fading away, creating the illusion of the button filling in with color.
         </div>
 
         <div className="mt-4">
-          The inspiration came from Material Design's ripple effects, but I wanted something softer and triggered on hover rather than click—making it feel more playful and less aggressive. The component is lightweight, reusable, and easy to customize with different colors or sizes.
+          The inspiration came from Material Design&apos;s ripple effects, but I wanted something softer and triggered on hover rather than click—making it feel more playful and less aggressive. The component is lightweight, reusable, and easy to customize with different colors or sizes.
         </div>
 
         <div className="mt-6">
@@ -127,7 +127,7 @@ function Page() {
             The ripple effect is created on hover, not click. This makes the interaction feel softer and more exploratory—users get feedback just by moving their cursor over the button.
           </p>
           <p className="text-neutral-700 mb-2">
-            When the user hovers, the cursor position is calculated relative to the button's bounds, and a new ripple element is inserted at that exact location:
+            When the user hovers, the cursor position is calculated relative to the button&apos;s bounds, and a new ripple element is inserted at that exact location:
           </p>
           <div className="my-4 rounded-md">
             <CodeBlock language="typescript" code={codeSnippetRipple} />
@@ -146,7 +146,7 @@ function Page() {
           </p>
           <CodeBlock language="css" code={codeSnippetRippleCSS} />
           <p className="text-neutral-700 mt-2">
-            The animation is applied using Tailwind's custom animation utilities. The pointer-events: none class ensures ripples don't interfere with button interactions.
+            The animation is applied using Tailwind&apos;s custom animation utilities. The pointer-events: none class ensures ripples don&apos;t interfere with button interactions.
           </p>
         </div>
 
@@ -164,7 +164,7 @@ function Page() {
         </div>
 
         <p className="font-medium mt-6 text-neutral-700 mb-3">
-          Here's the source code, I hope you like it :)
+         {` Here's the source code, I hope you like it :)`}
         </p>
         <motion.a
           href="https://github.com/prash240303/crafts/blob/main/src/components/RippleButton.tsx"

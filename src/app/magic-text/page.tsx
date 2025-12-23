@@ -37,10 +37,10 @@ function Page() {
       </div>
 
       <div className="text-base mt-8 text-neutral-700">
-        The Magic Text component is a playful typography experiment designed to bring a bit of motion and delight into static text. The highlighted phrase animates with a shifting gradient, while small star icons float, spin, and reposition around it—creating a subtle "magic" effect without overwhelming the layout.
+        The Magic Text component is a playful typography experiment designed to bring a bit of motion and delight into static text. The highlighted phrase animates with a shifting gradient, while small star icons float, spin, and reposition around it—creating a subtle {"magic"} effect without overwhelming the layout.
 
         <div className="mt-4">
-          Because it relies on animation timing and direct DOM access, the component runs on the client using "use client".
+          Because it relies on animation timing and direct DOM access, the component runs on the client using {"use client"}.
         </div>
 
         <div className="mt-6">
@@ -89,7 +89,7 @@ function Page() {
         </div>
 
         <p className="font-medium mt-6 text-neutral-700 mb-3">
-          Here's the source code, I hope you like it :)
+         {` Here's the source code, I hope you like it :)`}
         </p>
         <motion.a
           href="https://github.com/prash240303/crafts/blob/main/src/components/GlowyStarryText.tsx"

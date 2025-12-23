@@ -351,7 +351,7 @@ const page = () => {
         </div>
 
         <p className="font-medium mt-6 text-neutral-700 mb-3">
-          Here's the source code, I hope you like it :)
+         {` Here's the source code, I hope you like it :)`}
         </p>
         <motion.a
           href="https://github.com/prash240303/crafts/blob/main/src/components/TagsComponent.tsx"

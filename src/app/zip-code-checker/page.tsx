@@ -106,7 +106,7 @@ function page() {
         I built this Zip Code Checker as a small UI experiment focused on interaction and polish. The idea was to make a simple input feel more engaging through layout, spacing, and subtle animation.
 
         <div className="mt-4">
-          It's a client-side Next.js component using React state for the input and a DOM-based ripple effect for instant visual feedback when the button is clicked. The background image acts as both a design element and an interaction surface, keeping everything contained and clean.
+          It&apos;s a client-side Next.js component using React state for the input and a DOM-based ripple effect for instant visual feedback when the button is clicked. The background image acts as both a design element and an interaction surface, keeping everything contained and clean.
         </div>
 
         <div className="mt-4">
@@ -133,7 +133,7 @@ function page() {
             To create the ripple click effect, I use a DOM reference. This allows me to insert a temporary element exactly where the user clicks, without adding extra markup.
           </p>
           <p className="text-neutral-700 mb-2">
-            When the Check Availability button is clicked, a ripple is created and positioned using the mouse coordinates and the container's bounds:
+            When the Check Availability button is clicked, a ripple is created and positioned using the mouse coordinates and the container&apos;s bounds:
           </p>
           <div className="my-4 rounded-md">
             <CodeBlock language="typescript" code={codeSnippetRipple} />
@@ -152,7 +152,7 @@ function page() {
           </p>
           <CodeBlock language="css" code={codeSnippetRippleCSS} />
           <p className="text-neutral-700 mt-2">
-            The animation scales the ripple from 0 to 4x its size while fading it out, creating a smooth, water-like expansion effect. The pointer-events: none ensures it doesn't interfere with other interactions.
+            The animation scales the ripple from 0 to 4x its size while fading it out, creating a smooth, water-like expansion effect. The pointer-events: none ensures it doesn&apos;t interfere with other interactions.
           </p>
         </div>
 
@@ -170,7 +170,7 @@ function page() {
         </div>
 
         <p className="font-medium mt-6 text-neutral-700 mb-3">
-          Here's the source code, I hope you like it :)
+         {` Here's the source code, I hope you like it :)`}
         </p>
         <motion.a
           href="https://github.com/prash240303/crafts/blob/main/src/components/ZipCodeChecker.tsx"

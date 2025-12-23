@@ -316,9 +316,9 @@ const PortfolioGrid: React.FC = () => {
             className={`h-full ${instrumentSerif.className} relative p-0 m-0 w-full`}
           >
             <p className="text-3xl text-center border h-full w-full bg-white py-1 font-light leading-tight">
-              We've gotten so stuck in{" "}
+              We&apos;ve gotten so stuck in{" "}
               <span className="font-bold italic">optimising for function</span>{" "}
-              that we've{" "}
+              that we&apos;ve{" "}
               <span className="font-bold">
                 forgotten to be <span className="italic">creative</span>{" "}
               </span>

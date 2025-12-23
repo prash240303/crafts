@@ -39,7 +39,7 @@ function Page() {
         </p>
 
         <p>
-          The component runs on the client ("use client") since it relies on state and animated transitions.
+          The component runs on the client {"use client"} since it relies on state and animated transitions.
         </p>
 
         <div className="mt-6">
@@ -88,7 +88,7 @@ function Page() {
         </div>
 
         <p className="font-medium mt-6 text-neutral-700 mb-3">
-          Here's the source code, I hope you like it :)
+         {` Here's the source code, I hope you like it :)`}
         </p>
         <motion.a
           href="https://github.com/prash240303/crafts/blob/main/src/components/Switcher.tsx"
