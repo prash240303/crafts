@@ -205,7 +205,7 @@ function page() {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.02, boxShadow: '0 0 0 2px #22c55e' }}
             whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-2 rounded-md bg-white px-4 py-2 text-sm font-mono text-neutral-600 shadow-sm transition-colors hover:text-green-600 hover:bg-green-50"
+            className="inline-flex items-center gap-2 border border-neutral-200 rounded-md bg-white px-4 py-2 text-sm font-mono text-neutral-600 shadow-sm transition-colors hover:text-green-600 hover:bg-green-50"
           >
             <svg
               className="w-5 h-5"

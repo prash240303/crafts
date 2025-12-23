@@ -1,14 +1,16 @@
 "use client";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Inter, Instrument_Serif } from "next/font/google";
 import { cn } from "../../lib/utils";
+import Link from "next/link";
 
 type Project = {
   id: number;
   name: string;
   path: string;
-  vid: string;
+  img?: string;
+  vid?: string;
   description: string;
   type: string;
   height: string;
@@ -30,7 +32,7 @@ const PortfolioGrid = () => {
       id: 1,
       name: "Arrow Button",
       path: "/arrow-button",
-      vid: "/craft-preview/base.mp4",
+      vid: "/craft-preview/arrowbutton.mp4",
       description: "A button with an arrow icon.",
       type: "arrow-button",
       height: "h-72",
@@ -39,7 +41,7 @@ const PortfolioGrid = () => {
       id: 2,
       name: "Magic Text",
       path: "/magic-text",
-      vid: "/craft-preview/base.mp4",
+      vid: "/craft-preview/starrytext.mp4",
       description: "A text component with magical effects.",
       type: "magic-text",
       height: "h-80",
@@ -48,7 +50,7 @@ const PortfolioGrid = () => {
       id: 3,
       name: "Tab Switcher",
       path: "/tab-switcher",
-      vid: "/craft-preview/base.mp4",
+      vid: "/craft-preview/tabswitcher.mp4",
       description: "A component for switching between tabs.",
       type: "tab-switcher",
       height: "h-96",
@@ -57,7 +59,7 @@ const PortfolioGrid = () => {
       id: 4,
       name: "Tags Component",
       path: "/tags-component",
-      vid: "/craft-preview/base.mp4",
+      vid: "/craft-preview/tagsComponent.mp4",
       description: "A component for displaying tags.",
       type: "tags",
       height: "h-64",
@@ -66,7 +68,7 @@ const PortfolioGrid = () => {
       id: 5,
       name: "Zip Code Checker",
       path: "/zip-code-checker",
-      vid: "/craft-preview/base.mp4",
+      img: "/craft-preview/zipCodeChecker.png",
       description: "A component for checking zip codes.",
       type: "zip-code",
       height: "h-80",
@@ -75,7 +77,7 @@ const PortfolioGrid = () => {
       id: 6,
       name: "Custom Cards",
       path: "/custom-cards",
-      vid: "/craft-preview/base.mp4",
+      img: "/craft-preview/customCards.png",
       description: "A component for displaying custom cards.",
       type: "custom-cards",
       height: "h-96",
@@ -84,7 +86,7 @@ const PortfolioGrid = () => {
       id: 7,
       name: "Ripple button",
       path: "/ripple-button",
-      vid: "/craft-preview/base.mp4",
+      vid: "/craft-preview/ripplebutton.mp4",
       description: "Button with ripple effect on hover",
       type: "ripple-button",
       height: "h-72",
@@ -93,7 +95,7 @@ const PortfolioGrid = () => {
       id: 8,
       name: "Aadhar Card",
       path: "/aadhar-card",
-      vid: "/craft-preview/base.mp4",
+      img: "/craft-preview/aadharcard.png",
       description: "A component for displaying aadhar card",
       type: "aadhar-card",
       height: "h-[420px]",
@@ -130,18 +132,25 @@ const PortfolioGrid = () => {
         <div
           key={project.id}
           onClick={() => handleCardClick(project.path)}
-          className={`bg-white border border-zinc-300 rounded-2xl p-1 hover:border-zinc-400 hover:scale-[101%] hover:shadow-2xl transition-all ease-in duration-400 cursor-pointer flex flex-col ${project.height}`}
+          className={`bg-white rounded-xl border border-zinc-300 p-1 hover:border-zinc-400 hover:scale-[101%] hover:shadow-2xl transition-all ease-in duration-400 cursor-pointer flex flex-col ${project.height}`}
         >
           {/* Video Container */}
-          <div className="bg-black relative rounded-xl h-full overflow-hidden">
-            {renderContent(project.vid)}
+          <div className="border rounded-lg border-neutral-100 relative h-full overflow-hidden">
+            {project.vid && renderContent(project.vid)}
+            {project.img && (
+              <img
+                src={project.img || "/placeholder.svg"}
+                alt={project.name}
+                className="w-full h-full object-cover"
+              />
+            )}
 
             {/* Card Footer */}
-            <div className="space-y-1 absolute bottom-4 left-3 px-2">
-              <div className="text-white text-lg font-medium">
+            <div className="space-y-1 absolute w-full bottom-0 left-0 px-3 py-2 bg-white/60 backdrop-blur-md rounded-xl border border-white/20">
+              <div className="text-neutral-800 text-lg font-medium">
                 {project.name}
               </div>
-              <div className="text-gray-500 text-sm">{project.description}</div>
+              <div className="text-gray-600 text-sm">{project.description}</div>
             </div>
           </div>
         </div>
@@ -150,19 +159,45 @@ const PortfolioGrid = () => {
   );
 
   return (
-    <div className="min-h-screen p-10">
-      <div className="max-w-5xl space-y-8 mx-auto">
-        <div
-          className={`flex gap-2 items-center justify-center text-2xl ${instrumentSerif.className}`}
-        >
-          <span>A</span>
-          <span className="italic">collection</span>
-          <span>of Digital Crafts</span>
+    <div className="min-h-screen relative">
+      {/* Slanted lines background */}
+      <div
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage: `repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 6px,
+        rgba(0, 0, 0, 0.3) 6px,
+        rgba(0, 0, 0, 0.3) 8px
+      )`,
+        }}
+      />
+      <div className="border-x fixed left-1/2 -translate-x-1/2 top-0 h-full w-screen max-w-5xl bg-white border-neutral-300"></div>
+
+      {/* Content */}
+      <div className="relative py-10 border-x border-neutral-300 space-y-8 mx-auto">
+        <div className="w-full border">
+          <div
+            className={`flex gap-2 max-w-5xl text-neutral-700 border-x border-neutral-300 mx-auto bg-white/60 backdrop-blur-md py-4 items-center justify-center text-4xl ${instrumentSerif.className}`}
+          >
+            <span className="">A</span>
+            <span className="italic font-bold ">collection</span>
+            <span className="">of Digital Crafts</span>
+          </div>
         </div>
-        <div className="grid grid-cols-3 gap-2">
-          {renderColumn(column1)}
-          {renderColumn(column2)}
-          {renderColumn(column3)}
+        <div className="border w-full">
+          <div className="grid grid-cols-3 border-x border-neutral-300 p-2 bg-white max-w-5xl  mx-auto gap-2">
+            {renderColumn(column1)}
+            {renderColumn(column2)}
+            {renderColumn(column3)}
+          </div>
+        </div>
+        <div className={`mt-2 border flex justify-between px-4 max-w-5xl ${instrumentSerif.className} py-4 mx-auto text-center`}>
+          <span>Site Designed by myself</span>
+          <Link href="https://portfolio-prash.vercel.app/about">About me</Link>
+          <Link href="mailto:prash2402works@gmail.com">prash2402works@gmail.com</Link>
+          <Link href="https://x.com/prash2403">Twitter</Link>
         </div>
       </div>
     </div>

@@ -46,7 +46,7 @@ export default function TabSwitcher() {
       </div>
 
       {/* Tab Content */}
-      <div className="p-4 bg-neutral-100 border border-gray-100 max-w-2xl rounded-lg text-sm text-gray-700 overflow-hidden">
+      <div className="p-4 bg-neutral-200 border border-gray-100 max-w-2xl rounded-lg text-sm text-gray-900 overflow-hidden">
         {/* Sliding track */}
         <div
           className={`flex w-full pr-4 gap-4 transition-transform duration-300 ease-in-out ${activeTab === "gallery" ? "translate-x-0" : "-translate-x-full"

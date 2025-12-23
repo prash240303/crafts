@@ -1,28 +1,12 @@
-"use client"
-
-import { useState } from "react";
-
+"use client";
+import TabSwitcher from "@/components/Switcher";
 
 export default function TodoList() {
-    const [todos, setTodos] = useState([
-        { id: 1, text: "Learn React" },
-        { id: 2, text: "Build App" },
-        { id: 3, text: "Deploy App" }
-    ]);
-
-    const removeFirst = () => {
-        setTodos(todos.slice(1)); // removes first item
-    };
-
-    return (
-        <>
-            <button onClick={removeFirst}>Remove First</button>
-
-            {todos.map((todo, index) => (
-                <div key={index}>
-                    <input defaultValue={todo.text} />
-                </div>
-            ))}
-        </>
-    );
+  return (
+    <>
+      <div className="max-w-xl mt-64 mx-auto">
+        <TabSwitcher />
+      </div>
+    </>
+  );
 }
