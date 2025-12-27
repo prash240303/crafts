@@ -195,9 +195,9 @@ const PortfolioGrid = () => {
         </div>
         <div className={`mt-2 border flex justify-between px-4 max-w-5xl ${instrumentSerif.className} py-4 mx-auto text-center`}>
           <span>Site Designed by myself</span>
-          <Link href="https://portfolio-prash.vercel.app/about">About me</Link>
-          <Link href="mailto:prash2402works@gmail.com">prash2402works@gmail.com</Link>
-          <Link href="https://x.com/prash2403">Twitter</Link>
+          <Link target="_blank" href="https://portfolio-prash.vercel.app/about">About me</Link>
+          <Link target="_blank" href="mailto:prash2402works@gmail.com">prash2402works@gmail.com</Link>
+          <Link target="_blank" href="https://x.com/prash2403">Twitter</Link>
         </div>
       </div>
     </div>
