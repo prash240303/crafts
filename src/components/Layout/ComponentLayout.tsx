@@ -101,7 +101,7 @@ export default function ComponentLayout({
   console.log("left ad right", leftIdx, rightIdx);
 
   return (
-    <div className="min-h-screen mx-auto flex flex-col items-start max-w-3xl gap-8 py-12">
+    <div className="min-h-screen md:mx-auto mx-4 flex flex-col items-start max-w-3xl gap-8 py-12">
       {/* Header */}
       <div className="">
         <div className="flex items-center gap-6 mb-6">
@@ -127,9 +127,9 @@ export default function ComponentLayout({
       <main className="">{children}</main>
 
       {/* Footer */}
-      <footer className="mt-auto  w-full">
-        <div className="w-full border-[0.5px] border-t  border-b-0 border-dashed border-neutral-500 h-[1px]" />
-        <div className="flex w-full text-sm mt-3 flex-col sm:flex-row justify-between items-center gap-4">
+      <footer className="mt-auto w-full">
+        <div className="w-full border-[0.5px] border-t border-b-0 border-dashed border-neutral-500 h-[1px]" />
+        <div className="flex w-full text-sm mt-3 flex-row justify-between items-center gap-4">
           <Link
             href={projects[leftIdx].path}
             className="flex flex-col gap-1 items-start justify-center"

@@ -177,9 +177,9 @@ const PortfolioGrid = () => {
 
       {/* Content */}
       <div className="relative py-10 border-x border-neutral-300 space-y-8 mx-auto">
-        <div className="w-full border">
+        <div className="w-full border-y border-neutral-300">
           <div
-            className={`flex gap-2 max-w-5xl text-neutral-700 border-x border-neutral-300 mx-auto bg-white/60 backdrop-blur-md py-4 items-center justify-center text-4xl ${instrumentSerif.className}`}
+            className={`flex gap-2 max-w-5xl text-neutral-700 border-x border-neutral-300 mx-auto bg-white/60 backdrop-blur-md py-4 items-center justify-center md:text-4xl text-2xl ${instrumentSerif.className}`}
           >
             <span className="">A</span>
             <span className="italic font-bold ">collection</span>
@@ -187,13 +187,13 @@ const PortfolioGrid = () => {
           </div>
         </div>
         <div className="border w-full">
-          <div className="grid grid-cols-3 border-x border-neutral-300 p-2 bg-white max-w-5xl  mx-auto gap-2">
+          <div className="grid md:grid-cols-3 grid-cols-1 border-x border-neutral-300 p-2 bg-white max-w-5xl  mx-auto gap-2">
             {renderColumn(column1)}
             {renderColumn(column2)}
             {renderColumn(column3)}
           </div>
         </div>
-        <div className={`mt-2 border flex justify-between px-4 max-w-5xl ${instrumentSerif.className} py-4 mx-auto text-center`}>
+        <div className={`mt-2 border flex flex-col md:flex-row md:justify-between justify-center px-4 max-w-5xl ${instrumentSerif.className} py-4 mx-auto md:text-center`}>
           <span>Site Designed by myself</span>
           <Link target="_blank" href="https://portfolio-prash.vercel.app/about">About me</Link>
           <Link target="_blank" href="mailto:prash2402works@gmail.com">prash2402works@gmail.com</Link>
