@@ -12,7 +12,7 @@ function PopOverMenuComponent() {
       <div className="mb-8 p-4 bg-white rounded-lg border">
         <h2 className="font-semibold mb-2">Exact Edge Alignment Test</h2>
         <p className="text-sm text-neutral-600">
-          Red border = trigger container. Content should start exactly at trigger's edge with sideOffset=0
+          Red border = trigger container. Content should start exactly at trigger&apos;s edge with sideOffset=0
         </p>
       </div>
 
@@ -21,13 +21,13 @@ function PopOverMenuComponent() {
         {/* RIGHT SIDE - all alignments */}
         <div>
           <h3 className="text-sm font-semibold mb-6 text-neutral-700">
-            side="right" - Content should start at right edge of trigger
+            {`side="right" - Content should start at right edge of trigger`}
           </h3>
           <div className="flex gap-24 items-start">
             
             {/* align="start" */}
             <div className="flex flex-col gap-4">
-              <div className="text-xs text-neutral-500 mb-2">align="start"</div>
+              <div className="text-xs text-neutral-500 mb-2">{`align="start"`}</div>
               <Popover>
                 <div className="border-2 border-red-600 inline-block">
                   <PopoverTrigger>
@@ -52,7 +52,7 @@ function PopOverMenuComponent() {
 
             {/* align="center" */}
             <div className="flex flex-col gap-4">
-              <div className="text-xs text-neutral-500 mb-2">align="center"</div>
+              <div className="text-xs text-neutral-500 mb-2">{`align="center"`}</div>
               <Popover>
                 <div className="border-2 border-red-600 inline-block">
                   <PopoverTrigger>
@@ -77,7 +77,7 @@ function PopOverMenuComponent() {
 
             {/* align="end" */}
             <div className="flex flex-col gap-4">
-              <div className="text-xs text-neutral-500 mb-2">align="end"</div>
+              <div className="text-xs text-neutral-500 mb-2">{`align="end"`}</div>
               <Popover>
                 <div className="border-2 border-red-600 inline-block">
                   <PopoverTrigger>
