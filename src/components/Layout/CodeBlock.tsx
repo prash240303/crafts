@@ -19,8 +19,8 @@ const CodeSnippet = ({
   };
 
   return (
-    <div className="relative my-4 rounded-md bg-gray-100 p-4 font-mono text-sm shadow-sm text-gray-800">
-      <pre className="overflow-x-auto whitespace-pre-wrap break-words">
+    <div className="relative my-4 rounded-md bg-gray-100 p-4 font-mono text-sm shadow-xs text-gray-800">
+      <pre className="overflow-x-auto whitespace-pre-wrap wrap-break-word">
         <code>{code}</code>
       </pre>
       <motion.button

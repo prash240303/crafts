@@ -10,7 +10,7 @@ import {
   Download,
   Upload,
 } from "lucide-react";
-import TagsComponent, { SkeuomorphicTag } from "@/components/TagsComponent";
+import TagsComponent, { DottedBorderTags, SkeuomorphicTag } from "@/components/TagsComponent";
 import ComponentLayout from "@/components/Layout/ComponentLayout";
 import CodeBlock from "@/components/Layout/CodeBlock";
 import { motion } from 'framer-motion';
@@ -102,13 +102,13 @@ const TagsComponent = (props: Props) => {
   return (
     <div className={baseClasses} style={tagStyle}>
       {leadingIcon && (
-        <span className="w-4 h-4 flex items-center justify-center flex-shrink-0" style={{ strokeWidth: 2.5 }}>
+        <span className="w-4 h-4 flex items-center justify-center shrink-0" style={{ strokeWidth: 2.5 }}>
           {leadingIcon}
         </span>
       )}
       <span className="font-medium whitespace-nowrap">{content}</span>
       {trailingIcon && (
-        <span className="w-4 h-4 flex items-center justify-center flex-shrink-0" style={{ strokeWidth: 2.5 }}>
+        <span className="w-4 h-4 flex items-center justify-center shrink-0" style={{ strokeWidth: 2.5 }}>
           {trailingIcon}
         </span>
       )}
@@ -159,7 +159,7 @@ const page = () => {
       title="Tags Component"
       description="A versatile tags component for displaying various statuses and actions with icons and colors."
     >
-      <div className="flex flex-wrap max-w-5xl mx-auto p-6 py-8 border border-neutral-200 shadow-sm rounded-xl bg-neutral-50 items-center justify-center gap-2">
+      <div className="flex flex-wrap max-w-5xl mx-auto p-6 py-8 border border-neutral-200 shadow-xs rounded-xl bg-neutral-50 items-center justify-center gap-2">
         <TagsComponent
           glare={true}
           type="default"
@@ -246,6 +246,8 @@ const page = () => {
           colorType="solid"
           color="Purple"
         />
+
+        <DottedBorderTags/>
         {/* <SkeuomorphicTag status="pending" icon={<CircleDashed />}>
           Paper Tag
         </SkeuomorphicTag> */}

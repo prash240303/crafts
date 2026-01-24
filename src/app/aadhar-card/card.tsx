@@ -11,7 +11,7 @@ function Card() {
                 <Image src="/aadhar-logo.png" width={100} height={100} className='h-6 z-10 w-auto' alt='user' />
                 <div className='flex flex-col gap-2'>
                     <Image src="/bg.png" width={100} height={100} className='rounded-full overflow-hidden w-12 h-12' alt='user' />
-                    <span className='w-full font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-[#5D5139] to-[#9f6d21]'>Prashant Prabhakar</span>
+                    <span className='w-full font-bold text-lg text-transparent bg-clip-text bg-linear-to-r from-[#5D5139] to-[#9f6d21]'>Prashant Prabhakar</span>
                 </div>
 
                 <div className='flex flex-col text-xs gap-1'>

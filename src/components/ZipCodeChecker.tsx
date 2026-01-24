@@ -50,12 +50,12 @@ export default function ZipCodeChecker() {
           value={zipCode}
           onChange={(e) => setZipCode(e.target.value)}
           placeholder="Enter your zip code"
-          className="w-full placeholder-neutral-500 text-3xl px-6 py-4 text-center text-gray-900 bg-white rounded-full shadow-inner border-2 border-white focus:outline-none"
+          className="w-full placeholder-neutral-500 text-3xl px-6 py-4 text-center text-gray-900 bg-white rounded-full shadow-inner border-2 border-white focus:outline-hidden"
         />
         <button
           type="button"
           onClick={(e) => handleCheckAvailability(zipCode, e)}
-          className="w-full z-10 px-6 pt-4 pb-2 text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#78af19] to-[#385800]"
+          className="w-full z-10 px-6 pt-4 pb-2 text-2xl font-semibold text-transparent bg-clip-text bg-linear-to-r from-[#78af19] to-[#385800]"
         >
           Check Availability
         </button>

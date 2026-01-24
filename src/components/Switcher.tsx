@@ -14,7 +14,7 @@ export default function TabSwitcher() {
       <div className="relative bg-neutral-200 p-1 rounded-xl mx-auto flex w-fit">
         {/* Background Slide */}
         <div
-          className={`absolute top-0 left-0 h-full w-1/2 rounded-xl bg-neutral-900 transition-transform duration-300 ease-in-out shadow-sm ${activeTab === "gallery" ? "translate-x-0" : "translate-x-full"
+          className={`absolute top-0 left-0 h-full w-1/2 rounded-xl bg-neutral-900 transition-transform duration-300 ease-in-out shadow-xs ${activeTab === "gallery" ? "translate-x-0" : "translate-x-full"
             }`}
           style={{
             boxShadow: `

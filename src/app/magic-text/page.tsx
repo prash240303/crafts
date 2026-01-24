@@ -32,7 +32,7 @@ function Page() {
       title="Magic Text Component"
       description="A beautiful glowing text component with starry effects and smooth animations. Perfect for hero sections and attention-grabbing headlines."
     >
-      <div className="bg-white rounded-xl shadow-sm mb-8">
+      <div className="bg-white rounded-xl shadow-xs mb-8">
         <MagicText />
       </div>
 

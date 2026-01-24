@@ -1,315 +1,408 @@
-@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
-@import "react-grid-layout/css/styles.css";
-@import "react-resizable/css/styles.css";
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap")
+layer(base);
+@import "react-grid-layout/css/styles.css" layer(base);
+@import "react-resizable/css/styles.css" layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin 'tailwindcss-animate';
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@custom-variant dark (&:is(.dark *));
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@theme {
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  --background-image-purpleBG: linear-gradient(
+    275deg,
+    #5d46dd 1.24%,
+    #7e69f6 97.24%
+  );
+  --background-image-purpleCardBG: linear-gradient(
+    275deg,
+    #6e58eb 1.24%,
+    #9a88fe 97.24%
+  );
+  --background-image-blackCardBG: linear-gradient(
+    275deg,
+    #46474c 1.24%,
+    #232429 97.24%
+  );
+
+  --animate-ripple: ripple 1s ease-out forwards;
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  @keyframes ripple {
+    0% {
+      transform: scale(0);
+      opacity: 0.7;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.4;
+    }
+    100% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
   }
 }
 
-.geist-thin {
-  font-family: "Geist", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: normal;
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
 }
 
-.geist-extralight {
-  font-family: "Geist", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
-}
-
-.geist-light {
-  font-family: "Geist", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.geist-regular {
-  font-family: "Geist", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.geist-medium {
-  font-family: "Geist", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-}
-
-.geist-semibold {
-  font-family: "Geist", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.geist-bold {
-  font-family: "Geist", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.geist-extrabold {
-  font-family: "Geist", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 800;
-  font-style: normal;
-}
-
-.geist-black {
-  font-family: "Geist", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 900;
-  font-style: normal;
+@utility text-balance {
+  text-wrap: balance;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  :root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --foreground-rgb: 255, 255, 255;
+      --background-start-rgb: 0, 0, 0;
+      --background-end-rgb: 0, 0, 0;
+    }
+  }
+
+  .geist-thin {
+    font-family: "Geist", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+  }
+
+  .geist-extralight {
+    font-family: "Geist", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+  }
+
+  .geist-light {
+    font-family: "Geist", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  .geist-regular {
+    font-family: "Geist", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .geist-medium {
+    font-family: "Geist", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  .geist-semibold {
+    font-family: "Geist", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .geist-bold {
+    font-family: "Geist", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  .geist-extrabold {
+    font-family: "Geist", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  .geist-black {
+    font-family: "Geist", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
   }
 }
 
-.moving-arrows-item {
-  display: none;
-}
-
-.moving-arrows-item.block {
-  display: block;
-}
-
-.moving-arrows-item.group-hover\\:block {
-  display: none;
-}
-
-.group:hover .moving-arrows-item.group-hover\\:block {
-  display: block;
-}
-
-.moving-arrows-item div {
-  background-color: rgb(255, 255, 255);
-  opacity: 0.3;
-}
-
-.wave {
-  animation: wave 1.5s ease-in-out infinite;
-}
-
-@keyframes wave {
-  0%,
-  100% {
-    opacity: 0.8;
+@layer utilities {
+  .moving-arrows-item {
+    display: none;
   }
-  50% {
-    opacity: 0.2;
+
+  .moving-arrows-item.block {
+    display: block;
+  }
+
+  .moving-arrows-item.group-hover {
+    display: none;
+  }
+
+  .group:hover .moving-arrows-item.group-hover {
+    display: block;
+  }
+
+  .moving-arrows-item div {
+    background-color: rgb(255, 255, 255);
+    opacity: 0.3;
+  }
+
+  .wave {
+    animation: wave 1.5s ease-in-out infinite;
+  }
+
+  @keyframes wave {
+    0%,
+    100% {
+      opacity: 0.8;
+    }
+    50% {
+      opacity: 0.2;
+    }
+  }
+
+  .wave-1 {
+    animation-delay: 0s;
+  }
+
+  .wave-2 {
+    animation-delay: 0.1s; /* 0.2s delay for the second arrow */
+  }
+
+  .wave-3 {
+    animation-delay: 0.2s; /* 0.4s delay for the third arrow */
+  }
+
+  .wave-4 {
+    animation-delay: 0.3s; /* 0.6s delay for the fourth arrow */
+  }
+
+  .wave-5 {
+    animation-delay: 0.4s; /* 0.8s delay for the fifth arrow */
+  }
+
+  .wave-6 {
+    animation-delay: 0.5s; /* 1s delay for the sixth arrow */
+  }
+
+  .wave-7 {
+    animation-delay: 0.6s; /* 1.2s delay for the seventh arrow */
+  }
+
+  .wave-8 {
+    animation-delay: 0.7s; /* 1.4s delay for the eighth arrow */
+  }
+
+  .group:hover .moving-arrows-item:first-child {
+    display: none;
+  }
+
+  /*  */
+  /*  */
+
+  :root {
+    --purple: rgb(123, 31, 162);
+    --violet: rgb(103, 58, 183);
+    --pink: rgb(244, 143, 177);
+  }
+
+  @keyframes background-pan {
+    from {
+      background-position: 0% center;
+    }
+    to {
+      background-position: -200% center;
+    }
+  }
+
+  @keyframes scale {
+    from,
+    to {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(180deg);
+    }
+  }
+
+  h1 {
+    color: white;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(2em, 2vw, 4em);
+    font-weight: 400;
+    margin: 0px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  h1 > .magic {
+    display: inline-block;
+    position: relative;
+  }
+
+  h1 > .magic > .magic-star {
+    --size: clamp(15px, 0.7vw, 25px);
+    animation: scale 700ms ease forwards;
+    display: block;
+    height: var(--size);
+    left: var(--star-left);
+    position: absolute;
+    top: var(--star-top);
+    width: var(--size);
+  }
+
+  h1 > .magic > .magic-star > svg {
+    animation: rotate 1000ms linear infinite;
+    display: block;
+    opacity: 0.7;
+  }
+
+  h1 > .magic > .magic-star > svg > path {
+    fill: var(--violet);
+  }
+
+  h1 > .magic > .magic-text {
+    animation: background-pan 3s linear infinite;
+    background: linear-gradient(
+      to right,
+      var(--purple),
+      var(--violet),
+      var(--pink),
+      var(--purple)
+    );
+    background-size: 200%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+  }
+
+  .stitch-shadow {
+    position: relative;
+    border-radius: 16px;
+  }
+
+  .stitch-shadow::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px; /* Adjust thickness */
+    mask-image: repeating-linear-gradient(
+      90deg,
+      white 0px,
+      white 5px,
+      transparent 5px,
+      transparent 10px
+    );
+    -webkit-mask-image: repeating-linear-gradient(
+      90deg,
+      white 0px,
+      white 5px,
+      transparent 5px,
+      transparent 10px
+    );
+    background: white;
+  }
+
+  @keyframes water-ripple {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(6);
+      opacity: 0.1;
+    }
+  }
+
+  .ripple-on-image {
+    position: absolute;
+    border-radius: 9999px;
+    background: rgba(179, 224, 84, 1);
+    pointer-events: none;
+    animation: water-ripple 1s ease-out;
+  }
+
+  .mask-top {
+    -webkit-mask-image: url("/mask-top.svg");
+    mask-image: url("/mask-top.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-size: 100% auto;
+    mask-size: 100% auto;
+
+    -webkit-mask-position: top center;
+    mask-position: top center;
   }
 }
-
-.wave-1 {
-  animation-delay: 0s;
-}
-
-.wave-2 {
-  animation-delay: 0.1s; /* 0.2s delay for the second arrow */
-}
-
-.wave-3 {
-  animation-delay: 0.2s; /* 0.4s delay for the third arrow */
-}
-
-.wave-4 {
-  animation-delay: 0.3s; /* 0.6s delay for the fourth arrow */
-}
-
-.wave-5 {
-  animation-delay: 0.4s; /* 0.8s delay for the fifth arrow */
-}
-
-.wave-6 {
-  animation-delay: 0.5s; /* 1s delay for the sixth arrow */
-}
-
-.wave-7 {
-  animation-delay: 0.6s; /* 1.2s delay for the seventh arrow */
-}
-
-.wave-8 {
-  animation-delay: 0.7s; /* 1.4s delay for the eighth arrow */
-}
-
-.group:hover .moving-arrows-item:first-child {
-  display: none;
-}
-
-/*  */
-/*  */
-
-:root {
-  --purple: rgb(123, 31, 162);
-  --violet: rgb(103, 58, 183);
-  --pink: rgb(244, 143, 177);
-}
-
-@keyframes background-pan {
-  from {
-    background-position: 0% center;
-  }
-  to {
-    background-position: -200% center;
-  }
-}
-
-@keyframes scale {
-  from,
-  to {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1);
-  }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(180deg);
-  }
-}
-
-h1 {
-  color: white;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(2em, 2vw, 4em);
-  font-weight: 400;
-  margin: 0px;
-  padding: 20px;
-  text-align: center;
-}
-
-h1 > .magic {
-  display: inline-block;
-  position: relative;
-}
-
-h1 > .magic > .magic-star {
-  --size: clamp(15px, 0.7vw, 25px);
-  animation: scale 700ms ease forwards;
-  display: block;
-  height: var(--size);
-  left: var(--star-left);
-  position: absolute;
-  top: var(--star-top);
-  width: var(--size);
-}
-
-h1 > .magic > .magic-star > svg {
-  animation: rotate 1000ms linear infinite;
-  display: block;
-  opacity: 0.7;
-}
-
-h1 > .magic > .magic-star > svg > path {
-  fill: var(--violet);
-}
-
-h1 > .magic > .magic-text {
-  animation: background-pan 3s linear infinite;
-  background: linear-gradient(
-    to right,
-    var(--purple),
-    var(--violet),
-    var(--pink),
-    var(--purple)
-  );
-  background-size: 200%;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  white-space: nowrap;
-}
-
-.stitch-shadow {
-  position: relative;
-  border-radius: 16px;
-}
-
-.stitch-shadow::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 2px; /* Adjust thickness */
-  mask-image: repeating-linear-gradient(
-    90deg,
-    white 0px,
-    white 5px,
-    transparent 5px,
-    transparent 10px
-  );
-  -webkit-mask-image: repeating-linear-gradient(
-    90deg,
-    white 0px,
-    white 5px,
-    transparent 5px,
-    transparent 10px
-  );
-  background: white;
-}
-
-@keyframes water-ripple {
-  0% {
-    transform: scale(0);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(6);
-    opacity: 0.1;
-  }
-}
-
-.ripple-on-image {
-  position: absolute;
-  border-radius: 9999px;
-  background: rgba(179, 224, 84, 1);
-  pointer-events: none;
-  animation: water-ripple 1s ease-out;
-}
-
-.mask-top {
-  -webkit-mask-image: url("/mask-top.svg");
-  mask-image: url("/mask-top.svg");
-
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-
-  -webkit-mask-size: 100% auto;
-  mask-size: 100% auto;
-
-  -webkit-mask-position: top center;
-  mask-position: top center;
-}
-
-
 
 @layer base {
   :root {
@@ -367,8 +460,6 @@ h1 > .magic > .magic-text {
   }
 }
 
-
-
 @layer base {
   * {
     @apply border-border;
@@ -377,4 +468,3 @@ h1 > .magic > .magic-text {
     @apply bg-background text-foreground;
   }
 }
-

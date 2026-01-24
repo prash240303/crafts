@@ -101,7 +101,7 @@ const TagsComponent = (props: Props) => {
     <div className={`${baseClasses}`} style={tagStyle}>
       {leadingIcon && (
         <span
-          className="w-4 h-4 flex items-center justify-center flex-shrink-0"
+          className="w-4 h-4 flex items-center justify-center shrink-0"
           style={{ strokeWidth: 2.5 }}
         >
           {leadingIcon}
@@ -110,7 +110,7 @@ const TagsComponent = (props: Props) => {
       <span className="font-medium whitespace-nowrap">{content}</span>
       {trailingIcon && (
         <span
-          className="w-4 h-4 flex items-center justify-center flex-shrink-0"
+          className="w-4 h-4 flex items-center justify-center shrink-0"
           style={{ strokeWidth: 2.5 }}
         >
           {trailingIcon}
@@ -164,21 +164,31 @@ function getGlassyStatusStyles(status: StatusType): string {
 
   const statusMap = {
     pending:
-      "bg-gradient-to-br from-amber-500/20 via-amber-600/15 to-amber-700/10 border-amber-500/30 text-gray-200 shadow-amber-500/20",
+      "bg-linear-to-br from-amber-500/20 via-amber-600/15 to-amber-700/10 border-amber-500/30 text-gray-200 shadow-amber-500/20",
     paused:
-      "bg-gradient-to-br from-gray-600/20 via-gray-700/15 to-gray-800/10 border-gray-500/30 text-gray-300 shadow-gray-500/20",
+      "bg-linear-to-br from-gray-600/20 via-gray-700/15 to-gray-800/10 border-gray-500/30 text-gray-300 shadow-gray-500/20",
     success:
-      "bg-gradient-to-br from-emerald-500/20 via-emerald-600/15 to-emerald-700/10 border-emerald-400/30 text-gray-200 shadow-emerald-500/20",
+      "bg-linear-to-br from-emerald-500/20 via-emerald-600/15 to-emerald-700/10 border-emerald-400/30 text-gray-200 shadow-emerald-500/20",
     favourite:
-      "bg-gradient-to-br from-pink-500/20 via-pink-600/15 to-rose-700/10 border-pink-400/30 text-gray-200 shadow-pink-500/20",
+      "bg-linear-to-br from-pink-500/20 via-pink-600/15 to-rose-700/10 border-pink-400/30 text-gray-200 shadow-pink-500/20",
     "at-risk":
-      "bg-gradient-to-br from-red-500/20 via-red-600/15 to-red-700/10 border-red-400/30 text-gray-300 shadow-red-500/20",
+      "bg-linear-to-br from-red-500/20 via-red-600/15 to-red-700/10 border-red-400/30 text-gray-300 shadow-red-500/20",
     archived:
-      "bg-gradient-to-br from-slate-600/20 via-slate-700/15 to-slate-800/10 border-slate-500/30 text-gray-300 shadow-slate-500/20",
+      "bg-linear-to-br from-slate-600/20 via-slate-700/15 to-slate-800/10 border-slate-500/30 text-gray-300 shadow-slate-500/20",
   };
 
   const shimmerEffect =
-    "before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/5 before:to-transparent before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-1000";
+    "before:absolute before:inset-0 before:bg-linear-to-r before:from-transparent before:via-white/5 before:to-transparent before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-1000";
 
   return `${baseStyles} ${statusMap[status]} ${shimmerEffect}`;
 }
+
+export const DottedBorderTags = () => {
+  return (
+    <>
+      <div className=" transition-all flex items-center gap-1 p-2 bg-conic from-blue-600 to-sky-400 to-50% cursor-pointer select-none rounded-md">
+        <span className="font-medium text-xs">Dotted Border</span>
+      </div>
+    </>
+  );
+};

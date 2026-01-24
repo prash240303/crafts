@@ -93,7 +93,7 @@ function Page() {
       title="Ripple Button Component"
       description="An interactive button with hover-triggered ripple effects for tactile, responsive feedback"
     >
-      <div className="flex items-center justify-center py-12 bg-neutral-50 rounded-xl shadow-sm mb-8">
+      <div className="flex items-center justify-center py-12 bg-neutral-50 rounded-xl shadow-xs mb-8">
         <RippleButton>Click me</RippleButton>
       </div>
 

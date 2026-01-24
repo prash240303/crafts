@@ -128,7 +128,7 @@ export default function ComponentLayout({
 
       {/* Footer */}
       <footer className="mt-auto w-full">
-        <div className="w-full border-[0.5px] border-t border-b-0 border-dashed border-neutral-500 h-[1px]" />
+        <div className="w-full border-[0.5px] border-t border-b-0 border-dashed border-neutral-500 h-px" />
         <div className="flex w-full text-sm mt-3 flex-row justify-between items-center gap-4">
           <Link
             href={projects[leftIdx].path}
