@@ -1,5 +1,5 @@
 import React from "react";
-import { Mail } from "lucide-react";
+import { BoltIcon, DownloadIcon, Leaf, Mail, ZapIcon } from "lucide-react";
 import { DotIcon } from "lucide-react";
 import { Check } from "lucide-react";
 import { ReactNode } from "react";
@@ -183,12 +183,114 @@ function getGlassyStatusStyles(status: StatusType): string {
   return `${baseStyles} ${statusMap[status]} ${shimmerEffect}`;
 }
 
-export const DottedBorderTags = () => {
+interface DashedBorderProps {
+  children: React.ReactNode;
+  dashLength?: number;
+  gapLength?: number;
+  borderWidth?: number;
+  borderColor?: string;
+  borderRadius?: number;
+  className?: string;
+  bgColor?: string;
+  textColor?: string;
+}
+
+export const DashedBorder: React.FC<DashedBorderProps> = ({
+  children,
+  dashLength = 8,
+  gapLength = 4,
+  borderWidth = 2,
+  borderColor = "#2563eb",
+  borderRadius = 6,
+  className = "",
+  bgColor = "#000",
+  textColor = "#fff",
+}) => {
+  const dashArray = dashLength + gapLength;
+
   return (
-    <>
-      <div className=" transition-all flex items-center gap-1 p-2 bg-conic from-blue-600 to-sky-400 to-50% cursor-pointer select-none rounded-md">
-        <span className="font-medium text-xs">Dotted Border</span>
+    <div
+      className={`relative z-0 group ${className} overflow-hidden`}
+      style={{ borderRadius: borderRadius }}
+    >
+      <style>
+        {`
+          @keyframes dash-animation {
+            to {
+              stroke-dashoffset: ${dashArray};
+            }
+          }
+          .dash-border {
+            animation: dash-animation 1s linear infinite;
+            animation-play-state: paused;
+          }
+          .group:hover .dash-border {
+            animation-play-state: running;
+          }
+        `}
+      </style>
+      <svg
+        className="absolute z-10 inset-0 w-full h-full pointer-events-none"
+        style={{ overflow: "visible" }}
+      >
+        <rect
+          className="dash-border"
+          x={borderWidth / 2}
+          y={borderWidth / 2}
+          width={`calc(100% - ${borderWidth}px)`}
+          height={`calc(100% - ${borderWidth}px)`}
+          rx={borderRadius}
+          ry={borderRadius}
+          fill="none"
+          strokeLinecap="round"
+          stroke={borderColor}
+          strokeWidth={borderWidth}
+          strokeDasharray={`${dashLength} ${gapLength}`}
+          strokeDashoffset="0"
+        />
+      </svg>
+      <div
+        className={`relative hover:cursor-pointer px-3 py-2`}
+        style={{ backgroundColor: bgColor, color: textColor }}
+      >
+        {children}
       </div>
-    </>
+    </div>
   );
 };
+
+// Usage example:
+export function DashedBorderTags() {
+  return (
+    <>
+      <DashedBorder
+        dashLength={6}
+        gapLength={7}
+        borderWidth={2}
+        bgColor="#EEFEF6"
+        borderRadius={10}
+        borderColor="#B3F3D8"
+        textColor="#1E6A55"
+      >
+        <div className="text-sm flex items-center justify-center gap-1">
+          <Leaf className="text-[#1E6A55] w-4 h-4" />
+          Eco-Saver
+        </div>
+      </DashedBorder>
+      <DashedBorder
+        dashLength={6}
+        gapLength={7}
+        borderWidth={2}
+        bgColor="#F3FAFE"
+        borderRadius={10}
+        borderColor="#D1E9F7"
+        textColor="#016491"
+      >
+        <div className="text-sm flex items-center justify-center gap-1">
+          <DownloadIcon className="text-[#0077ae] w-4 h-4" />
+          Download
+        </div>
+      </DashedBorder>
+    </>
+  );
+}

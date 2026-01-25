@@ -10,7 +10,7 @@ import {
   Download,
   Upload,
 } from "lucide-react";
-import TagsComponent, { DottedBorderTags, SkeuomorphicTag } from "@/components/TagsComponent";
+import TagsComponent, { DashedBorderTags } from "@/components/TagsComponent";
 import ComponentLayout from "@/components/Layout/ComponentLayout";
 import CodeBlock from "@/components/Layout/CodeBlock";
 import { motion } from 'framer-motion';
@@ -246,11 +246,7 @@ const page = () => {
           colorType="solid"
           color="Purple"
         />
-
-        <DottedBorderTags/>
-        {/* <SkeuomorphicTag status="pending" icon={<CircleDashed />}>
-          Paper Tag
-        </SkeuomorphicTag> */}
+        <DashedBorderTags/>
       </div>
 
       <div className="text-base mt-8 text-neutral-700">
