@@ -1,10 +1,8 @@
-"use client"
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import TabSwitcher from '@/components/Switcher';
-import CodeBlock from '@/components/Layout/CodeBlock';
-import ComponentLayout from '@/components/Layout/ComponentLayout';
-import SourceCodeButton from '@/components/sourceCodeButton';
+"use client";
+import TabSwitcher from "@/components/ui/Switcher";
+import CodeBlock from "@/components/layout/CodeBlock";
+import ComponentLayout from "@/components/layout/ComponentLayout";
+import SourceCodeButton from "@/components/ui/sourceCodeButton";
 
 // Code snippets for documentation
 const codeSnippetState = `const [activeTab, setActiveTab] = useState("gallery");`;
@@ -32,15 +30,17 @@ function Page() {
         <TabSwitcher />
       </div>
 
-
-
       <div className="text-base mt-8 text-neutral-700 space-y-6">
         <p>
-          The Tab Switcher is a compact navigation component designed for smooth, visual tab transitions. Instead of switching content abruptly, the active tab slides into place with a soft background animation, making the interaction feel polished and intentional.
+          The Tab Switcher is a compact navigation component designed for
+          smooth, visual tab transitions. Instead of switching content abruptly,
+          the active tab slides into place with a soft background animation,
+          making the interaction feel polished and intentional.
         </p>
 
         <p>
-          The component runs on the client {"use client"} since it relies on state and animated transitions.
+          The component runs on the client {"use client"} since it relies on
+          state and animated transitions.
         </p>
 
         <div className="mt-6">
@@ -51,10 +51,11 @@ function Page() {
             The active tab is controlled using React state:
           </p>
           <div className="my-4 rounded-md">
-            <CodeBlock language='javascript' code={codeSnippetState} />
+            <CodeBlock language="javascript" code={codeSnippetState} />
           </div>
           <p className="text-neutral-700">
-            This keeps the logic simple and makes it easy to add more tabs later or sync the state with routing.
+            This keeps the logic simple and makes it easy to add more tabs later
+            or sync the state with routing.
           </p>
         </div>
 
@@ -63,13 +64,15 @@ function Page() {
             Sliding Background Animation
           </h3>
           <p className="text-neutral-700 mb-2">
-            The highlight behind the active tab is a single element that slides horizontally based on the active state:
+            The highlight behind the active tab is a single element that slides
+            horizontally based on the active state:
           </p>
           <div className="my-4 rounded-md">
-            <CodeBlock language='javascript' code={codeSnippetSliding} />
+            <CodeBlock language="javascript" code={codeSnippetSliding} />
           </div>
           <p className="text-neutral-700">
-            Using transform instead of position changes keeps the animation smooth and performant.
+            Using transform instead of position changes keeps the animation
+            smooth and performant.
           </p>
         </div>
 
@@ -78,20 +81,24 @@ function Page() {
             Icon Feedback
           </h3>
           <p className="text-neutral-700 mb-2">
-            The icons respond to the active state, reinforcing which tab is selected:
+            The icons respond to the active state, reinforcing which tab is
+            selected:
           </p>
           <div className="my-4 rounded-md">
-            <CodeBlock language='javascript' code={codeSnippetIconFeedback} />
+            <CodeBlock language="javascript" code={codeSnippetIconFeedback} />
           </div>
           <p className="text-neutral-700">
-            This subtle feedback helps the component feel more responsive without adding extra animation noise.
+            This subtle feedback helps the component feel more responsive
+            without adding extra animation noise.
           </p>
         </div>
 
-        <SourceCodeButton componentName="TabSwitcher" hrefLink="https://github.com/prash240303/crafts/blob/main/src/components/Switcher.tsx" />
+        <SourceCodeButton
+          componentName="TabSwitcher"
+          hrefLink="https://github.com/prash240303/crafts/blob/main/src/components/Switcher.tsx"
+        />
       </div>
     </ComponentLayout>
-
   );
 }
 

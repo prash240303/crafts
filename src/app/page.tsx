@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import DesktopUI from "./DesktopUI";
-import MobileUI from "./MobileUI";
+import DesktopUI from "./ui-layouts/DesktopUI";
+import MobileUI from "./ui-layouts/MobileUI";
 
 function Home() {
   const [isMobile, setIsMobile] = useState(false);

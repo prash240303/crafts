@@ -1,10 +1,8 @@
 "use client";
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import RippleButton from "@/components/RippleButton";
-import ComponentLayout from "@/components/Layout/ComponentLayout";
-import CodeBlock from "@/components/Layout/CodeBlock";
-import SourceCodeButton from "@/components/sourceCodeButton";
+import RippleButton from "@/components/ui/RippleButton";
+import ComponentLayout from "@/components/layout/ComponentLayout";
+import CodeBlock from "@/components/layout/CodeBlock";
+import SourceCodeButton from "@/components/ui/sourceCodeButton";
 
 const codeSnippetRipple = `
 const createRipple = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -177,7 +175,10 @@ function Page() {
             <li>Clean state management with automatic ripple cleanup</li>
           </ul>
         </div>
-        <SourceCodeButton componentName="RippleButton" hrefLink="https://github.com/prash240303/crafts/blob/main/src/components/RippleButton.tsx" />
+        <SourceCodeButton
+          componentName="RippleButton"
+          hrefLink="https://github.com/prash240303/crafts/blob/main/src/components/RippleButton.tsx"
+        />
       </div>
     </ComponentLayout>
   );

@@ -31,7 +31,7 @@ const PortfolioGrid = () => {
     {
       id: 1,
       name: "Arrow Button",
-      path: "/arrow-button",
+      path: "/crafts/arrow-button",
       vid: "/craft-preview/arrowbutton.mp4",
       description: "A button with an arrow icon.",
       type: "arrow-button",
@@ -40,7 +40,7 @@ const PortfolioGrid = () => {
     {
       id: 2,
       name: "Magic Text",
-      path: "/magic-text",
+      path: "/crafts/magic-text",
       vid: "/craft-preview/starrytext.mp4",
       description: "A text component with magical effects.",
       type: "magic-text",
@@ -49,7 +49,7 @@ const PortfolioGrid = () => {
     {
       id: 3,
       name: "Tab Switcher",
-      path: "/tab-switcher",
+      path: "/crafts/tab-switcher",
       vid: "/craft-preview/tabswitcher.mp4",
       description: "A component for switching between tabs.",
       type: "tab-switcher",
@@ -58,7 +58,7 @@ const PortfolioGrid = () => {
     {
       id: 4,
       name: "Tags Component",
-      path: "/tags-component",
+      path: "/crafts/tags-component",
       vid: "/craft-preview/tagsComponent.mp4",
       description: "A component for displaying tags.",
       type: "tags",
@@ -67,7 +67,7 @@ const PortfolioGrid = () => {
     {
       id: 5,
       name: "Zip Code Checker",
-      path: "/zip-code-checker",
+      path: "/crafts/zip-code-checker",
       img: "/craft-preview/zipcodechecker.png",
       description: "A component for checking zip codes.",
       type: "zip-code",
@@ -76,7 +76,7 @@ const PortfolioGrid = () => {
     {
       id: 6,
       name: "Custom Cards",
-      path: "/custom-cards",
+      path: "/crafts/custom-cards",
       img: "/craft-preview/customCards.png",
       description: "A component for displaying custom cards.",
       type: "custom-cards",
@@ -85,7 +85,7 @@ const PortfolioGrid = () => {
     {
       id: 7,
       name: "Ripple button",
-      path: "/ripple-button",
+      path: "/crafts/ripple-button",
       vid: "/craft-preview/ripplebutton.mp4",
       description: "Button with ripple effect on hover",
       type: "ripple-button",
@@ -94,12 +94,21 @@ const PortfolioGrid = () => {
     {
       id: 8,
       name: "Aadhar Card",
-      path: "/aadhar-card",
+      path: "/crafts/aadhar-card",
       img: "/craft-preview/aadharcard.png",
       description: "A component for displaying aadhar card",
       type: "aadhar-card",
       height: "h-[420px]",
     },
+    {
+      id:9,
+      name:"Expand Repel Card",
+      path:"/crafts/expand-repel-card",
+      vid:"/craft-preview/base.mp4",
+      description:"A component for displaying expand repel card",
+      type:"expand-repel-card",
+      height:"h-[420px]",
+    }
   ]);
 
   const renderContent = (vid: string) => {

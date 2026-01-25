@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import {
   BanIcon,
@@ -10,11 +10,11 @@ import {
   Download,
   Upload,
 } from "lucide-react";
-import TagsComponent, { DashedBorderTags } from "@/components/TagsComponent";
-import ComponentLayout from "@/components/Layout/ComponentLayout";
-import CodeBlock from "@/components/Layout/CodeBlock";
-import { motion } from 'framer-motion';
-import SourceCodeButton from "@/components/sourceCodeButton";
+import TagsComponent, { DashedBorderTags } from "@/components/ui/TagsComponent";
+import ComponentLayout from "@/components/layout/ComponentLayout";
+import CodeBlock from "@/components/layout/CodeBlock";
+import { motion } from "framer-motion";
+import SourceCodeButton from "@/components/ui/sourceCodeButton";
 
 const codeSnippetColorSystem = `
 const pastelBg = {
@@ -227,7 +227,8 @@ const page = () => {
           colorType="light"
         />
         <TagsComponent
-          type="default" glare={true}
+          type="default"
+          glare={true}
           content="Download"
           isFilled={true}
           isBordered={false}
@@ -238,7 +239,8 @@ const page = () => {
         />
         <TagsComponent
           type="default"
-          content="Upload" glare={true}
+          content="Upload"
+          glare={true}
           isFilled={true}
           isBordered={false}
           trailingIcon={null}
@@ -246,7 +248,7 @@ const page = () => {
           colorType="solid"
           color="Purple"
         />
-        <DashedBorderTags/>
+        <DashedBorderTags />
       </div>
 
       <div className="text-base mt-8 text-neutral-700">
@@ -254,10 +256,14 @@ const page = () => {
           About This Component
         </h3>
         <p>
-          The Tags Component is a flexible UI element designed to display statuses and actions in a clear, visual way. It supports different colors, icons, and styles, making it easy to reuse across dashboards, tables, or workflows.
+          The Tags Component is a flexible UI element designed to display
+          statuses and actions in a clear, visual way. It supports different
+          colors, icons, and styles, making it easy to reuse across dashboards,
+          tables, or workflows.
         </p>
         <p className="mt-2">
-          The component is built as a simple React function with a prop-driven API, so each tag can be customized without duplicating styles.
+          The component is built as a simple React function with a prop-driven
+          API, so each tag can be customized without duplicating styles.
         </p>
 
         <div className="mt-6">
@@ -265,13 +271,16 @@ const page = () => {
             Color System
           </h3>
           <p className="text-neutral-700 mb-2">
-            To keep the tags consistent and soft on the eyes, I defined a pastel color system for background, text, and solid states:
+            To keep the tags consistent and soft on the eyes, I defined a pastel
+            color system for background, text, and solid states:
           </p>
           <div className="my-4 rounded-md">
             <CodeBlock language="typescript" code={codeSnippetColorSystem} />
           </div>
           <p className="text-neutral-700">
-            This separation makes it easy to switch between light and solid variants while keeping colors predictable and visually harmonious across different use cases.
+            This separation makes it easy to switch between light and solid
+            variants while keeping colors predictable and visually harmonious
+            across different use cases.
           </p>
         </div>
 
@@ -301,13 +310,15 @@ const page = () => {
             Dynamic Styling Logic
           </h3>
           <p className="text-neutral-700 mb-2">
-            The background and text color are computed at runtime based on the selected color and style:
+            The background and text color are computed at runtime based on the
+            selected color and style:
           </p>
           <div className="my-4 rounded-md">
             <CodeBlock language="typescript" code={codeSnippetStyling} />
           </div>
           <p className="text-neutral-700">
-            For solid tags, the text automatically switches to white to maintain contrast, ensuring readability across all color variants.
+            For solid tags, the text automatically switches to white to maintain
+            contrast, ensuring readability across all color variants.
           </p>
         </div>
 
@@ -316,20 +327,22 @@ const page = () => {
             Icon Support
           </h3>
           <p className="text-neutral-700 mb-2">
-            Icons are fully optional and slot-based, so any icon library can be used. The component uses Lucide React icons but can work with any React icon library:
+            Icons are fully optional and slot-based, so any icon library can be
+            used. The component uses Lucide React icons but can work with any
+            React icon library:
           </p>
           <div className="my-4 rounded-md">
             <CodeBlock language="typescript" code={codeSnippetUsage} />
           </div>
           <p className="text-neutral-700">
-            This makes the component suitable for both status indicators (Verified, Rejected) and actions (Upload, Download), providing maximum flexibility for different use cases.
+            This makes the component suitable for both status indicators
+            (Verified, Rejected) and actions (Upload, Download), providing
+            maximum flexibility for different use cases.
           </p>
         </div>
 
         <div className="mt-6">
-          <h3 className="font-semibold mb-2 text-neutral-700">
-            Key Features
-          </h3>
+          <h3 className="font-semibold mb-2 text-neutral-700">Key Features</h3>
           <ul className="list-disc list-inside text-neutral-700 space-y-1">
             <li>Seven color variants with both light and solid modes</li>
             <li>Optional leading and trailing icon slots</li>
@@ -345,12 +358,18 @@ const page = () => {
             Inspiration
           </h3>
           <p className="text-neutral-700">
-            The inspiration came from modern admin dashboards and design systems where tags need to be expressive but not distracting. The goal was to keep the component lightweight, readable, and easy to extend while supporting a wide range of use cases—from status badges in data tables to action buttons in workflows.
+            The inspiration came from modern admin dashboards and design systems
+            where tags need to be expressive but not distracting. The goal was
+            to keep the component lightweight, readable, and easy to extend
+            while supporting a wide range of use cases—from status badges in
+            data tables to action buttons in workflows.
           </p>
         </div>
 
-        <SourceCodeButton componentName="TagsComponent" hrefLink="https://github.com/prash240303/crafts/blob/main/src/components/TagsComponent.tsx" />
-        
+        <SourceCodeButton
+          componentName="TagsComponent"
+          hrefLink="https://github.com/prash240303/crafts/blob/main/src/components/TagsComponent.tsx"
+        />
       </div>
     </ComponentLayout>
   );

@@ -1,10 +1,8 @@
 "use client";
-import React, { useEffect } from "react";
-import { motion } from "framer-motion";
-import ComponentLayout from "@/components/Layout/ComponentLayout";
-import MagicText from "@/components/GlowyStarryText";
-import CodeBlock from "@/components/Layout/CodeBlock";
-import SourceCodeButton from "@/components/sourceCodeButton";
+import ComponentLayout from "@/components/layout/ComponentLayout";
+import MagicText from "@/components/ui/GlowyStarryText";
+import CodeBlock from "@/components/layout/CodeBlock";
+import SourceCodeButton from "@/components/ui/sourceCodeButton";
 
 const codeSnippetGradient = `
 .magic-text {
@@ -93,7 +91,10 @@ function Page() {
             timing and motion.
           </p>
         </div>
-        <SourceCodeButton componentName="GlowyStarryText" hrefLink="https://github.com/prash240303/crafts/blob/main/src/components/GlowyStarryText.tsx" />
+        <SourceCodeButton
+          componentName="GlowyStarryText"
+          hrefLink="https://github.com/prash240303/crafts/blob/main/src/components/GlowyStarryText.tsx"
+        />
       </div>
     </ComponentLayout>
   );

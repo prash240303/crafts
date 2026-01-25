@@ -1,10 +1,10 @@
 "use client";
-import ComponentLayout from "@/components/Layout/ComponentLayout";
-import ZipCodeChecker from "@/components/ZipCodeChecker";
+import ComponentLayout from "@/components/layout/ComponentLayout";
+import ZipCodeChecker from "@/components/ui/ZipCodeChecker";
 import React from "react";
-import CodeBlock from "@/components/Layout/CodeBlock";
+import CodeBlock from "@/components/layout/CodeBlock";
 import { motion } from "framer-motion";
-import SourceCodeButton from "@/components/sourceCodeButton";
+import SourceCodeButton from "@/components/ui/sourceCodeButton";
 
 const codeSnippetRipple = `
 const createRipple = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -182,7 +182,10 @@ function page() {
             <li>Easy to extend with real API validation logic</li>
           </ul>
         </div>
-        <SourceCodeButton componentName="ZipCodeChecker" hrefLink="https://github.com/prash240303/crafts/blob/main/src/components/ZipCodeChecker.tsx" />
+        <SourceCodeButton
+          componentName="ZipCodeChecker"
+          hrefLink="https://github.com/prash240303/crafts/blob/main/src/components/ZipCodeChecker.tsx"
+        />
       </div>
     </ComponentLayout>
   );

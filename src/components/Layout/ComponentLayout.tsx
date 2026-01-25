@@ -1,8 +1,7 @@
 "use client";
 import type { ReactNode } from "react";
 import { ChevronLeft } from "lucide-react";
-import { useState } from "react";
-import { useParams, useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 interface LayoutProps {
@@ -17,13 +16,12 @@ export default function ComponentLayout({
   children,
 }: LayoutProps) {
   const pathname = usePathname();
-  console.log("Current path:", pathname);
 
   const projects = [
     {
       id: 1,
       name: "Arrow Button",
-      path: "/arrow-button",
+      path: "/crafts/arrow-button",
       vid: "/craft-preview/base.mp4",
       description: "A button with an arrow icon.",
       type: "arrow-button",
@@ -32,7 +30,7 @@ export default function ComponentLayout({
     {
       id: 2,
       name: "Magic Text",
-      path: "/magic-text",
+      path: "/crafts/magic-text",
       vid: "/craft-preview/base.mp4",
       description: "A text component with magical effects.",
       type: "magic-text",
@@ -41,7 +39,7 @@ export default function ComponentLayout({
     {
       id: 3,
       name: "Tab Switcher",
-      path: "/tab-switcher",
+      path: "/crafts/tab-switcher",
       vid: "/craft-preview/base.mp4",
       description: "A component for switching between tabs.",
       type: "tab-switcher",
@@ -50,7 +48,7 @@ export default function ComponentLayout({
     {
       id: 4,
       name: "Tags Component",
-      path: "/tags-component",
+      path: "/crafts/tags-component",
       vid: "/craft-preview/base.mp4",
       description: "A component for displaying tags.",
       type: "tags",
@@ -59,7 +57,7 @@ export default function ComponentLayout({
     {
       id: 5,
       name: "Zip Code Checker",
-      path: "/zip-code-checker",
+      path: "/crafts/zip-code-checker",
       vid: "/craft-preview/base.mp4",
       description: "A component for checking zip codes.",
       type: "zip-code",
@@ -68,7 +66,7 @@ export default function ComponentLayout({
     {
       id: 6,
       name: "Custom Cards",
-      path: "/custom-cards",
+      path: "/crafts/custom-cards",
       vid: "/craft-preview/base.mp4",
       description: "A component for displaying custom cards.",
       type: "custom-cards",
@@ -77,7 +75,7 @@ export default function ComponentLayout({
     {
       id: 7,
       name: "Ripple button",
-      path: "/ripple-button",
+      path: "/crafts/ripple-button",
       vid: "/craft-preview/base.mp4",
       description: "Button with ripple effect on hover",
       type: "ripple-button",
@@ -86,19 +84,26 @@ export default function ComponentLayout({
     {
       id: 8,
       name: "Aadhar Card",
-      path: "/aadhar-card",
+      path: "/crafts/aadhar-card",
       vid: "/craft-preview/base.mp4",
       description: "A component for displaying aadhar card",
       type: "aadhar-card",
       height: "h-[420px]",
     },
+    {
+      id:9,
+      name:"Expand Repel Card",
+      path:"/crafts/expand-repel-card",
+      vid:"/craft-preview/base.mp4",
+      description:"A component for displaying expand repel card",
+      type:"expand-repel-card",
+      height:"h-[420px]",
+    }
   ];
 
   const currIdx = projects.findIndex((item) => item.path === pathname);
   const leftIdx = currIdx === 0 ? projects.length - 1 : currIdx - 1;
   const rightIdx = currIdx === projects.length - 1 ? 0 : currIdx + 1;
-
-  console.log("left ad right", leftIdx, rightIdx);
 
   return (
     <div className="min-h-screen md:mx-auto mx-4 flex flex-col items-start max-w-3xl gap-8 py-12">

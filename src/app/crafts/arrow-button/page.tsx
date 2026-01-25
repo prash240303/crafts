@@ -1,11 +1,11 @@
-"use client"
-import ArrowButton from "@/components/ArrowButton";
-import ComponentLayout from "@/components/Layout/ComponentLayout";
+"use client";
+import ArrowButton from "@/components/ui/ArrowButton";
+import ComponentLayout from "@/components/layout/ComponentLayout";
 import React from "react";
-import CodeBlock from "../../components/Layout/CodeBlock";
+import CodeBlock from "../../../components/layout/CodeBlock";
 import Image from "next/image";
-import { motion } from 'framer-motion';
-import SourceCodeButton from "@/components/sourceCodeButton";
+import { motion } from "framer-motion";
+import SourceCodeButton from "@/components/ui/sourceCodeButton";
 
 const codeSnippet = `
 const getArrowStyles = (index: number) => {
@@ -115,7 +115,7 @@ function page() {
             rel="noopener noreferrer"
             href="https://x.com/mannupaaji"
           >
-            @mannupaaji.  {" "}
+            @mannupaaji.{" "}
           </a>
         </span>
         Here is the reference tweet
@@ -139,8 +139,8 @@ function page() {
             Antimetal
           </a>
         </span>{" "}
-        where the CTA button struck my mind and I also in motivated mind
-        thought to recreate that button.
+        where the CTA button struck my mind and I also in motivated mind thought
+        to recreate that button.
         <div className="mt-2">
           My Immeditate thought was to create the detailed Arrow SVG
           <Image
@@ -150,17 +150,17 @@ function page() {
             height={100}
             alt="arrow"
           />
-          While I knew I wont find any asset/SVG online, I had to make it
-          myself from scratch where got the idea by GPT how to build it using
-          CSS styles over divs by absolute positioning them.
+          While I knew I wont find any asset/SVG online, I had to make it myself
+          from scratch where got the idea by GPT how to build it using CSS
+          styles over divs by absolute positioning them.
           <div className="my-4 rounded-md">
             <CodeBlock language="javascript" code={codeSnippet} />
           </div>
           This function creates the arrow shape using small 2x2 pixel blocks.
           Each block is positioned precisely to form the arrow shape. The
           baseStyles define the size and appearance of each block, while the
-          positions array determines the exact placement of each block to
-          create the arrow shape.
+          positions array determines the exact placement of each block to create
+          the arrow shape.
         </div>
         <div>
           <h3 className="font-semibold mt-2 mb-1 text-neutral-700">
@@ -185,18 +185,21 @@ function page() {
           </h3>
           <p className="text-neutral-700 ">
             The pulsating effect is created by using multiple layers of arrows
-            that appear to move. This is achieved by rendering multiple sets
-            of arrows and animating them:
+            that appear to move. This is achieved by rendering multiple sets of
+            arrows and animating them:
           </p>
           <CodeBlock language="javascript" code={codeSnippetPulsating} />
           <CodeBlock language="javascript" code={codeSnippetPulsatingCSS} />
           <p className="text-neutral-700 ">
             Each set of arrows is given a different animation delay, creating
-            the illusion of a continuous flow of arrows. The CSS animations
-            (not shown in the provided code) would handle the actual movement
-            of these arrow sets.
+            the illusion of a continuous flow of arrows. The CSS animations (not
+            shown in the provided code) would handle the actual movement of
+            these arrow sets.
           </p>
-          <SourceCodeButton  componentName="ArrowButton"  hrefLink="https://github.com/prash240303/crafts/blob/main/src/components/ArrowButton.tsx" />
+          <SourceCodeButton
+            componentName="ArrowButton"
+            hrefLink="https://github.com/prash240303/crafts/blob/main/src/components/ArrowButton.tsx"
+          />
         </div>
       </div>
     </ComponentLayout>
