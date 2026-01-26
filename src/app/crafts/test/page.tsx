@@ -1,5 +1,4 @@
-"use client";
-import TabSwitcher from "@/components/Switcher";
+import TabSwitcher from "@/components/ui/Switcher";
 
 export default function TodoList() {
   return (
