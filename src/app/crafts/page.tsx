@@ -104,7 +104,7 @@ const PortfolioGrid = () => {
       id:9,
       name:"Expand Repel Card",
       path:"/crafts/expand-repel-card",
-      vid:"/craft-preview/base.mp4",
+      vid:"/craft-preview/expand-repel-card.mp4",
       description:"A component for displaying expand repel card",
       type:"expand-repel-card",
       height:"h-[420px]",
