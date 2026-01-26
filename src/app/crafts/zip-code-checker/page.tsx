@@ -1,9 +1,7 @@
-"use client";
+"use client"
 import ComponentLayout from "@/components/layout/ComponentLayout";
 import ZipCodeChecker from "@/components/ui/ZipCodeChecker";
-import React from "react";
 import CodeBlock from "@/components/layout/CodeBlock";
-import { motion } from "framer-motion";
 import SourceCodeButton from "@/components/ui/sourceCodeButton";
 
 const codeSnippetRipple = `
