@@ -83,6 +83,24 @@ export default function ComponentLayout({
     },
     {
       id: 8,
+      name: "Expand Repel Card",
+      path: "/crafts/expand-repel-card",
+      vid: "/craft-preview/base.mp4",
+      description: "A component for displaying expand repel card",
+      type: "expand-repel-card",
+      height: "h-[420px]",
+    },
+    {
+      id: 9,
+      name: "Image Reveal",
+      path: "/crafts/image-reveal",
+      vid: "/craft-preview/image-reveal.mp4",
+      description: "A component for displaying images, with grid reveal effect",
+      type: "image-reveal",
+      height: "h-[420px]",
+    },
+    {
+      id: 10,
       name: "Aadhar Card",
       path: "/crafts/aadhar-card",
       vid: "/craft-preview/base.mp4",
@@ -90,15 +108,6 @@ export default function ComponentLayout({
       type: "aadhar-card",
       height: "h-[420px]",
     },
-    {
-      id:9,
-      name:"Expand Repel Card",
-      path:"/crafts/expand-repel-card",
-      vid:"/craft-preview/base.mp4",
-      description:"A component for displaying expand repel card",
-      type:"expand-repel-card",
-      height:"h-[420px]",
-    }
   ];
 
   const currIdx = projects.findIndex((item) => item.path === pathname);

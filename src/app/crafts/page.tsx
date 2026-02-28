@@ -1,9 +1,9 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
 import { Inter, Instrument_Serif } from "next/font/google";
 import { cn } from "../../lib/utils";
 import Link from "next/link";
+import { Projects } from "../../data/projects";
 
 type Project = {
   id: number;
@@ -27,90 +27,6 @@ const instrumentSerif = Instrument_Serif({
 
 const PortfolioGrid = () => {
   const router = useRouter();
-  const [projects] = useState([
-    {
-      id: 1,
-      name: "Arrow Button",
-      path: "/crafts/arrow-button",
-      vid: "/craft-preview/arrowbutton.mp4",
-      description: "A button with an arrow icon.",
-      type: "arrow-button",
-      height: "h-72",
-    },
-    {
-      id: 2,
-      name: "Magic Text",
-      path: "/crafts/magic-text",
-      vid: "/craft-preview/starrytext.mp4",
-      description: "A text component with magical effects.",
-      type: "magic-text",
-      height: "h-80",
-    },
-    {
-      id: 3,
-      name: "Tab Switcher",
-      path: "/crafts/tab-switcher",
-      vid: "/craft-preview/tabswitcher.mp4",
-      description: "A component for switching between tabs.",
-      type: "tab-switcher",
-      height: "h-96",
-    },
-    {
-      id: 4,
-      name: "Tags Component",
-      path: "/crafts/tags-component",
-      vid: "/craft-preview/tagsComponent.mp4",
-      description: "A component for displaying tags.",
-      type: "tags",
-      height: "h-64",
-    },
-    {
-      id: 5,
-      name: "Zip Code Checker",
-      path: "/crafts/zip-code-checker",
-      img: "/craft-preview/zipcodechecker.png",
-      description: "A component for checking zip codes.",
-      type: "zip-code",
-      height: "h-80",
-    },
-    {
-      id: 6,
-      name: "Custom Cards",
-      path: "/crafts/custom-cards",
-      img: "/craft-preview/customCards.png",
-      description: "A component for displaying custom cards.",
-      type: "custom-cards",
-      height: "h-96",
-    },
-    {
-      id: 7,
-      name: "Ripple button",
-      path: "/crafts/ripple-button",
-      vid: "/craft-preview/ripplebutton.mp4",
-      description: "Button with ripple effect on hover",
-      type: "ripple-button",
-      height: "h-72",
-    },
-    {
-      id: 8,
-      name: "Aadhar Card",
-      path: "/crafts/aadhar-card",
-      img: "/craft-preview/aadharcard.png",
-      description: "A component for displaying aadhar card",
-      type: "aadhar-card",
-      height: "h-[420px]",
-    },
-    {
-      id:9,
-      name:"Expand Repel Card",
-      path:"/crafts/expand-repel-card",
-      vid:"/craft-preview/expand-repel-card.mp4",
-      description:"A component for displaying expand repel card",
-      type:"expand-repel-card",
-      height:"h-[420px]",
-    }
-  ]);
-
   const renderContent = (vid: string) => {
     return (
       <video
@@ -129,11 +45,12 @@ const PortfolioGrid = () => {
     router.push(path);
   };
 
+  console.log("projects", Projects);
   // Split projects into 3 equal columns
-  const itemsPerColumn = Math.ceil(projects.length / 3);
-  const column1 = projects.slice(0, itemsPerColumn);
-  const column2 = projects.slice(itemsPerColumn, itemsPerColumn * 2);
-  const column3 = projects.slice(itemsPerColumn * 2);
+  const itemsPerColumn = Math.ceil(Projects.length / 3);
+  const column1 = Projects.slice(0, itemsPerColumn);
+  const column2 = Projects.slice(itemsPerColumn, itemsPerColumn * 2);
+  const column3 = Projects.slice(itemsPerColumn * 2);
 
   const renderColumn = (columnProjects: Project[]) => (
     <div className={cn("flex flex-col gap-2", inter.className)}>
