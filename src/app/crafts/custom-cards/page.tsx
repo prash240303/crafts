@@ -1,5 +1,5 @@
 import CustomCards from "@/components/ui/cards";
-import ComponentLayout from "@/components/layout/ComponentLayout";
+import ComponentLayout from "@/components/layoutComponents/ComponentLayout";
 
 function page() {
   return (

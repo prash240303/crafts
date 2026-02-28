@@ -11,8 +11,8 @@ import {
   Upload,
 } from "lucide-react";
 import TagsComponent, { DashedBorderTags } from "@/components/ui/TagsComponent";
-import ComponentLayout from "@/components/layout/ComponentLayout";
-import CodeBlock from "@/components/layout/CodeBlock";
+import ComponentLayout from "@/components/layoutComponents/ComponentLayout";
+import CodeBlock from "@/components/layoutComponents/CodeBlock";
 import { motion } from "framer-motion";
 import SourceCodeButton from "@/components/ui/sourceCodeButton";
 

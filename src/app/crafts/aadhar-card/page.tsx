@@ -1,4 +1,4 @@
-import ComponentLayout from "@/components/layout/ComponentLayout";
+import ComponentLayout from "@/components/layoutComponents/ComponentLayout";
 import React from "react";
 import AadharCard from "./aadhar-card";
 

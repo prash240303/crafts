@@ -1,7 +1,7 @@
 "use client";
 import ImageReveal from "@/components/ui/ImageReveal";
-import ComponentLayout from "@/components/layout/ComponentLayout";
-import CodeBlock from "../../../components/layout/CodeBlock";
+import ComponentLayout from "@/components/layoutComponents/ComponentLayout";
+import CodeBlock from "../../../components/layoutComponents/CodeBlock";
 import SourceCodeButton from "@/components/ui/sourceCodeButton";
 
 const codeSnippetGrid = `
@@ -165,13 +165,12 @@ function page() {
         I wanted to recreate the kind of dramatic image reveal you see on
         high-end portfolio and product launch sites — where a photo isn&apos;t
         simply faded in but actively{" "}
-        <span className="font-medium text-neutral-900">uncovered</span>, tile
-        by tile, like a curtain being drawn back. The whole effect is built with
-        a CSS Grid overlay and{" "}
-        <span className="font-medium text-neutral-900">Framer Motion</span> —
-        no canvas, no WebGL, no external animation libraries beyond what&apos;s
+        <span className="font-medium text-neutral-900">uncovered</span>, tile by
+        tile, like a curtain being drawn back. The whole effect is built with a
+        CSS Grid overlay and{" "}
+        <span className="font-medium text-neutral-900">Framer Motion</span> — no
+        canvas, no WebGL, no external animation libraries beyond what&apos;s
         already in the stack.
-
         {/* Grid overlay */}
         <div className="mt-4">
           <h3 className="font-semibold mt-2 mb-1 text-neutral-700">
@@ -181,7 +180,9 @@ function page() {
           on top of the image. Each cell starts fully opaque white — completely
           hiding the image — and later animates to transparent when the reveal
           fires. The container is divided into a{" "}
-          <span className="font-medium text-neutral-900">10 rows × 15 cols</span>{" "}
+          <span className="font-medium text-neutral-900">
+            10 rows × 15 cols
+          </span>{" "}
           grid (150 tiles total) using{" "}
           <code className="text-sm bg-neutral-100 px-1 py-0.5 rounded">
             gridTemplateColumns
@@ -205,7 +206,6 @@ function page() {
           </code>{" "}
           to ensure it sits above the image layer at all times.
         </div>
-
         {/* Per-tile animation */}
         <div>
           <h3 className="font-semibold mt-2 mb-1 text-neutral-700">
@@ -244,13 +244,12 @@ function page() {
           <code className="text-sm bg-neutral-100 px-1 py-0.5 rounded">
             filter: brightness(2)
           </code>{" "}
-          on the initial state gives tiles a luminous, glowing quality
-          rather than flat white, making the pre-reveal feel intentional.
+          on the initial state gives tiles a luminous, glowing quality rather
+          than flat white, making the pre-reveal feel intentional.
           <div className="my-4 rounded-md">
             <CodeBlock language="jsx" code={codeSnippetTile} />
           </div>
         </div>
-
         {/* Diagonal delay */}
         <div>
           <h3 className="font-semibold mt-2 mb-1 text-neutral-700">
@@ -262,9 +261,9 @@ function page() {
           <code className="text-sm bg-neutral-100 px-1 py-0.5 rounded">
             row + col
           </code>{" "}
-          sum. Tiles near the top-left disappear first; tiles at the bottom-right
-          disappear last — producing a natural diagonal wave across the entire
-          image.
+          sum. Tiles near the top-left disappear first; tiles at the
+          bottom-right disappear last — producing a natural diagonal wave across
+          the entire image.
           <div className="my-4 rounded-md">
             <CodeBlock language="javascript" code={codeSnippetDelay} />
           </div>
@@ -275,7 +274,6 @@ function page() {
           is fully tunable — increase it for a slow theatrical wipe, decrease it
           for a snappy explosive reveal.
         </div>
-
         {/* Reset trick */}
         <div>
           <h3 className="font-semibold mt-2 mb-1 text-neutral-700">
@@ -286,8 +284,8 @@ function page() {
           <code className="text-sm bg-neutral-100 px-1 py-0.5 rounded">
             initial
           </code>{" "}
-          state cleanly after they&apos;ve already animated. The cleanest fix
-          is changing the grid wrapper&apos;s{" "}
+          state cleanly after they&apos;ve already animated. The cleanest fix is
+          changing the grid wrapper&apos;s{" "}
           <code className="text-sm bg-neutral-100 px-1 py-0.5 rounded">
             key
           </code>{" "}
@@ -299,7 +297,6 @@ function page() {
             <CodeBlock language="jsx" code={codeSnippetReset} />
           </div>
         </div>
-
         {/* Full source */}
         <div>
           <h3 className="font-semibold mt-2 mb-1 text-neutral-700">

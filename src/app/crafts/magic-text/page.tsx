@@ -1,7 +1,7 @@
 "use client";
-import ComponentLayout from "@/components/layout/ComponentLayout";
+import ComponentLayout from "@/components/layoutComponents/ComponentLayout";
 import MagicText from "@/components/ui/GlowyStarryText";
-import CodeBlock from "@/components/layout/CodeBlock";
+import CodeBlock from "@/components/layoutComponents/CodeBlock";
 import SourceCodeButton from "@/components/ui/sourceCodeButton";
 
 const codeSnippetGradient = `

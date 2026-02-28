@@ -1,7 +1,7 @@
 "use client";
 import TabSwitcher from "@/components/ui/Switcher";
-import CodeBlock from "@/components/layout/CodeBlock";
-import ComponentLayout from "@/components/layout/ComponentLayout";
+import CodeBlock from "@/components/layoutComponents/CodeBlock";
+import ComponentLayout from "@/components/layoutComponents/ComponentLayout";
 import SourceCodeButton from "@/components/ui/sourceCodeButton";
 
 // Code snippets for documentation

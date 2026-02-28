@@ -1,8 +1,8 @@
 "use client";
 import ArrowButton from "@/components/ui/ArrowButton";
-import ComponentLayout from "@/components/layout/ComponentLayout";
+import ComponentLayout from "@/components/layoutComponents/ComponentLayout";
 import React from "react";
-import CodeBlock from "../../../components/layout/CodeBlock";
+import CodeBlock from "../../../components/layoutComponents/CodeBlock";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import SourceCodeButton from "@/components/ui/sourceCodeButton";
