@@ -8,8 +8,6 @@ export default function ZipCodeChecker() {
   const imageWrapperRef = useRef<HTMLDivElement>(null);
 
   function handleCheckAvailability(zip: string, e: React.MouseEvent) {
-    console.log(`Checking availability for zip code: ${zip}`);
-
     const wrapper = imageWrapperRef.current;
     if (!wrapper) return;
 

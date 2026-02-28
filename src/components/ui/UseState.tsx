@@ -113,7 +113,6 @@ function UseStateExample({ }: Props) {
   let nextID = 3;
 
   function handleChangeTask(updatedTask: any) {
-     console.log("here",  tasks.map((t) => (t.id === updatedTask.id ? updatedTask : t)))
     setTasks(
       tasks.map((t) => (t.id === updatedTask.id ? updatedTask : t))
     );

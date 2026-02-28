@@ -41,11 +41,9 @@ const PortfolioGrid = () => {
   };
 
   const handleCardClick = (path: string) => {
-    console.log(`Navigating to: ${path}`);
     router.push(path);
   };
 
-  console.log("projects", Projects);
   // Split projects into 3 equal columns
   const itemsPerColumn = Math.ceil(Projects.length / 3);
   const column1 = Projects.slice(0, itemsPerColumn);

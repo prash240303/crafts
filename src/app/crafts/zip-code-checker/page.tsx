@@ -59,7 +59,6 @@ const ZipCodeChecker = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle zip code validation
-    console.log('Checking zip code:', zipCode);
   };
 
   return (
