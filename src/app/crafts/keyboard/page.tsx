@@ -16,7 +16,7 @@ import {
 import { keymap } from "prosemirror-keymap";
 import Image from "next/image";
 
-const LINE_HEIGHT = 28;
+const LINE_HEIGHT = 20;
 const STORAGE_KEY = "typewriter-content";
 const FONT_STORAGE_KEY = "typewriter-font";
 
@@ -34,6 +34,8 @@ export default function Page() {
   const paperRef = useRef<HTMLDivElement>(null);
   const editorRef = useRef<HTMLDivElement>(null);
   const viewRef = useRef<EditorView | null>(null);
+  const paperRef2 = useRef<HTMLImageElement>(null);
+  const [editorMaxHeight, setEditorMaxHeight] = useState(480);
 
   const [selectedFont, setSelectedFont] = useState<string>(() => {
     if (typeof window !== "undefined") {
@@ -41,6 +43,19 @@ export default function Page() {
     }
     return FONTS[0].value;
   });
+
+  useEffect(() => {
+    if (!paperRef2.current) return;
+    const update = () => {
+      const paperHeight = paperRef2.current!.offsetHeight;
+      // editor top (192px) - paper top (96px) = 96px offset from paper top
+      // also subtract ~48px bottom padding inside the paper
+      setEditorMaxHeight(paperHeight - 96 - 48);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
   // Inject Google Fonts link once
   useEffect(() => {
@@ -62,7 +77,10 @@ export default function Page() {
       styleTag.id = "pm-font-override";
       document.head.appendChild(styleTag);
     }
-    styleTag.textContent = `.ProseMirror { font-family: ${selectedFont} !important; }`;
+    styleTag.textContent = `
+  .ProseMirror { font-family: ${selectedFont} !important; outline: none !important; }
+  .ProseMirror p { margin: 0; line-height: ${LINE_HEIGHT}px; }
+`;
   }, [selectedFont]);
 
   // Initialize ProseMirror
@@ -217,17 +235,20 @@ export default function Page() {
       {/* ── ProseMirror editor ── */}
       <div
         ref={editorRef}
-        className="absolute top-48 left-48 z-50 w-[380px]"
+        className="absolute p-2 top-36 left-40 z-50 w-[430px]"
         style={{
           fontFamily: selectedFont,
-          fontSize: 15,
+          fontSize: 18,
           lineHeight: `${LINE_HEIGHT}px`,
           color: "#3a3025",
           letterSpacing: "0.05em",
+          maxHeight: editorMaxHeight,
+          overflowY: "auto",
+          scrollBehavior: "smooth",
         }}
       />
-
       <Image
+        ref={paperRef2}
         alt="paper"
         src="/paper.png"
         width={1000}

@@ -83,7 +83,7 @@ const PortfolioGrid = () => {
   );
 
   return (
-    <div className="min-h-screen relative">
+    <div suppressHydrationWarning className="min-h-screen relative">
       {/* Slanted lines background */}
       <div
         className="absolute inset-0 opacity-30"
