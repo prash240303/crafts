@@ -1,4 +1,14 @@
 export const Projects = [
+   {
+    id: 1,
+    name: "Typewriter-letters",
+    path: "/crafts/keyboard",
+    vid: "/craft-preview/arrowbutton.mp4",
+    description: "Write your letters with a experince of using a typewriter.",
+    type: "type-writer",
+    height: "h-72",
+  },
+
   {
     id: 1,
     name: "Arrow Button",
