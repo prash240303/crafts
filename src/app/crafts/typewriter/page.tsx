@@ -175,7 +175,7 @@ export default function TypewriterPage() {
       description="A vintage typewriter experience built on a physical keyboard UI, ProseMirror rich text, and a canvas-based PNG export — all wired together in one atmospheric page."
     >
       {/* ── Live preview / CTA ─────────────────────────────────────────── */}
-      <div className="relative bg-[#1c1510] w-full max-w-2xl flex flex-col items-center justify-center rounded-lg border border-neutral-700 min-h-80 overflow-hidden gap-4 p-6">
+      <div className="relative bg-[#1c1510] w-full flex flex-col items-center justify-center rounded-lg border border-neutral-700 min-h-80 overflow-hidden gap-4 p-6">
         {/* decorative grain */}
         <div
           className="pointer-events-none absolute inset-0 opacity-30"
@@ -198,10 +198,26 @@ export default function TypewriterPage() {
           <rect x="10" y="12" width="44" height="10" rx="2" fill="#6b5a3e" />
           <rect x="14" y="6" width="36" height="8" rx="1" fill="#5a4a30" />
           {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
-            <rect key={i} x={12 + i * 6} y="22" width="4" height="4" rx="1" fill="#3a2e1e" />
+            <rect
+              key={i}
+              x={12 + i * 6}
+              y="22"
+              width="4"
+              height="4"
+              rx="1"
+              fill="#3a2e1e"
+            />
           ))}
           {[0, 1, 2, 3, 4, 5, 6].map((i) => (
-            <rect key={i} x={15 + i * 6} y="28" width="4" height="4" rx="1" fill="#3a2e1e" />
+            <rect
+              key={i}
+              x={15 + i * 6}
+              y="28"
+              width="4"
+              height="4"
+              rx="1"
+              fill="#3a2e1e"
+            />
           ))}
           <rect x="20" y="34" width="24" height="3" rx="1" fill="#3a2e1e" />
         </svg>
@@ -265,12 +281,50 @@ export default function TypewriterPage() {
       {/* ── Narrative ──────────────────────────────────────────────────── */}
       <div className="text-base mt-8 text-neutral-700 space-y-6">
         <p>
-          This started as a simple question: <em>what if a virtual keyboard
-          wasn't just decorative?</em> I wanted clicking keys to actually feel
-          like using a typewriter — sound, haptics, and ink on paper — and the
-          result to be a real PNG you could send to someone.
+          This started as a simple question:{" "}
+          <em>what if a virtual keyboard wasn't just decorative?</em> I wanted
+          clicking keys to actually feel like using a typewriter — sound,
+          haptics, and ink on paper — and the result to be a real PNG you could
+          send to someone.
         </p>
 
+        <p>
+          The keyboard component at the heart of this experience wasn't built
+          from scratch. It started as a beautifully crafted Keychron-style
+          mechanical keyboard UI by{" "}
+          <span className="font-medium text-blue-500 dark:text-blue-400">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://x.com/@himanhacks"
+            >
+              @himanhacks
+            </a>
+          </span>
+          . His original component was already impressive — a full physical
+          keyboard with per-key sound definitions, a haptics layer via{" "}
+          <code className="text-sm bg-neutral-100 px-1 rounded">
+            web-haptics
+          </code>
+          , and six swappable colorways (classic, mint, royal, dolch, sand,
+          scarlet). Under the hood, each key rendered as a spherical keycap with
+          a stem, gloss sheen, and a floor shadow that compressed on press — all
+          driven by a shared context that handled both real keystrokes and
+          pointer events.
+        </p>
+        <p className="mt-3">
+          My job was to transform it from a sleek modern keyboard into something
+          that feels like it belongs on a 1940s writing desk. The Keychron
+          chassis was swapped out for a typewriter body image, the colorway was
+          locked to a single ink-stained classic theme, and the{" "}
+          <code className="text-sm bg-neutral-100 px-1 rounded">
+            Special Elite
+          </code>{" "}
+          font was baked into every keycap label to give that worn type-slug
+          character. Finally, the entire layout was scaled down and repositioned
+          to sit naturally over the typewriter platen — turning a polished UI
+          component into something tactile and atmospheric.
+        </p>
         {/* ── Font Switcher ── */}
         <div>
           <h3 className="font-semibold mt-2 mb-1 text-neutral-700">
@@ -278,13 +332,23 @@ export default function TypewriterPage() {
           </h3>
           <p>
             Five Google Fonts are loaded once via a programmatically injected{" "}
-            <code className="text-sm bg-neutral-100 px-1 rounded">&lt;link&gt;</code>{" "}
+            <code className="text-sm bg-neutral-100 px-1 rounded">
+              &lt;link&gt;
+            </code>{" "}
             tag. Switching fonts re-writes a single{" "}
-            <code className="text-sm bg-neutral-100 px-1 rounded">&lt;style&gt;</code>{" "}
-            override tag that targets <code className="text-sm bg-neutral-100 px-1 rounded">.ProseMirror</code>,
-            so the editor responds instantly without a re-mount. The chosen font
-            is also persisted to <code className="text-sm bg-neutral-100 px-1 rounded">localStorage</code> so
-            your typeface survives a page refresh.
+            <code className="text-sm bg-neutral-100 px-1 rounded">
+              &lt;style&gt;
+            </code>{" "}
+            override tag that targets{" "}
+            <code className="text-sm bg-neutral-100 px-1 rounded">
+              .ProseMirror
+            </code>
+            , so the editor responds instantly without a re-mount. The chosen
+            font is also persisted to{" "}
+            <code className="text-sm bg-neutral-100 px-1 rounded">
+              localStorage
+            </code>{" "}
+            so your typeface survives a page refresh.
           </p>
           <div className="my-4 rounded-md">
             <CodeBlock language="typescript" code={snippetFontSystem} />
@@ -297,21 +361,33 @@ export default function TypewriterPage() {
             2 · ProseMirror as the "paper"
           </h3>
           <p>
-            Rather than a plain <code className="text-sm bg-neutral-100 px-1 rounded">textarea</code>, the
-            editor uses{" "}
+            Rather than a plain{" "}
+            <code className="text-sm bg-neutral-100 px-1 rounded">
+              textarea
+            </code>
+            , the editor uses{" "}
             <span className="font-medium text-blue-500">
-              <a href="https://prosemirror.net/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://prosemirror.net/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 ProseMirror
               </a>
             </span>{" "}
             so we get rich text (bold, italic) for free. The key trick is inside
-            <code className="text-sm bg-neutral-100 px-1 rounded"> dispatchTransaction</code>: every keystroke
-            that changes the document is measured against the{" "}
+            <code className="text-sm bg-neutral-100 px-1 rounded">
+              {" "}
+              dispatchTransaction
+            </code>
+            : every keystroke that changes the document is measured against the{" "}
             <em>physical page height</em> before being committed. If the
             rendered line count would exceed{" "}
-            <code className="text-sm bg-neutral-100 px-1 rounded">MAX_LINES</code>, the transaction is
-            silently rejected — the letter simply cannot grow longer than one
-            page.
+            <code className="text-sm bg-neutral-100 px-1 rounded">
+              MAX_LINES
+            </code>
+            , the transaction is silently rejected — the letter simply cannot
+            grow longer than one page.
           </p>
           <div className="my-4 rounded-md">
             <CodeBlock language="typescript" code={snippetProseMirror} />
@@ -325,10 +401,11 @@ export default function TypewriterPage() {
           </h3>
           <p>
             CSS word-wrap is invisible to JavaScript, so I use an off-screen{" "}
-            <code className="text-sm bg-neutral-100 px-1 rounded">canvas</code> to measure the <em>same font
-            at the same size</em> as the editor and replicate the wrap logic.
-            This gives an accurate line count that matches what the user sees —
-            no scroll-height hacks, no DOM measurements.
+            <code className="text-sm bg-neutral-100 px-1 rounded">canvas</code>{" "}
+            to measure the <em>same font at the same size</em> as the editor and
+            replicate the wrap logic. This gives an accurate line count that
+            matches what the user sees — no scroll-height hacks, no DOM
+            measurements.
           </p>
           <div className="my-4 rounded-md">
             <CodeBlock language="typescript" code={snippetLineCount} />
@@ -341,18 +418,43 @@ export default function TypewriterPage() {
             4 · Wiring the visual keyboard to ProseMirror
           </h3>
           <p>
-            The <code className="text-sm bg-neutral-100 px-1 rounded">Keyboard</code> component fires{" "}
-            <code className="text-sm bg-neutral-100 px-1 rounded">onKeyEvent</code> with a{" "}
-            <code className="text-sm bg-neutral-100 px-1 rounded">code</code> string (e.g.{" "}
+            The{" "}
+            <code className="text-sm bg-neutral-100 px-1 rounded">
+              Keyboard
+            </code>{" "}
+            component fires{" "}
+            <code className="text-sm bg-neutral-100 px-1 rounded">
+              onKeyEvent
+            </code>{" "}
+            with a{" "}
+            <code className="text-sm bg-neutral-100 px-1 rounded">code</code>{" "}
+            string (e.g.{" "}
             <code className="text-sm bg-neutral-100 px-1 rounded">"KeyA"</code>,{" "}
-            <code className="text-sm bg-neutral-100 px-1 rounded">"Space"</code>,{" "}
-            <code className="text-sm bg-neutral-100 px-1 rounded">"Backspace"</code>). The handler maps
-            those codes to ProseMirror commands — special keys like{" "}
-            <code className="text-sm bg-neutral-100 px-1 rounded">Backspace</code> and{" "}
-            <code className="text-sm bg-neutral-100 px-1 rounded">Enter</code> use{" "}
-            <code className="text-sm bg-neutral-100 px-1 rounded">chainCommands</code> and{" "}
-            <code className="text-sm bg-neutral-100 px-1 rounded">baseKeymap</code>; printable characters are
-            inserted via <code className="text-sm bg-neutral-100 px-1 rounded">tr.insertText(char)</code>.
+            <code className="text-sm bg-neutral-100 px-1 rounded">"Space"</code>
+            ,{" "}
+            <code className="text-sm bg-neutral-100 px-1 rounded">
+              "Backspace"
+            </code>
+            ). The handler maps those codes to ProseMirror commands — special
+            keys like{" "}
+            <code className="text-sm bg-neutral-100 px-1 rounded">
+              Backspace
+            </code>{" "}
+            and{" "}
+            <code className="text-sm bg-neutral-100 px-1 rounded">Enter</code>{" "}
+            use{" "}
+            <code className="text-sm bg-neutral-100 px-1 rounded">
+              chainCommands
+            </code>{" "}
+            and{" "}
+            <code className="text-sm bg-neutral-100 px-1 rounded">
+              baseKeymap
+            </code>
+            ; printable characters are inserted via{" "}
+            <code className="text-sm bg-neutral-100 px-1 rounded">
+              tr.insertText(char)
+            </code>
+            .
           </p>
           <div className="my-4 rounded-md">
             <CodeBlock language="typescript" code={snippetKeyboardHandler} />
@@ -367,12 +469,16 @@ export default function TypewriterPage() {
           <p>
             The export function walks the ProseMirror document tree, collecting
             segments with their inline marks (bold / italic). It then loads{" "}
-            <code className="text-sm bg-neutral-100 px-1 rounded">/letter_export_bg.png</code> — an
-            aged-paper texture — onto a 2× DPI canvas, re-draws every wrapped
-            line with the selected font, and triggers a browser download. The
-            font is read from{" "}
-            <code className="text-sm bg-neutral-100 px-1 rounded">document.fonts.ready</code> before drawing
-            to avoid blank-text export bugs.
+            <code className="text-sm bg-neutral-100 px-1 rounded">
+              /letter_export_bg.png
+            </code>{" "}
+            — an aged-paper texture — onto a 2× DPI canvas, re-draws every
+            wrapped line with the selected font, and triggers a browser
+            download. The font is read from{" "}
+            <code className="text-sm bg-neutral-100 px-1 rounded">
+              document.fonts.ready
+            </code>{" "}
+            before drawing to avoid blank-text export bugs.
           </p>
           <div className="my-4 rounded-md">
             <CodeBlock language="typescript" code={snippetExport} />

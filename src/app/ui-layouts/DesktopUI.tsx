@@ -243,7 +243,7 @@ const DesktopUI: React.FC = () => {
     switch (item.type) {
       case "image":
         return (
-          <div className="border border-red-400 w-full h-full">
+          <div className=" w-full h-full">
             <Image
               src={item.src || "/home/sculpture.jpg"}
               alt="image"

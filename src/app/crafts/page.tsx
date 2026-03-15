@@ -1,9 +1,9 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { Inter, Instrument_Serif } from "next/font/google";
-import { cn } from "../../lib/utils";
 import Link from "next/link";
 import { Projects } from "../../data/projects";
+import { useEffect, useRef } from "react";
 
 type Project = {
   id: number;
@@ -12,6 +12,7 @@ type Project = {
   img?: string;
   vid?: string;
   description: string;
+  createdAt: string;
   type: string;
   height: string;
 };
@@ -25,6 +26,43 @@ const instrumentSerif = Instrument_Serif({
   weight: "400",
 });
 
+const LazyVideo = ({ src }: { src: string }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Start loading + playing only when visible
+          if (video.readyState === 0) video.load();
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.25 }, // trigger when 25% visible
+    );
+
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <video
+      ref={videoRef}
+      src={src}
+      preload="none"
+      loop
+      muted
+      playsInline
+      className="w-full group-hover:scale-105 transition-all ease-in duration-300 h-full object-cover rounded-lg"
+    />
+  );
+};
+
 const PortfolioGrid = () => {
   const router = useRouter();
   const renderContent = (vid: string) => {
@@ -35,7 +73,7 @@ const PortfolioGrid = () => {
         loop
         muted
         playsInline
-        className="w-full h-full object-cover rounded-lg"
+        className="w-full  group-hover:scale-105 transition-all ease-in duration-300 h-full object-cover rounded-lg"
       />
     );
   };
@@ -44,44 +82,10 @@ const PortfolioGrid = () => {
     router.push(path);
   };
 
-  // Split projects into 3 equal columns
-  const itemsPerColumn = Math.ceil(Projects.length / 3);
-  const column1 = Projects.slice(0, itemsPerColumn);
-  const column2 = Projects.slice(itemsPerColumn, itemsPerColumn * 2);
-  const column3 = Projects.slice(itemsPerColumn * 2);
-
-  const renderColumn = (columnProjects: Project[]) => (
-    <div className={cn("flex flex-col gap-2", inter.className)}>
-      {columnProjects.map((project) => (
-        <div
-          key={project.id}
-          onClick={() => handleCardClick(project.path)}
-          className={`bg-white rounded-xl border border-zinc-300 p-1 hover:border-zinc-400 hover:scale-[101%] hover:shadow-2xl transition-all ease-in duration-400 cursor-pointer flex flex-col ${project.height}`}
-        >
-          {/* Video Container */}
-          <div className="border rounded-lg border-neutral-100 relative h-full overflow-hidden">
-            {project.vid && renderContent(project.vid)}
-            {project.img && (
-              <img
-                src={project.img || "/placeholder.svg"}
-                alt={project.name}
-                className="w-full h-full object-cover"
-              />
-            )}
-
-            {/* Card Footer */}
-            <div className="space-y-1 absolute w-full bottom-0 left-0 px-3 py-2 bg-white/60 backdrop-blur-md rounded-xl border border-white/20">
-              <div className="text-neutral-800 text-lg font-medium">
-                {project.name}
-              </div>
-              <div className="text-gray-600 text-sm">{project.description}</div>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-
+  const columns: Project[][] = [[], [], []];
+  Projects.forEach((project, i) => {
+    columns[i % 3].push(project);
+  });
   return (
     <div suppressHydrationWarning className="min-h-screen relative">
       {/* Slanted lines background */}
@@ -111,10 +115,37 @@ const PortfolioGrid = () => {
           </div>
         </div>
         <div className="border w-full">
-          <div className="grid md:grid-cols-3 grid-cols-1 border-x border-neutral-300 p-2 bg-white max-w-5xl  mx-auto gap-2">
-            {renderColumn(column1)}
-            {renderColumn(column2)}
-            {renderColumn(column3)}
+          <div className="grid md:grid-cols-3 grid-cols-1 border-x border-neutral-300 p-2 bg-white max-w-5xl mx-auto gap-2">
+            {columns.map((col, colIndex) => (
+              <div key={colIndex} className="flex flex-col gap-2">
+                {col.map((project) => (
+                  <div
+                    key={project.path}
+                    onClick={() => handleCardClick(project.path)}
+                    className={`bg-white group rounded-xl border border-zinc-300 p-1 hover:border-zinc-400 hover:scale-[101%] hover:shadow-2xl transition-all ease-in duration-300 cursor-pointer flex flex-col ${project.height} ${inter.className}`}
+                  >
+                    <div className="border rounded-lg border-neutral-100 relative h-full overflow-hidden">
+                      {project.vid && <LazyVideo src={project.vid} />}
+                      {project.img && (
+                        <img
+                          src={project.img}
+                          alt={project.name}
+                          className="w-full group-hover:scale-105 transition-all ease-in duration-300 h-full object-cover"
+                        />
+                      )}
+                      <div className="space-y-1 absolute w-full bottom-0 left-0 px-3 py-2 bg-white/60 backdrop-blur-md rounded-lg border border-white/20">
+                        <div className="text-neutral-800 text-lg font-medium">
+                          {project.name}
+                        </div>
+                        <div className="text-gray-600 text-sm">
+                          {project.description}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ))}
           </div>
         </div>
         <div
