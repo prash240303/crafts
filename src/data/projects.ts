@@ -2,15 +2,14 @@ export const Projects = [
    {
     id: 1,
     name: "Typewriter-letters",
-    path: "/crafts/keyboard",
+    path: "/crafts/typewriter",
     vid: "/craft-preview/arrowbutton.mp4",
     description: "Write your letters with a experince of using a typewriter.",
     type: "type-writer",
     height: "h-72",
   },
-
   {
-    id: 1,
+    id: 2,
     name: "Arrow Button",
     path: "/crafts/arrow-button",
     vid: "/craft-preview/arrowbutton.mp4",
@@ -19,7 +18,7 @@ export const Projects = [
     height: "h-72",
   },
   {
-    id: 2,
+    id: 3,
     name: "Magic Text",
     path: "/crafts/magic-text",
     vid: "/craft-preview/starrytext.mp4",
@@ -28,7 +27,7 @@ export const Projects = [
     height: "h-80",
   },
   {
-    id: 3,
+    id: 4,
     name: "Tab Switcher",
     path: "/crafts/tab-switcher",
     vid: "/craft-preview/tabswitcher.mp4",
@@ -37,7 +36,7 @@ export const Projects = [
     height: "h-96",
   },
   {
-    id: 4,
+    id: 5,
     name: "Tags Component",
     path: "/crafts/tags-component",
     vid: "/craft-preview/tagsComponent.mp4",
@@ -46,7 +45,7 @@ export const Projects = [
     height: "h-64",
   },
   {
-    id: 5,
+    id: 6,
     name: "Zip Code Checker",
     path: "/crafts/zip-code-checker",
     img: "/craft-preview/zipcodechecker.png",
@@ -55,7 +54,7 @@ export const Projects = [
     height: "h-80",
   },
   {
-    id: 6,
+    id: 7,
     name: "Custom Cards",
     path: "/crafts/custom-cards",
     img: "/craft-preview/customCards.png",
@@ -64,7 +63,7 @@ export const Projects = [
     height: "h-96",
   },
   {
-    id: 7,
+    id: 8,
     name: "Ripple button",
     path: "/crafts/ripple-button",
     vid: "/craft-preview/ripplebutton.mp4",
@@ -73,7 +72,7 @@ export const Projects = [
     height: "h-72",
   },
   {
-    id: 8,
+    id: 9,
     name: "Image Reveal",
     path: "/crafts/image-reveal",
     vid: "/craft-preview/image-reveal.mp4",
@@ -82,7 +81,7 @@ export const Projects = [
     height: "h-72",
   },
   {
-    id: 9,
+    id: 10,
     name: "Aadhar Card",
     path: "/crafts/aadhar-card",
     img: "/craft-preview/aadharcard.png",
@@ -92,7 +91,7 @@ export const Projects = [
   },
 
   {
-    id: 10,
+    id: 11,
     name: "Expand Repel Card",
     path: "/crafts/expand-repel-card",
     vid: "/craft-preview/expand-repel-card.mp4",

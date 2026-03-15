@@ -145,18 +145,18 @@ export default function ComponentLayout({
         <div className="w-full border-[0.5px] border-t border-b-0 border-dashed border-neutral-500 h-px" />
         <div className="flex w-full text-sm mt-3 flex-row justify-between items-center gap-4">
           <Link
-            href={projects[leftIdx].path}
+            href={projects[leftIdx]?.path || "/crafts"}
             className="flex flex-col gap-1 items-start justify-center"
           >
             <span className="text-neutral-600 text-xs">Previous</span>
-            <span className="font-medium">{projects[leftIdx].name}</span>
+            <span className="font-medium">{projects[leftIdx]?.name}</span>
           </Link>
           <Link
-            href={projects[rightIdx].path}
+            href={projects[rightIdx].path || "/crafts"}
             className="flex flex-col gap-1 items-end justify-center"
           >
             <span className="text-neutral-600 text-xs">Next</span>
-            <span className="font-medium">{projects[rightIdx].name}</span>
+            <span className="font-medium">{projects[rightIdx]?.name}</span>
           </Link>
         </div>
       </footer>

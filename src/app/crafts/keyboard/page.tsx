@@ -216,6 +216,14 @@ export default function Page() {
   const [editorMaxHeight, setEditorMaxHeight] = useState(380);
   const [exporting, setExporting] = useState(false);
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setIsMobile(true);
+    }
+  }, []);
+
   const [selectedFont, setSelectedFont] = useState<string>(() => {
     if (typeof window !== "undefined") {
       return localStorage.getItem(FONT_STORAGE_KEY) ?? FONTS[0].value;
@@ -444,6 +452,17 @@ export default function Page() {
       <div className="w-screen absolute inset-0 h-screen">
         <Image alt="bg" fill src="/typewriter_bg.png" />
       </div>
+
+      {isMobile && (
+        <div className="absolute h-screen w-screen bg-white inset-0 z-90 flex items-center justify-center">
+          <span className="w-64 z-60 text-center font-medium font-mono text-lg">
+            Please use a desktop to access this page
+          </span>
+
+          <Image alt="bg" className="aspect-auto absolute inset-0 z-50 border blur-md object-top" fill src="/typewriter_bg.png" />
+        </div>
+      )}
+
       {/* ── Font Selector ── */}
       <div className="absolute top-4 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3">
         <div className="relative">
@@ -559,7 +578,7 @@ export default function Page() {
         <div
           className="absolute z-50 flex items-center gap-2 px-3 py-1.5 rounded-full text-xs"
           style={{
-            top: `calc(36px + ${editorMaxHeight}px + 144px)`, 
+            top: `calc(36px + ${editorMaxHeight}px + 144px)`,
             left: "50%",
             transform: "translateX(-50%)",
             background: "rgba(80, 30, 10, 0.82)",
@@ -576,7 +595,8 @@ export default function Page() {
           <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
           </svg>
-          Page full — the letter cannot grow any longer in order to export your letter
+          Page full — the letter cannot grow any longer in order to export your
+          letter
         </div>
       )}
       <Image
