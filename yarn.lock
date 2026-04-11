@@ -262,6 +262,16 @@
     "@babel/helper-string-parser" "^7.27.1"
     "@babel/helper-validator-identifier" "^7.28.5"
 
+"@cornerkit/core@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@cornerkit/core/-/core-1.2.0.tgz#299418f67dfb6b2e5476f88acab8933194032bb1"
+  integrity sha512-hbNHH4UzdWH7XVaLoPTpnt26l2ksdDbgeyTdMF7s8RhjVRnPK2Q+86RQJYUpNk+64b1h9YWO3k0DaVcb9HFQqQ==
+
+"@cornerkit/react@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@cornerkit/react/-/react-1.0.1.tgz#705b392951181b068a21832a2ddf27b4eb1bfea1"
+  integrity sha512-+7ImLYpQf43qFHtZpMKZnSZou54HX9aYTCykR+qxV3YLnLPK2wEeUu798tj0t721gP+PAlHqI2xrxT3lF7BTqA==
+
 "@dotenvx/dotenvx@^1.48.4":
   version "1.54.1"
   resolved "https://registry.yarnpkg.com/@dotenvx/dotenvx/-/dotenvx-1.54.1.tgz#a625bbb22597c5f295cb570a835a9dcb45d00619"

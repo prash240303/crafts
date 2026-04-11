@@ -109,6 +109,15 @@ const _projects = [
     height: "h-72",
     createdAt: "05-02-2026",
   },
+  {
+    name: "MacOS Dock",
+    path: "/crafts/canvas",
+    img: "/craft-preview/macos_dock.png",
+    description: "A liquid Glass Dock with macOS style",
+    type: "macos-dock",
+    height: "h-72",
+    createdAt: "11-04-2026",
+  }
 ];
 
 export const Projects = _projects
