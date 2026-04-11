@@ -472,7 +472,7 @@ export default function TypewriterPage() {
             <code className="text-sm bg-neutral-100 px-1 rounded">
               /letter_export_bg.png
             </code>{" "}
-            — an aged-paper texture — onto a 2× DPI canvas, re-draws every
+            — an aged-paper texture — onto a 2x DPI canvas, re-draws every
             wrapped line with the selected font, and triggers a browser
             download. The font is read from{" "}
             <code className="text-sm bg-neutral-100 px-1 rounded">
