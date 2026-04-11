@@ -5,6 +5,7 @@ import ComponentLayout from "@/components/layoutComponents/ComponentLayout";
 import SourceCodeButton from "@/components/ui/sourceCodeButton";
 import Dock from "../../dock/page";
 import Link from "next/link";
+import Image from "next/image";
 // Code snippets for documentation
 const codeSnippetFilter = `/* Apply displacement filter to card */
 .liquid-glass-card {
@@ -45,12 +46,8 @@ function Page() {
       title="Liquid Glass Effect"
       description="A CSS and SVG filter technique that goes beyond standard glassmorphism by physically warping and refracting background elements, creating a convincing liquid glass illusion without JavaScript or shaders."
     >
-      <div className="relative bg-[#0b1220] w-full flex flex-col items-center justify-center rounded-xl border border-white/10 min-h-80 overflow-hidden gap-4 p-6">
-        {/* glass noise */}
-        <div className="pointer-events-none absolute inset-0 opacity-20" />
-
-        {/* subtle glass gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-blue-200/5 to-transparent backdrop-blur-xl" />
+      <div className="relative w-full flex flex-col items-center justify-center rounded-xl border border-white/10 min-h-80 overflow-hidden gap-4 p-6">
+       <Image className="blur" fill alt="bg" src="/craft-preview/macos_dock.png"/>
 
         <p
           className="text-white/70 text-sm text-center z-10 max-w-xs"
@@ -61,7 +58,7 @@ function Page() {
         </p>
 
         <Link
-          href="/crafts/dock"
+          href="/dock"
           target="_blank"
           rel="noopener noreferrer"
           className="z-10 group relative flex items-center gap-2 px-6 py-2.5 rounded-full text-sm transition-all duration-300 hover:scale-105 active:scale-95"
