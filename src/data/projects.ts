@@ -110,11 +110,11 @@ const _projects = [
     createdAt: "05-02-2026",
   },
   {
-    name: "MacOS Dock",
-    path: "/crafts/canvas",
+    name: "MacOS Liquid Glass Dock",
+    path: "/crafts/liquid-glass-dock",
     img: "/craft-preview/macos_dock.png",
     description: "A liquid Glass Dock with macOS style",
-    type: "macos-dock",
+    type: "liquid-glass-dock",
     height: "h-72",
     createdAt: "11-04-2026",
   }

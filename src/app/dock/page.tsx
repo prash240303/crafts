@@ -10,7 +10,7 @@ const BG_OPTIONS = [
   { id: "tahoe", src: "/bg/bg-tahoe.jpg", label: "Tahoe" },
 ];
 
-export default function MagnifierGallery() {
+export default function Dock() {
   const [activeBg, setActiveBg] = useState(BG_OPTIONS[0]);
   const [open, setOpen] = useState(false);
 
