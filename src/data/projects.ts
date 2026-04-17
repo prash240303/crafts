@@ -2,7 +2,7 @@ const _projects = [
   {
     name: "Hero Section Image Animation",
     path: "/crafts/hero",
-    vid: "/craft-preview/hero.mp4",
+    img: "/craft-preview/hero.gif",
     description: "Interactive hero-section image animation.",
     type: "hero",
     height: "h-72",
@@ -12,7 +12,7 @@ const _projects = [
   {
     name: "Typewriter-Letters",
     path: "/crafts/typewriter",
-    vid: "/craft-preview/typewriter.mp4",
+    img: "/craft-preview/typewriter.gif",
     description: "Write your letters with a experince of using a typewriter.",
     type: "type-writer",
     height: "h-72",
@@ -21,7 +21,7 @@ const _projects = [
   {
     name: "Arrow Button",
     path: "/crafts/arrow-button",
-    vid: "/craft-preview/arrowbutton.mp4",
+    img: "/craft-preview/arrowbutton.gif",
     description: "A button with an arrow icon.",
     type: "arrow-button",
     height: "h-72",
@@ -30,7 +30,7 @@ const _projects = [
   {
     name: "Magic Text",
     path: "/crafts/magic-text",
-    vid: "/craft-preview/starrytext.mp4",
+    img: "/craft-preview/starrytext.gif",
     description: "A text component with magical effects.",
     type: "magic-text",
     height: "h-80",
@@ -39,7 +39,7 @@ const _projects = [
   {
     name: "Tab Switcher",
     path: "/crafts/tab-switcher",
-    vid: "/craft-preview/tabswitcher.mp4",
+    img: "/craft-preview/tabswitcher.gif",
     description: "A component for switching between tabs.",
     type: "tab-switcher",
     height: "h-96",
@@ -48,7 +48,7 @@ const _projects = [
   {
     name: "Tags Component",
     path: "/crafts/tags-component",
-    vid: "/craft-preview/tagsComponent.mp4",
+    img: "/craft-preview/tagsComponent.gif",
     description: "A component for displaying tags.",
     type: "tags",
     height: "h-64",
@@ -75,7 +75,7 @@ const _projects = [
   {
     name: "Ripple button",
     path: "/crafts/ripple-button",
-    vid: "/craft-preview/ripplebutton.mp4",
+    img: "/craft-preview/ripplebutton.gif",
     description: "Button with ripple effect on hover",
     type: "ripple-button",
     height: "h-72",
@@ -84,7 +84,7 @@ const _projects = [
   {
     name: "Image Reveal",
     path: "/crafts/image-reveal",
-    vid: "/craft-preview/image-reveal.mp4",
+    img: "/craft-preview/image-reveal.gif",
     description: "A component for displaying images, with grid reveal effect",
     type: "image-reveal",
     height: "h-72",
@@ -103,7 +103,7 @@ const _projects = [
   {
     name: "Expand Repel Card",
     path: "/crafts/expand-repel-card",
-    vid: "/craft-preview/expand-repel-card.mp4",
+    img: "/craft-preview/expand-repel-card.gif",
     description: "A component for displaying expand repel card",
     type: "expand-repel-card",
     height: "h-72",
@@ -117,7 +117,17 @@ const _projects = [
     type: "liquid-glass-dock",
     height: "h-72",
     createdAt: "11-04-2026",
-  }
+  },
+  {
+    name: "Animated Number Input",
+    path: "/crafts/animated-number-input",
+    img: "/craft-preview/animated-number-input.gif",
+    description: "A bottom-up animated number input.",
+    type: "animated-number-input",
+    height: "h-72",
+    createdAt: "17-04-2026",
+  },
+
 ];
 
 export const Projects = _projects
