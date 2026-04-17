@@ -110,7 +110,7 @@ const UICard: React.FC<CardProps> = ({
             if (overlapX > overlapY) {
               // Push horizontally
               offsetX = dirX * (overlapX + 20); //  20px buffer
-              offsetY = dirY * (overlapY * 0.5); 
+              offsetY = dirY * (overlapY * 0.5);
             } else {
               // Push vertically
               offsetY = dirY * (overlapY + 20); //  20px buffer
@@ -229,12 +229,9 @@ const UICard: React.FC<CardProps> = ({
         <div
           className={`border ${isExpanded ? "" : "my-3"} w-full border-neutral-500  transition-all duration-300`}
         >
-          <video
+          <img
             src={vidSrc}
-            autoPlay
-            loop
-            muted
-            playsInline
+            alt={title}
             className={
               isExpanded
                 ? "w-full h-64 object-cover object-center"
@@ -270,7 +267,7 @@ function ExpandRepelComponent() {
     {
       id: 1,
       title: "Arrow-Button",
-      vidSrc: "/craft-preview/arrowbutton.mp4",
+      vidSrc: "/craft-preview/arrowbutton.gif",
       projectLink: "https://crafts-three.vercel.app/arrow-button",
       desc: "A simple yet elegant arrow button component that can be used for Call to Actions(CTA).",
       x: 120,
@@ -279,7 +276,7 @@ function ExpandRepelComponent() {
     {
       id: 2,
       title: "Ripple Button",
-      vidSrc: "/craft-preview/ripplebutton.mp4",
+      vidSrc: "/craft-preview/ripplebutton.gif",
       projectLink: "https://crafts-three.vercel.app/arrow-button",
       desc: "An interactive button with hover-triggered ripple effects for tactile, responsive feedback",
       x: 1080,
@@ -288,7 +285,7 @@ function ExpandRepelComponent() {
     {
       id: 3,
       title: "Starry Text",
-      vidSrc: "/craft-preview/starrytext.mp4",
+      vidSrc: "/craft-preview/starrytext.gif",
       projectLink: "https://crafts-three.vercel.app/arrow-button",
       desc: "A beautiful glowing text component with starry effects and smooth animations. Perfect for hero sections and attention-grabbing headlines.",
       x: 80,
@@ -298,7 +295,7 @@ function ExpandRepelComponent() {
       id: 4,
       title: "Tab Switcher",
       projectLink: "https://crafts-three.vercel.app/arrow-button",
-      vidSrc: "/craft-preview/tabswitcher.mp4",
+      vidSrc: "/craft-preview/tabswitcher.gif",
       desc: "A compact navigation component designed for smooth, visual tab transitions. Instead of switching content abruptly, the active tab slides into place with a soft background animation, making the interaction feel polished and intentional.",
       x: 550,
       y: 420,

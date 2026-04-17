@@ -104,7 +104,7 @@ function page() {
       title="Arrow Button Component"
       description="A simple yet elegant arrow button component that can be used for Call to Actions(CTA)."
     >
-      <div className=" bg-[#DDDCDA] w-full max-w-2xl flex items-center justify-center rounded-lg border border-neutral-300 min-h-80 ">
+      <div className=" bg-neutral-50 w-full flex items-center justify-center rounded-2xl border border-neutral-300 min-h-64 ">
         <ArrowButton />
       </div>
       <div className="text-base mt-8 text-neutral-700">

@@ -26,7 +26,7 @@ function Page() {
       title="Tab Switcher Component"
       description="A compact navigation component designed for smooth, visual tab transitions. Instead of switching content abruptly, the active tab slides into place with a soft background animation, making the interaction feel polished and intentional."
     >
-      <div className="bg-neutral-50 mx-auto py-8 flex items-center justify-center rounded-xl shadow-md mb-8">
+      <div className="mx-auto px-12 bg-neutral-50 shadow w-full flex items-center justify-center rounded-2xl border border-neutral-300 min-h-80 ">
         <TabSwitcher />
       </div>
 
