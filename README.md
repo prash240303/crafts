@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Digital Crafts 
 
-## Getting Started
+<p align="left">
+  <a href="https://crafts-three.vercel.app/crafts">
+    <img src="https://img.shields.io/badge/Live%20Preview-Explore%20Crafts-blue?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Preview" />
+  </a>
+</p>
 
-First, run the development server:
+A curated collection of handcrafted UI components, delightful interactions, and experimental animations. Each craft is more than just a component; it's a deep dive into the "how" behind the magic, accompanied by detailed articles and implementation breakdowns.
+
+![Crafts Preview](/public/craftsPage.png)
+
+## 🎨 Overview
+
+**Digital Crafts** is my personal playground where I explore the boundaries of web interfaces. From liquid glass docks to intricate hero animations, this project documents my journey in creating polished, high-fidelity UI elements.
+
+- **Interactions & Animations**: Exploring Framer Motion, GSAP, and CSS transitions to create "alive" interfaces.
+- **Deep Dives**: Every non-trivial component comes with an article explaining the logic, the math, and the code.
+- **Ready to Use**: Components are built with modularity in mind using React, Tailwind CSS, and TypeScript.
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/), [GSAP](https://gsap.com/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+
+## 🚀 Getting Started
+
+Experience the crafts locally:
 
 ```bash
-npm run dev
-# or
+# Clone the repository
+git clone https://github.com/prash240303/crafts.git
+
+# Install dependencies
+yarn install
+
+# Run the development server
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit `https://crafts-three.vercel.app/crafts` or `http://localhost:3000` to explore the collection.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📦 Featured Crafts
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+| Component | Description |
+| :--- | :--- |
+| **MacOS Liquid Glass Dock** | A high-fidelity recreation of the MacOS dock with liquid glass effects. |
+| **Arrow Button** | An elegant CTA button with a custom-built pixel-based arrow animation. |
+| **Animated Number Input** | A unique, bottom-up animated digit transition for numerical inputs. |
+| **Hero Image Animation** | An interactive grid-based image reveal and parallax effect. |
+| **Magic Text** | Typography experiments with sparkling effects and dynamic gradients. |
 
-## Learn More
+## 📂 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+- `src/app/crafts/`: Individual routes for each craft and its article.
+- `src/components/ui/`: Reusable, atomic UI components.
+- `src/data/projects.ts`: Metadata for the project gallery.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Crafted with ❤️ by [Prashant](https://x.com/prash2403)
