@@ -9,7 +9,7 @@ function Page() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     // Only allow numbers and limit length to 10 for better layout
-    if ((value === "" || /^\d+$/.test(value)) && value.length <= 10) {
+    if ((value === "" || /^\d*\.?\d*$/.test(value)) && value.length <= 10) {
       setInput(value);
     }
   };
@@ -25,7 +25,7 @@ function Page() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="relative"
         >
-          <span className="text-[10px] uppercase tracking-[0.3em] text-white/40 font-medium">
+          <span className="text-xl uppercase text-red-500 tracking-[0.3em] text-white/40 font-medium">
             Animated Number Input
           </span>
         </motion.div>
@@ -120,9 +120,9 @@ function Page() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.3 }}
         transition={{ delay: 1 }}
-        className="fixed bottom-12 text-[10px] uppercase tracking-widest text-white/50"
+        className="fixed bottom-12 text-sm uppercase tracking-widest text-white"
       >
-        Backspace to delete • Only digits allowed
+        Backspace to delete • Only digits/decimals allowed
       </motion.div>
     </div>
   );

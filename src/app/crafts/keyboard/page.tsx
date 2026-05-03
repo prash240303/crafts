@@ -225,9 +225,6 @@ export default function Page() {
   }, []);
 
   const [selectedFont, setSelectedFont] = useState<string>(() => {
-    if (typeof window !== "undefined") {
-      return localStorage.getItem(FONT_STORAGE_KEY) ?? FONTS[0].value;
-    }
     return FONTS[0].value;
   });
 
