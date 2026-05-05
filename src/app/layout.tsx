@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={cn("font-sans", geist.variable)}>
-      <body className={cn(inter.className)}>{children}</body>
+      <body suppressHydrationWarning className={cn(inter.className)}>{children}</body>
     </html>
   );
 }
