@@ -127,6 +127,15 @@ const _projects = [
     height: "h-72",
     createdAt: "17-04-2026",
   },
+  {
+    name: "Inverted List",
+    path: "/crafts/inverted-list",
+    img: "/craft-preview/inverted-list.png",
+    description: "Split-screen list with opposite-direction spring scroll and click-to-expand detail view.",
+    type: "inverted-list",
+    height: "h-72",
+    createdAt: "04-05-2026",
+  },
 
 ];
 
