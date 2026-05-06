@@ -1,6 +1,5 @@
 "use client";
-
-import Image from "next/image";
+import { Image } from "@imagekit/next";
 import { useEffect, useRef, useState } from "react";
 import {
   motion,
@@ -28,82 +27,95 @@ interface Item {
   details: string;
   tags: string[];
 }
-
 const items: Item[] = [
   {
     id: 0,
-    title: "Mountain Peak",
-    description: "Majestic alpine landscape",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=800&fit=crop",
-    location: "Swiss Alps, Switzerland",
-    details: "Towering granite spires pierce the clouds at over 4,000 metres. Pristine snowfields reflect dawn light in shades of rose and amber, while alpine meadows below burst with wildflowers during the brief summer thaw.",
-    tags: ["alpine", "snow", "hiking", "nature"],
+    title: 'MacBook Pro 16"',
+    description: "Professional laptop powerhouse",
+    image: "/Crafts/inverted-list/macbook.jpg",
+    location: "Apple, California",
+    details:
+      "M4 Max chip delivers desktop-class performance in a portable form. The 16-inch Liquid Retina XDR display renders colors with exceptional accuracy, while the all-day battery enables creative work anywhere. Thermal engineering keeps it cool under sustained workloads.",
+    tags: ["laptop", "professional", "high-performance", "design"],
   },
   {
     id: 1,
-    title: "Ocean Waves",
-    description: "Serene coastal beauty",
-    image: "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=600&h=800&fit=crop",
-    location: "Pacific Coast, California",
-    details: "Rolling swells travel thousands of miles before meeting the rugged coastline, carving sea caves and stacking tide pools with colourful life. The salt air carries the rhythm of something ancient and endless.",
-    tags: ["ocean", "waves", "coastal", "blue"],
+    title: "Sony WH-1000XM5",
+    description: "Premium wireless headphones",
+    image:
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=800&fit=crop",
+    location: "Sony, Japan",
+    details:
+      "Industry-leading noise cancellation uses eight microphones to detect and eliminate ambient sound. The 30-hour battery outlasts most workdays, while adaptive sound control learns your environment and adjusts automatically.",
+    tags: ["audio", "wireless", "noise-cancelling", "premium"],
   },
   {
     id: 2,
-    title: "Forest Path",
-    description: "Deep woods exploration",
-    image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&h=800&fit=crop",
-    location: "Black Forest, Germany",
-    details: "Ancient beeches and silver firs form cathedral canopies over moss-carpeted trails. Shafts of light pierce the canopy at dawn, illuminating mist that clings to the forest floor like a living thing.",
-    tags: ["forest", "trees", "trail", "green"],
+    title: "DJI Mini 4 Pro",
+    description: "Ultra-compact drone camera",
+    image:
+      "https://images.unsplash.com/photo-1625948515291-69613efd103f?w=600&h=800&fit=crop",
+    location: "DJI, China",
+    details:
+      "Weighs just 249 grams, making it exempt from many regulations. The mechanical 3-axis gimbal stabilizes 4K footage, while obstacle avoidance on all sides provides confidence in tight spaces.",
+    tags: ["drone", "camera", "portable", "4K"],
   },
   {
     id: 3,
-    title: "City Lights",
-    description: "Urban nightscape",
-    image: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=600&h=800&fit=crop",
-    location: "Manhattan, New York",
-    details: "Eight million stories compressed into a grid of light and shadow. At night the skyline becomes an abstract painting — reflections doubling every glowing window into a second city below.",
-    tags: ["urban", "night", "skyline", "architecture"],
+    title: "iPhone 16 Pro",
+    description: "Advanced smartphone flagship",
+    image:
+      "https://images.unsplash.com/photo-1592286927505-1def25115558?w=600&h=800&fit=crop",
+    location: "Apple, California",
+    details:
+      "A18 Pro chip handles computational photography and machine learning at the edge. The titanium frame feels premium, while the always-on display provides constant connectivity without battery drain.",
+    tags: ["smartphone", "ios", "camera", "flagship"],
   },
   {
     id: 4,
-    title: "Desert Dunes",
-    description: "Golden sands endless",
-    image: "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=600&h=800&fit=crop",
-    location: "Sahara Desert, Morocco",
-    details: "Wind sculpts the sand into perfect geometric ridges that shift overnight, erasing every footprint. At sunset the dunes turn deep orange then violet, and silence is so complete you can hear your own heartbeat.",
-    tags: ["desert", "sand", "sunset", "dunes"],
+    title: "Steam Deck OLED",
+    description: "Portable gaming revolution",
+    image:
+      "https://images.unsplash.com/photo-1633133971292-02a3638199b3?w=600&h=800&fit=crop",
+    location: "Valve, Washington",
+    details:
+      "The OLED display transforms PC gaming on the go with perfect blacks and vibrant colors. Play your entire Steam library with hardware that fits in your backpack, with dock support for TV gaming.",
+    tags: ["gaming", "handheld", "pc", "portable"],
   },
   {
     id: 5,
-    title: "Aurora Borealis",
-    description: "Northern lights magic",
-    image: "https://images.unsplash.com/photo-1444080748397-f442aa95c3e5?w=600&h=800&fit=crop",
-    location: "Tromsø, Norway",
-    details: "Solar particles collide with the atmosphere 100 kilometres up, painting the sky in curtains of green, violet, and white. Each display is unrepeatable — the same physics, a different painting, every time.",
-    tags: ["aurora", "night sky", "arctic", "lights"],
+    title: "Apple Vision Pro",
+    description: "Spatial computing interface",
+    image:
+      "https://images.unsplash.com/photo-1611095461304-46a91e6b4338?w=600&h=800&fit=crop",
+    location: "Apple, California",
+    details:
+      "Dual micro-OLED displays deliver a 4K experience to each eye. Eye tracking and hand gesture recognition create an intuitive interface, while spatial audio places sound precisely in three-dimensional space.",
+    tags: ["vr", "spatial computing", "innovation", "future"],
   },
   {
     id: 6,
-    title: "Waterfall",
-    description: "Cascading waters",
-    image: "https://images.unsplash.com/photo-1500595046891-9e0e6b6adddd?w=600&h=800&fit=crop",
-    location: "Plitvice Lakes, Croatia",
-    details: "Sixteen terraced lakes cascade into each other through a series of falls, the water so mineral-rich it builds its own travertine dams. The turquoise pools shift colour with the angle of the sun.",
-    tags: ["waterfall", "lakes", "turquoise", "nature"],
+    title: "Canon EOS R5 ",
+    description: "Professional mirrorless camera",
+    image:
+      "https://images.unsplash.com/photo-1606986628253-05620e9b0a80?w=600&h=800&fit=crop",
+    location: "Canon, Japan",
+    details:
+      "45-megapixel full-frame sensor captures stunning detail across dynamic ranges. Advanced autofocus with bird-eye detection tracks subjects with AI precision, while 8K recording future-proofs your footage.",
+    tags: ["camera", "professional", "photography", "8K"],
   },
   {
     id: 7,
-    title: "Sunset Sky",
-    description: "Golden hour glow",
-    image: "https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=600&h=800&fit=crop",
-    location: "Santorini, Greece",
-    details: "The Aegean's last light catches the whitewashed walls and turns them honey-gold, every shadow a deep cobalt. For twenty minutes the island exists in a palette no photographer can fully claim to have captured.",
-    tags: ["sunset", "golden hour", "sky", "greece"],
+    title: "Framework Laptop",
+    description: "Modular computing experience",
+    image:
+      "https://images.unsplash.com/photo-1527864550417-7fd231fc53a7?w=600&h=800&fit=crop",
+    location: "Framework, California",
+    details:
+      "Swappable port modules let you customize connectivity for each journey. Upgrade the mainboard while keeping your chassis, encouraging longevity over obsolescence. Repairable by design with no proprietary screws.",
+    tags: ["laptop", "modular", "sustainable", "customizable"],
   },
 ];
-
 // ── Left list slot ──────────────────────────────────────────────────────────
 function LeftSlot({
   offset,
@@ -130,8 +142,12 @@ function LeftSlot({
     return Math.abs(offset - frac);
   });
 
-  const scale      = useTransform(absDistance, [0, 1, 3], [1.05, 0.95, 0.85]);
-  const color      = useTransform(absDistance, [0, 0.5, 2], ["#ffffff", "#cccccc", "#444444"]);
+  const scale = useTransform(absDistance, [0, 1, 3], [1.05, 0.95, 0.85]);
+  const color = useTransform(
+    absDistance,
+    [0, 0.5, 2],
+    ["#ffffff", "#cccccc", "#444444"],
+  );
   const fontWeight = useTransform(absDistance, (d) => (d < 0.4 ? 700 : 400));
 
   const [descVisible, setDescVisible] = useState(false);
@@ -139,11 +155,22 @@ function LeftSlot({
 
   return (
     <motion.div
-      style={{ position: "absolute", top, left: 0, right: 0, height: LEFT_ITEM_HEIGHT, scale, color }}
+      style={{
+        position: "absolute",
+        top,
+        left: 0,
+        right: 0,
+        height: LEFT_ITEM_HEIGHT,
+        scale,
+        color,
+      }}
       className="flex items-end text-left gap-5 justify-start px-12 cursor-pointer origin-left"
       onClick={() => onSelect(itemIndex)}
     >
-      <motion.h2 style={{ fontWeight }} className="text-3xl leading-tight tracking-tight">
+      <motion.h2
+        style={{ fontWeight }}
+        className="text-3xl leading-tight tracking-tight"
+      >
         {item.title}
       </motion.h2>
       <motion.p
@@ -190,66 +217,72 @@ function RightImage({
 
   return (
     <motion.div
-      style={{ position: "absolute", top, left: 0, right: 0, height: imageSlot }}
+      style={{
+        position: "absolute",
+        top,
+        left: 0,
+        right: 0,
+        height: imageSlot,
+      }}
       className="px-2 flex items-center justify-center"
     >
       <motion.div
-        layoutId={`img-${itemIndex}`}
         animate={{ opacity: isSelected ? 0 : 1 }}
         transition={{ opacity: { duration: 0.12 } }}
-        style={{ borderRadius: 16 }}
         className="relative w-xl h-96 border border-white/10 overflow-hidden cursor-pointer"
         onClick={() => onSelect(itemIndex)}
       >
-        <Image src={item.image} alt={item.title} fill className="object-cover" unoptimized />
+        <Image
+          urlEndpoint="https://ik.imagekit.io/z0f6srcjf"
+          src={item.image}
+          alt={item.title}
+          fill
+          className="object-cover"
+          unoptimized
+        />
       </motion.div>
     </motion.div>
   );
 }
 
 // ── Detail left panel ───────────────────────────────────────────────────────
-function DetailPanel({
-  item,
-  onBack,
-}: {
-  item: Item;
-  onBack: () => void;
-}) {
-  const stagger = (i: number) => ({ delay: 0.08 + i * 0.06 });
-
+function DetailPanel({ item, onBack }: { item: Item; onBack: () => void }) {
   return (
     <motion.div
       key="detail"
       className="absolute inset-0 flex flex-col justify-center px-12"
-      initial={{ opacity: 0, x: 48 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: 48 }}
-      transition={{ type: "spring", stiffness: 220, damping: 28 }}
+      initial={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
     >
       <motion.button
-        initial={{ opacity: 0, y: -8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={stagger(0)}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.55, duration: 0.25 }}
         onClick={onBack}
-        className="self-start mb-14 flex items-center gap-2 text-white/30 hover:text-white/70 transition-colors text-xs tracking-[0.25em] uppercase"
+        className="self-start mb-14 cursor-pointer flex items-center gap-2 text-white/30 hover:text-white/70 transition-colors text-xs tracking-[0.25em] uppercase"
       >
         ← Back
       </motion.button>
 
       <motion.p
-        initial={{ opacity: 0, y: 10 }}
+        initial={{ opacity: 0, y: 6 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={stagger(1)}
+        transition={{ delay: 0.42, duration: 0.22 }}
         className="text-xs text-white/25 tracking-[0.28em] uppercase mb-3"
       >
         {item.location}
       </motion.p>
 
       <motion.h1
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ ...stagger(2), type: "spring", stiffness: 200, damping: 24 }}
-        className="text-6xl font-bold text-white leading-none tracking-tight mb-4"
+        initial={{ y: "20vh", opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{
+          y: { type: "spring", stiffness: 140, damping: 20 },
+          opacity: { duration: 0.08 },
+          x: { duration: 0.2 },
+        }}
+        className="text-6xl text-left px-0 font-bold text-white leading-none tracking-tight mb-4"
       >
         {item.title}
       </motion.h1>
@@ -257,7 +290,12 @@ function DetailPanel({
       <motion.p
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={stagger(3)}
+        transition={{
+          delay: 0.28,
+          type: "spring",
+          stiffness: 300,
+          damping: 28,
+        }}
         className="text-xl text-white/45 mb-8 leading-snug"
       >
         {item.description}
@@ -266,7 +304,7 @@ function DetailPanel({
       <motion.p
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={stagger(4)}
+        transition={{ delay: 0.38, duration: 0.22 }}
         className="text-white/55 leading-relaxed text-sm max-w-xs mb-10"
       >
         {item.details}
@@ -275,7 +313,7 @@ function DetailPanel({
       <motion.div
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={stagger(5)}
+        transition={{ delay: 0.48, duration: 0.2 }}
         className="flex flex-wrap gap-2"
       >
         {item.tags.map((tag) => (
@@ -299,9 +337,16 @@ export default function InvertedListPage() {
   const isExpandedRef = useRef(false);
 
   const accumulatedScroll = useMotionValue(0);
-  const baseAccumulated   = useRef(0);
-  const activeRaw         = useTransform(accumulatedScroll, (s) => s / imageSlotRef.current);
-  const activeSpring      = useSpring(activeRaw, { stiffness: 60, damping: 8, mass: 0.6 });
+  const baseAccumulated = useRef(0);
+  const activeRaw = useTransform(
+    accumulatedScroll,
+    (s) => s / imageSlotRef.current,
+  );
+  const activeSpring = useSpring(activeRaw, {
+    stiffness: 60,
+    damping: 8,
+    mass: 0.6,
+  });
 
   const [activeIndex, setActiveIndex] = useState(0);
   useMotionValueEvent(activeSpring, "change", (a) => {
@@ -344,11 +389,13 @@ export default function InvertedListPage() {
     };
   }, []);
 
-  const leftSlots = Array.from({ length: LEFT_HALF * 2 + 1 }, (_, i) => i - LEFT_HALF);
+  const leftSlots = Array.from(
+    { length: LEFT_HALF * 2 + 1 },
+    (_, i) => i - LEFT_HALF,
+  );
 
   return (
     <div className="flex h-screen overflow-hidden bg-black">
-
       {/* ── Left column ── */}
       <div className="w-1/2 relative overflow-hidden">
         <AnimatePresence mode="wait">
@@ -394,18 +441,19 @@ export default function InvertedListPage() {
           />
         ))}
 
-        {/* Full-screen overlay — layoutId morphs from the card */}
+        {/* Full-screen overlay — scales up from centre */}
         <AnimatePresence>
           {selectedIndex !== null && (
             <motion.div
               key={selectedIndex}
-              layoutId={`img-${selectedIndex}`}
+              initial={{ scale: 0.85, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 260, damping: 28 }}
               className="absolute inset-0 overflow-hidden"
-              style={{ borderRadius: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
             >
               <Image
+                urlEndpoint="https://ik.imagekit.io/z0f6srcjf"
                 src={items[selectedIndex].image}
                 alt={items[selectedIndex].title}
                 fill
@@ -416,7 +464,6 @@ export default function InvertedListPage() {
           )}
         </AnimatePresence>
       </div>
-
     </div>
   );
 }

@@ -418,6 +418,18 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-2.0.3.tgz#4a2868d75d6d6963e423bcf90b7fd1be343409d3"
   integrity sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==
 
+"@imagekit/javascript@^5.1.0":
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/@imagekit/javascript/-/javascript-5.3.0.tgz#20b4efe64b4eec826fd3489cce35ea1b491d91ee"
+  integrity sha512-jMptcXxQlg7BfZxVS9E2azkjfVieaKZD851XJSQLlR6kzoCg1HTTDscwUwdpHDpmt2MkTdGazo+BrsnxHrlyzA==
+
+"@imagekit/next@^2.1.5":
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/@imagekit/next/-/next-2.1.5.tgz#32a83f4405f357314ec4aebac8f2e6ba81931f75"
+  integrity sha512-fvUEqAcq+krrMvn9Yb9fiq6q6ezbVuHvcvJJ606PzmaeBPFcsTU0FZAWW9TRr0cyj4i+4RfzurSy4GfK9RwjOg==
+  dependencies:
+    "@imagekit/javascript" "^5.1.0"
+
 "@img/colour@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@img/colour/-/colour-1.0.0.tgz#d2fabb223455a793bf3bf9c70de3d28526aa8311"
