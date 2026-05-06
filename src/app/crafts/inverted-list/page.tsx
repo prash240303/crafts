@@ -43,7 +43,7 @@ const items: Item[] = [
     title: "Sony WH-1000XM5",
     description: "Premium wireless headphones",
     image:
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=800&fit=crop",
+      "/Crafts/inverted-list/sony.jpeg",
     location: "Sony, Japan",
     details:
       "Industry-leading noise cancellation uses eight microphones to detect and eliminate ambient sound. The 30-hour battery outlasts most workdays, while adaptive sound control learns your environment and adjusts automatically.",
@@ -54,7 +54,7 @@ const items: Item[] = [
     title: "DJI Mini 4 Pro",
     description: "Ultra-compact drone camera",
     image:
-      "https://images.unsplash.com/photo-1625948515291-69613efd103f?w=600&h=800&fit=crop",
+      "/Crafts/inverted-list/dji.jpg",
     location: "DJI, China",
     details:
       "Weighs just 249 grams, making it exempt from many regulations. The mechanical 3-axis gimbal stabilizes 4K footage, while obstacle avoidance on all sides provides confidence in tight spaces.",
@@ -65,7 +65,7 @@ const items: Item[] = [
     title: "iPhone 16 Pro",
     description: "Advanced smartphone flagship",
     image:
-      "https://images.unsplash.com/photo-1592286927505-1def25115558?w=600&h=800&fit=crop",
+      "/Crafts/inverted-list/iphone.png",
     location: "Apple, California",
     details:
       "A18 Pro chip handles computational photography and machine learning at the edge. The titanium frame feels premium, while the always-on display provides constant connectivity without battery drain.",
@@ -76,7 +76,7 @@ const items: Item[] = [
     title: "Steam Deck OLED",
     description: "Portable gaming revolution",
     image:
-      "https://images.unsplash.com/photo-1633133971292-02a3638199b3?w=600&h=800&fit=crop",
+      "/Crafts/inverted-list/steamdeck.jpg",
     location: "Valve, Washington",
     details:
       "The OLED display transforms PC gaming on the go with perfect blacks and vibrant colors. Play your entire Steam library with hardware that fits in your backpack, with dock support for TV gaming.",
@@ -87,7 +87,7 @@ const items: Item[] = [
     title: "Apple Vision Pro",
     description: "Spatial computing interface",
     image:
-      "https://images.unsplash.com/photo-1611095461304-46a91e6b4338?w=600&h=800&fit=crop",
+      "/Crafts/inverted-list/visionpro.png",
     location: "Apple, California",
     details:
       "Dual micro-OLED displays deliver a 4K experience to each eye. Eye tracking and hand gesture recognition create an intuitive interface, while spatial audio places sound precisely in three-dimensional space.",
@@ -98,7 +98,7 @@ const items: Item[] = [
     title: "Canon EOS R5 ",
     description: "Professional mirrorless camera",
     image:
-      "https://images.unsplash.com/photo-1606986628253-05620e9b0a80?w=600&h=800&fit=crop",
+      "/Crafts/inverted-list/canon-r5.jpeg",
     location: "Canon, Japan",
     details:
       "45-megapixel full-frame sensor captures stunning detail across dynamic ranges. Advanced autofocus with bird-eye detection tracks subjects with AI precision, while 8K recording future-proofs your footage.",
@@ -109,7 +109,7 @@ const items: Item[] = [
     title: "Framework Laptop",
     description: "Modular computing experience",
     image:
-      "https://images.unsplash.com/photo-1527864550417-7fd231fc53a7?w=600&h=800&fit=crop",
+      "/Crafts/inverted-list/framework.jpg",
     location: "Framework, California",
     details:
       "Swappable port modules let you customize connectivity for each journey. Upgrade the mainboard while keeping your chassis, encouraging longevity over obsolescence. Repairable by design with no proprietary screws.",
@@ -229,7 +229,7 @@ function RightImage({
       <motion.div
         animate={{ opacity: isSelected ? 0 : 1 }}
         transition={{ opacity: { duration: 0.12 } }}
-        className="relative w-xl h-96 border border-white/10 overflow-hidden cursor-pointer"
+        className="relative w-xl h-96 rounded-2xl border border-white/10 overflow-hidden cursor-pointer"
         onClick={() => onSelect(itemIndex)}
       >
         <Image
@@ -237,8 +237,11 @@ function RightImage({
           src={item.image}
           alt={item.title}
           fill
+          sizes="576px"
           className="object-cover"
           unoptimized
+          priority={itemIndex < 3}
+          transformation={[{ width: 576, height: 384, focus: "auto", quality: 80 }]}
         />
       </motion.div>
     </motion.div>
@@ -459,6 +462,7 @@ export default function InvertedListPage() {
                 fill
                 className="object-cover"
                 unoptimized
+                transformation={[{ width: 960, height: 1080, focus: "auto", quality: 85 }]}
               />
             </motion.div>
           )}
