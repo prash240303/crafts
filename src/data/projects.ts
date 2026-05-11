@@ -128,6 +128,15 @@ const _projects = [
     createdAt: "17-04-2026",
   },
   {
+    name: "Particle Distortion",
+    path: "/crafts/distortion",
+    img: "/craft-preview/distortion.png",
+    description: "4M WebGL particles rendering a hero — displaced by cursor velocity.",
+    type: "distortion",
+    height: "h-72",
+    createdAt: "07-05-2026",
+  },
+  {
     name: "Inverted List",
     path: "/crafts/inverted-list",
     img: "/craft-preview/inverted-list.png",

@@ -1,11 +1,9 @@
-import TabSwitcher from "@/components/ui/Switcher";
+import MediaCard from "@/components/ui/MediaCard";
 
 export default function TodoList() {
   return (
-    <>
-      <div className="max-w-xl mt-64 mx-auto">
-        <TabSwitcher />
+      <div className="w-full h-screen flex items-center justify-center">
+        <MediaCard />
       </div>
-    </>
   );
 }

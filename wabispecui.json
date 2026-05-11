@@ -1,0 +1,360 @@
+{
+    "project": "Wabi Onboarding UI",
+    "format": "Mobile App Onboarding",
+    "duration": "19 seconds (looping)",
+    
+    "viewport": {
+      "width": 720,
+      "height": 720,
+      "aspectRatio": "1:1",
+      "deviceFrame": "iPhone with notch"
+    },
+  
+    "screens": [
+      {
+        "id": "screen-1",
+        "name": "Welcome",
+        "duration": 1000,
+        "elements": [
+          {
+            "type": "text",
+            "id": "welcome-heading",
+            "content": "A new era of software is here.",
+            "fontSize": 28,
+            "fontWeight": "bold",
+            "textAlign": "center",
+            "color": "#000000",
+            "position": "center",
+            "y": "45%",
+            "animation": {
+              "type": "fadeIn",
+              "duration": 500,
+              "delay": 0
+            }
+          },
+          {
+            "type": "text",
+            "id": "cta-swipe",
+            "content": "Swipe up to enter",
+            "fontSize": 14,
+            "fontWeight": "regular",
+            "color": "#999999",
+            "textAlign": "center",
+            "position": "bottom",
+            "y": "85%",
+            "animation": {
+              "type": "fadeIn",
+              "duration": 400,
+              "delay": 200
+            }
+          }
+        ],
+        "transition": {
+          "type": "fade",
+          "duration": 300,
+          "easing": "ease-in-out"
+        }
+      },
+  
+      {
+        "id": "screen-2",
+        "name": "Blob Introduction",
+        "duration": 2000,
+        "elements": [
+          {
+            "type": "blob-3d",
+            "id": "intro-blob",
+            "size": "medium",
+            "scale": 0.4,
+            "position": "top-center",
+            "y": "30%",
+            "animation": {
+              "type": "appear",
+              "duration": 600,
+              "rotationStart": 0,
+              "rotationEnd": 45
+            }
+          },
+          {
+            "type": "text",
+            "id": "meet-wabi",
+            "content": "Meet Wabi.",
+            "fontSize": 32,
+            "fontWeight": "bold",
+            "color": "#000000",
+            "textAlign": "center",
+            "position": "center",
+            "y": "60%",
+            "animation": {
+              "type": "fadeIn",
+              "duration": 500,
+              "delay": 300
+            }
+          }
+        ],
+        "transition": {
+          "type": "fade",
+          "duration": 400,
+          "easing": "ease-in-out"
+        }
+      },
+  
+      {
+        "id": "screen-3",
+        "name": "Main Interface",
+        "duration": 16000,
+        "elements": [
+          {
+            "type": "blob-3d",
+            "id": "main-blob",
+            "description": "Rotating 3D sphere with internal particles and icons",
+            "scale": 0.7,
+            "position": "top-center",
+            "y": "22%",
+            "colors": ["#FF6B35", "#A85FFF", "#2E5BFF", "#FF9A3D", "#D4AF37"],
+            "animation": {
+              "type": "continuous-rotation",
+              "rotationSpeed": "360deg per 3.5s",
+              "morphing": true,
+              "morphingIntensity": 0.15,
+              "scaling": {
+                "min": 0.95,
+                "max": 1.05,
+                "duration": 2000
+              },
+              "particles": {
+                "count": 8,
+                "rotationSpeeds": "variable",
+                "orbitRadius": "varies"
+              }
+            }
+          },
+  
+          {
+            "type": "button-icon",
+            "id": "plus-button",
+            "icon": "+",
+            "iconSize": 24,
+            "background": "#E8E8E8",
+            "shape": "circle",
+            "diameter": 60,
+            "position": "center",
+            "y": "43%",
+            "shadow": "0 2px 8px rgba(0,0,0,0.1)",
+            "interactive": true,
+            "states": {
+              "default": {
+                "opacity": 1,
+                "scale": 1
+              },
+              "hover": {
+                "opacity": 0.8,
+                "scale": 1.05
+              },
+              "active": {
+                "scale": 0.95
+              }
+            }
+          },
+  
+          {
+            "type": "text",
+            "id": "main-heading",
+            "content": "Meet Wabi.",
+            "fontSize": 32,
+            "fontWeight": "bold",
+            "color": "#000000",
+            "textAlign": "center",
+            "position": "center",
+            "y": "57%"
+          },
+  
+          {
+            "type": "text",
+            "id": "subtitle",
+            "content": "The first personal software platform.",
+            "fontSize": 18,
+            "fontWeight": "regular",
+            "color": "#000000",
+            "textAlign": "center",
+            "position": "center",
+            "y": "62%",
+            "lineHeight": 1.4
+          },
+  
+          {
+            "type": "button",
+            "id": "google-button",
+            "variant": "secondary",
+            "icon": "google",
+            "iconPosition": "left",
+            "text": "Continue with Google",
+            "fontSize": 16,
+            "fontWeight": "medium",
+            "background": "#FFFFFF",
+            "textColor": "#000000",
+            "borderColor": "#DDDDDD",
+            "borderWidth": 1,
+            "borderRadius": 12,
+            "padding": {
+              "vertical": 14,
+              "horizontal": 16
+            },
+            "position": "bottom-center",
+            "y": "78%",
+            "width": "calc(100% - 32px)",
+            "shadow": "0 2px 8px rgba(0,0,0,0.08)",
+            "interactive": true,
+            "states": {
+              "default": {
+                "opacity": 1,
+                "scale": 1
+              },
+              "hover": {
+                "background": "#F8F8F8",
+                "scale": 1.02
+              },
+              "active": {
+                "scale": 0.98,
+                "opacity": 0.95
+              }
+            }
+          },
+  
+          {
+            "type": "button",
+            "id": "apple-button",
+            "variant": "primary",
+            "icon": "apple",
+            "iconPosition": "left",
+            "text": "Continue with Apple",
+            "fontSize": 16,
+            "fontWeight": "medium",
+            "background": "#000000",
+            "textColor": "#FFFFFF",
+            "borderRadius": 12,
+            "padding": {
+              "vertical": 14,
+              "horizontal": 16
+            },
+            "position": "bottom-center",
+            "y": "88%",
+            "width": "calc(100% - 32px)",
+            "shadow": "0 2px 12px rgba(0,0,0,0.15)",
+            "interactive": true,
+            "states": {
+              "default": {
+                "opacity": 1,
+                "scale": 1
+              },
+              "hover": {
+                "background": "#1A1A1A",
+                "scale": 1.02
+              },
+              "active": {
+                "scale": 0.98,
+                "opacity": 0.9
+              }
+            }
+          }
+        ],
+        "transition": {
+          "type": "fade",
+          "duration": 400,
+          "easing": "ease-in-out"
+        }
+      }
+    ],
+  
+    "globalStyles": {
+      "background": {
+        "type": "gradient",
+        "baseColor": "#FFFFFF",
+        "accentGradient": "radial-gradient with bokeh blur in corners",
+        "accentColors": ["#FF6B35CC", "#A85FFFCC", "#2E5BFFCC"]
+      },
+      "fontFamily": "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif",
+      "phoneFrame": {
+        "borderColor": "#000000",
+        "borderWidth": 3,
+        "borderRadius": 40,
+        "notchHeight": 30,
+        "notchWidth": 130
+      },
+      "spacing": {
+        "horizontal": 16,
+        "vertical": 12
+      }
+    },
+  
+    "animations": {
+      "rotation": {
+        "type": "3D rotation",
+        "axis": "Y and X (random/organic)",
+        "speed": "continuous",
+        "fullRotationTime": 3500
+      },
+      "morphing": {
+        "type": "vertex deformation",
+        "intensity": 0.15,
+        "frequency": "continuous",
+        "noiseScale": 0.8
+      },
+      "particles": {
+        "type": "orbiting elements",
+        "count": 8,
+        "colors": "inherit from blob",
+        "sizeShrinkingEffect": true,
+        "orbitVariation": "dynamic"
+      },
+      "screenTransition": {
+        "type": "crossfade",
+        "duration": 300,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "loop": true
+      }
+    },
+  
+    "interactionFlow": {
+      "initial": "screen-1",
+      "sequence": ["screen-1", "screen-2", "screen-3"],
+      "loop": true,
+      "loopDelay": 0,
+      "clickTargets": [
+        {
+          "id": "plus-button",
+          "action": "none (demo only)"
+        },
+        {
+          "id": "google-button",
+          "action": "navigate to Google OAuth"
+        },
+        {
+          "id": "apple-button",
+          "action": "navigate to Apple OAuth"
+        }
+      ]
+    },
+  
+    "accessibility": {
+      "reduceMotion": {
+        "enabled": true,
+        "fallback": "disable 3D blob rotation, keep simple fade transitions"
+      },
+      "ariaLabels": {
+        "plus-button": "Add new item",
+        "google-button": "Sign in with Google account",
+        "apple-button": "Sign in with Apple account"
+      },
+      "colorContrast": "WCAG AA (4.5:1 minimum)",
+      "keyboardNav": "Tab between buttons, Enter to activate"
+    },
+  
+    "technicalNotes": {
+      "recommended3DLibrary": "Three.js",
+      "animationLibrary": "Framer Motion",
+      "styleSystem": "CSS-in-JS or Tailwind CSS",
+      "renderingContext": "Canvas for 3D, DOM for UI elements",
+      "performanceTargets": "60fps, <50ms frame time"
+    }
+  }
