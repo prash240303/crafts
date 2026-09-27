@@ -38,7 +38,7 @@ const LazyVideo = ({ src }: { src: string }) => {
         if (entry.isIntersecting) {
           // Start loading + playing only when visible
           if (video.readyState === 0) video.load();
-          video.play().catch(() => {});
+          video.play().catch(() => { });
         } else {
           video.pause();
         }
@@ -119,27 +119,26 @@ const PortfolioGrid = () => {
             {columns.map((col, colIndex) => (
               <div key={colIndex} className="flex flex-col gap-2">
                 {col.map((project) => (
-                  <div
-                    key={project.path}
-                    onClick={() => handleCardClick(project.path)}
-                    className={`bg-white group rounded-xl border border-zinc-300 p-1 hover:border-zinc-400 hover:scale-[101%] hover:shadow-2xl transition-all ease-in duration-300 cursor-pointer flex flex-col ${project.height} ${inter.className}`}
-                  >
-                    <div className="border rounded-lg border-neutral-100 relative h-full overflow-hidden">
-                      {project.vid && <LazyVideo src={project.vid} />}
-                      {project.img && (
-                        <img
-                          src={project.img}
-                          alt={project.name}
-                          className="w-full group-hover:scale-105 transition-all ease-in duration-300 h-full object-cover"
-                        />
-                      )}
-                      <div className="space-y-1 absolute w-full bottom-0 left-0 px-3 py-2 bg-white/60 backdrop-blur-md rounded-lg border border-white/20">
-                        <div className="text-neutral-800 text-lg font-medium">
-                          {project.name}
-                        </div>
-                        <div className="text-gray-600 text-sm">
-                          {project.description}
-                        </div>
+                  <div key={project.path} className="flex group rounded-xl border border-zinc-300 p-1 hover:border-zinc-400 hover:scale-[101%] hover:shadow-2xl transition-all ease-in duration-300 cursor-pointer  flex-col gap-1 justify-between">
+                    <div
+                      onClick={() => handleCardClick(project.path)}
+                      className={`bg-white flex-1 group flex flex-col ${project.height} ${inter.className}`}
+                    >
+                      <div className="border z-10 group-hover:border-zinc-200 rounded-lg border-neutral-100 relative h-full overflow-hidden">
+                        {project.vid && <LazyVideo src={project.vid} />}
+                        {project.img && (
+                          <img
+                            src={project.img}
+                            alt={project.name}
+                            className="w-full group-hover:scale-105 transition-all ease-in duration-300 h-full object-cover"
+                          />
+                        )}
+
+                      </div>
+                    </div>
+                    <div className="space-y-1 flex w-full bottom-0 left-0 pl-1 bg-white/60 backdrop-blur-md rounded-lg border border-white/20">
+                      <div className="group-hover:text-neutral-800 text-neutral-600 text-sm group-hover:font-semibold transition-all ease-in duration-300 ">
+                        {project.name}
                       </div>
                     </div>
                   </div>

@@ -120,7 +120,7 @@ const _projects = [
   {
     name: "Inverted List",
     path: "/crafts/craft15",
-    vid: "/craft-preview/inverted-list.mp4",
+    img: "/craft-preview/inverted-list.gif",
     description: "Split-screen list with opposite-direction spring scroll and click-to-expand detail view.",
     type: "inverted-list",
     height: "h-72",
@@ -129,7 +129,7 @@ const _projects = [
     {
     name: "Album Cover Player",
     path: "/crafts/craft18",
-    vid: "/craft-preview/album-cover-player.mp4",
+    img: "/craft-preview/player-card.gif",
     description: "Album cover art rotating disk animation",
     type: "cards",
     height: "h-72",
