@@ -231,7 +231,7 @@ export default function TypewriterPage() {
         </p>
 
         <Link
-          href="/crafts/keyboard"
+          href="/crafts/craft16"
           target="_blank"
           rel="noopener noreferrer"
           className="z-10 group relative flex items-center gap-2 px-6 py-2.5 rounded-full text-sm transition-all duration-300 hover:scale-105 active:scale-95"

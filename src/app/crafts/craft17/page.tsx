@@ -1,9 +1,7 @@
 "use client";
-import TabSwitcher from "@/components/ui/Switcher";
 import CodeBlock from "@/components/layoutComponents/CodeBlock";
 import ComponentLayout from "@/components/layoutComponents/ComponentLayout";
 import SourceCodeButton from "@/components/ui/sourceCodeButton";
-import Dock from "../../dock/page";
 import Link from "next/link";
 import Image from "next/image";
 // Code snippets for documentation
@@ -58,7 +56,7 @@ function Page() {
         </p>
 
         <Link
-          href="/dock"
+          href="/crafts/craft17/dock"
           target="_blank"
           rel="noopener noreferrer"
           className="z-10 group relative flex items-center gap-2 px-6 py-2.5 rounded-full text-sm transition-all duration-300 hover:scale-105 active:scale-95"

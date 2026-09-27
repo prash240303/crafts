@@ -1,7 +1,7 @@
 const _projects = [
   {
     name: "Hero Section Image Animation",
-    path: "/crafts/hero",
+    path: "/crafts/craft13",
     img: "/craft-preview/hero.gif",
     description: "Interactive hero-section image animation.",
     type: "hero",
@@ -11,7 +11,7 @@ const _projects = [
 
   {
     name: "Typewriter-Letters",
-    path: "/crafts/typewriter",
+    path: "/crafts/craft20",
     img: "/craft-preview/typewriter.gif",
     description: "Write your letters with a experince of using a typewriter.",
     type: "type-writer",
@@ -20,7 +20,7 @@ const _projects = [
   },
   {
     name: "Arrow Button",
-    path: "/crafts/arrow-button",
+    path: "/crafts/craft2",
     img: "/craft-preview/arrowbutton.gif",
     description: "A button with an arrow icon.",
     type: "arrow-button",
@@ -29,7 +29,7 @@ const _projects = [
   },
   {
     name: "Magic Text",
-    path: "/crafts/magic-text",
+    path: "/crafts/craft8",
     img: "/craft-preview/starrytext.gif",
     description: "A text component with magical effects.",
     type: "magic-text",
@@ -38,7 +38,7 @@ const _projects = [
   },
   {
     name: "Tab Switcher",
-    path: "/crafts/tab-switcher",
+    path: "/crafts/craft7",
     img: "/craft-preview/tabswitcher.gif",
     description: "A component for switching between tabs.",
     type: "tab-switcher",
@@ -47,7 +47,7 @@ const _projects = [
   },
   {
     name: "Tags Component",
-    path: "/crafts/tags-component",
+    path: "/crafts/craft11",
     img: "/craft-preview/tagsComponent.gif",
     description: "A component for displaying tags.",
     type: "tags",
@@ -56,7 +56,7 @@ const _projects = [
   },
   {
     name: "Zip Code Checker",
-    path: "/crafts/zip-code-checker",
+    path: "/crafts/craft6",
     img: "/craft-preview/zipcodechecker.png",
     description: "A component for checking zip codes.",
     type: "zip-code",
@@ -65,7 +65,7 @@ const _projects = [
   },
   {
     name: "Custom Cards",
-    path: "/crafts/custom-cards",
+    path: "/crafts/craft3",
     img: "/craft-preview/customCards.png",
     description: "A component for displaying custom cards.",
     type: "custom-cards",
@@ -74,7 +74,7 @@ const _projects = [
   },
   {
     name: "Ripple button",
-    path: "/crafts/ripple-button",
+    path: "/crafts/craft9",
     img: "/craft-preview/ripplebutton.gif",
     description: "Button with ripple effect on hover",
     type: "ripple-button",
@@ -83,7 +83,7 @@ const _projects = [
   },
   {
     name: "Image Reveal",
-    path: "/crafts/image-reveal",
+    path: "/crafts/craft10",
     img: "/craft-preview/image-reveal.gif",
     description: "A component for displaying images, with grid reveal effect",
     type: "image-reveal",
@@ -91,18 +91,8 @@ const _projects = [
     createdAt: "15-02-2026",
   },
   {
-    name: "Aadhar Card",
-    path: "/crafts/aadhar-card",
-    img: "/craft-preview/aadharcard.png",
-    description: "A component for displaying aadhar card",
-    type: "aadhar-card",
-    height: "h-[420px]",
-    createdAt: "10-02-2026",
-  },
-
-  {
     name: "Expand Repel Card",
-    path: "/crafts/expand-repel-card",
+    path: "/crafts/craft5",
     img: "/craft-preview/expand-repel-card.gif",
     description: "A component for displaying expand repel card",
     type: "expand-repel-card",
@@ -111,7 +101,7 @@ const _projects = [
   },
   {
     name: "MacOS Liquid Glass Dock",
-    path: "/crafts/liquid-glass-dock",
+    path: "/crafts/craft17",
     img: "/craft-preview/macos_dock.png",
     description: "A liquid Glass Dock with macOS style",
     type: "liquid-glass-dock",
@@ -120,7 +110,7 @@ const _projects = [
   },
   {
     name: "Animated Number Input",
-    path: "/crafts/animated-number-input",
+    path: "/crafts/craft21",
     img: "/craft-preview/animated-number-input.gif",
     description: "A bottom-up animated number input.",
     type: "animated-number-input",
@@ -129,14 +119,31 @@ const _projects = [
   },
   {
     name: "Inverted List",
-    path: "/crafts/inverted-list",
+    path: "/crafts/craft15",
     vid: "/craft-preview/inverted-list.mp4",
     description: "Split-screen list with opposite-direction spring scroll and click-to-expand detail view.",
     type: "inverted-list",
     height: "h-72",
     createdAt: "04-05-2026",
   },
-
+    {
+    name: "Album Cover Player",
+    path: "/crafts/craft18",
+    vid: "/craft-preview/album-cover-player.mp4",
+    description: "Album cover art rotating disk animation",
+    type: "cards",
+    height: "h-72",
+    createdAt: "04-06-2026",
+  },
+{
+    name: "Magnifier Shader",
+    path: "/crafts/craft22",
+    img: "/craft-preview/glass-magnifier.gif",
+    description: "A magnifier sphere with real glass effect using shaders",
+    type: "cards",
+    height: "h-72",
+    createdAt: "05-06-2026",
+  },
 ];
 
 export const Projects = _projects
